@@ -12,6 +12,8 @@
 - [Requirements & acceptance](docs/REQUIREMENTS_AND_ACCEPTANCE.md): verifiable functionality.
 - [Decision log](docs/DECISION_LOG.md): confirmed choices vs pending questions.
 - [Activity log](docs/ACTIVITY_LOG.md): durable work and evidence chronology.
+- [Model compatibility](docs/MODEL_COMPATIBILITY.md): manufacturer evidence and pending tests.
+- [POC test protocol](docs/POC_TEST_PLAN.md): step-by-step device acceptance.
 - [Weintek references](docs/REFERENCE_LINKS.md): official manuals, SDK and feature matrices.
 - [Worker protocol](docs/WORKER_PROTOCOL.md): issue/PR ownership and handoff.
 

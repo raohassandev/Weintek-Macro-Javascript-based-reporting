@@ -1,18 +1,18 @@
 # Master execution plan — historical reporting
-**Command Centre:** [#1](../issues/1). Task-specific acceptance is authoritative in issues #2–#10. Track with a link to an actual artifact/commit/test, not asserted percentages.
+**Command Centre:** [#1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1). Task-specific acceptance is authoritative in issues #2–#10. Track with a link to an actual artifact/commit/test, not asserted percentages.
 
 ## Parallel lanes
 | Lane | Issue | Implementation | Evidence gate |
 |---|---|---|---|
-| HW | [#2](../issues/2) | Official feature matrix; exact model / EBPro / OS and device capability | Documented + device evidence |
-| SQL | [#3](../issues/3) | Sample schema, filtered SQL, query and register contract | SQL fixtures + verified EBPro config |
-| HIST | [#4](../issues/4) | Source tags, sampling, backup and retention | Saved EBPro setup + data reconciliation |
-| MACRO | [#5](../issues/5) | Macro query orchestration/status/error | Minimal reproducible script + execution |
-| JS | [#6](../issues/6) | JS register I/O, UI integration and state machine | Versioned SDK API + functional test |
-| UI | [#7](../issues/7) | Date filters, results, paging, loading/errors | Prototype/screens and UX tests |
-| EXPORT | [#8](../issues/8) | CSV and separately proven PDF/print | Test files + source-data comparison |
-| QA | [#9](../issues/9) | Automated and real-HMI integration tests | CI IDs + named device proof |
-| RELEASE | [#10](../issues/10) | Commissioning, training, customer sign-off | Signed acceptance checklist |
+| HW | [#2](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/2) | Official feature matrix; exact model / EBPro / OS and device capability | Documented + device evidence |
+| SQL | [#3](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/3) | Sample schema, filtered SQL, query and register contract | SQL fixtures + verified EBPro config |
+| HIST | [#4](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/4) | Source tags, sampling, backup and retention | Saved EBPro setup + data reconciliation |
+| MACRO | [#5](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/5) | Macro query orchestration/status/error | Minimal reproducible script + execution |
+| JS | [#6](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/6) | JS register I/O, UI integration and state machine | Versioned SDK API + functional test |
+| UI | [#7](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/7) | Date filters, results, paging, loading/errors | Prototype/screens and UX tests |
+| EXPORT | [#8](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/8) | CSV and separately proven PDF/print | Test files + source-data comparison |
+| QA | [#9](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/9) | Automated and real-HMI integration tests | CI IDs + named device proof |
+| RELEASE | [#10](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/10) | Commissioning, training, customer sign-off | Signed acceptance checklist |
 
 ## Delivery milestones
 ### M0 — Reproducible problem definition

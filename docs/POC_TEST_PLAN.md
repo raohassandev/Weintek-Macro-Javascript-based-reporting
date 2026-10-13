@@ -1,5 +1,5 @@
 # POC bench-test protocol — Weintek SQL reporting
-**Status:** NOT RUN, actual model/OS and project unavailable. Owner: [HW #2](../issues/2), [SQL #3](../issues/3), [MACRO #5](../issues/5), [JS #6](../issues/6).
+**Status:** NOT RUN, actual model/OS and project unavailable. Owner: [HW #2](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/2), [SQL #3](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/3), [MACRO #5](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/5), [JS #6](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/6).
 
 ## Test 0 — identify runtime
 Record exact rear-label model, hardware revision, OS build, EBPro release, JS SDK docs used and USB/SD filesystem. Photograph label only with customer permission. Do not log passwords.

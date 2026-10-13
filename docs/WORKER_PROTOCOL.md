@@ -1,7 +1,7 @@
 # Collaboration / worker protocol
 
 ## Entrypoint
-Open [Command Centre #1](../issues/1) and read current live table, related task issue and docs before work. GitHub is durable coordination; chat discussions become project context only when the associated docs/issues are updated.
+Open [Command Centre #1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1) and read current live table, related task issue and docs before work. GitHub is durable coordination; chat discussions become project context only when the associated docs/issues are updated.
 
 ## Task lifecycle
 - `[AVAILABLE]`: scoped, unclaimed.
@@ -23,4 +23,4 @@ Read live issue before claiming. Set owner flag as issue comment and update Comm
 - Upon blockage, log root cause, missing input, what was tried and next owner; do independent work without overwriting others.
 
 ## Minimum new-chat instruction
-> Continue `raohassandev/Weintek-Macro-Javascript-based-reporting` from [Command Centre #1](../issues/1). Read README, docs/PROJECT_CONTEXT.md, docs/MASTER_PLAN.md, docs/DECISION_LOG.md and open issues/PRs. Do the next available scoped engineering work, push genuine code/tests, update issues/board/log with evidence. Do not claim direct Macro/JS SQLite APIs or device test results without verification. Do not ask for data already recorded in the repo.
+> Continue `raohassandev/Weintek-Macro-Javascript-based-reporting` from [Command Centre #1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1). Read README, docs/PROJECT_CONTEXT.md, docs/MASTER_PLAN.md, docs/DECISION_LOG.md and open issues/PRs. Do the next available scoped engineering work, push genuine code/tests, update issues/board/log with evidence. Do not claim direct Macro/JS SQLite APIs or device test results without verification. Do not ask for data already recorded in the repo.

@@ -1,5 +1,5 @@
 # Project context — handoff document
-**Last updated:** 2026-10-13. **Source:** project owner conversation and verified product references. **Command Centre:** [#1](../issues/1).
+**Last updated:** 2026-10-13. **Source:** project owner conversation and verified product references. **Command Centre:** [#1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1).
 
 ## The customer problem
 A customer requires **historical reports** on a Weintek industrial HMI, not just live values or general data logging. The engineering objective is filtering by date/period/device, reporting summary statistics, showing historical table/pages, exporting CSV/Excel-compatible data, and deciding whether customer also requires branded multipage PDF/print. Exact final output specification, tag list and report templates are **not supplied yet**.
@@ -25,20 +25,20 @@ A customer requires **historical reports** on a Weintek industrial HMI, not just
 - Preserve raw timestamps, time zone and data quality.
 
 ## New-session continuation procedure
-1. Read [Command Centre #1](../issues/1), this document, [MASTER_PLAN.md](MASTER_PLAN.md), [DECISION_LOG.md](DECISION_LOG.md), open GitHub issues and PRs.
+1. Read [Command Centre #1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1), this document, [MASTER_PLAN.md](MASTER_PLAN.md), [DECISION_LOG.md](DECISION_LOG.md), open GitHub issues and PRs.
 2. State current task ID, previous verified evidence, exact next action and dependencies.
 3. Pick only [AVAILABLE] work in authorized lane, claim it before changing shared files.
 4. Commit work in scope; link commit/PR, CI/hardware evidence; update issue flag, [ACTIVITY_LOG.md](ACTIVITY_LOG.md), and decision log if applicable.
 5. If blocked, document exact missing device/input and continue independent work. Never fill unknowns with guesses.
 
 ## Repository links
-- [#1 Command Centre](../issues/1)
-- [#2 Model compatibility](../issues/2)
-- [#3 SQL/query](../issues/3)
-- [#4 Historian](../issues/4)
-- [#5 Macro](../issues/5)
-- [#6 JavaScript](../issues/6)
-- [#7 HMI UI](../issues/7)
-- [#8 Export/PDF](../issues/8)
-- [#9 QA](../issues/9)
-- [#10 Release](../issues/10)
+- [#1 Command Centre](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1)
+- [#2 Model compatibility](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/2)
+- [#3 SQL/query](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/3)
+- [#4 Historian](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/4)
+- [#5 Macro](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/5)
+- [#6 JavaScript](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/6)
+- [#7 HMI UI](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/7)
+- [#8 Export/PDF](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/8)
+- [#9 QA](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/9)
+- [#10 Release](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/10)
