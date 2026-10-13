@@ -41,5 +41,5 @@ class Analyzer210Development(unittest.TestCase):
         with (SRC/"tags/screen_tag_contract.csv").open(newline="") as f:
             rows=list(csv.DictReader(f))
         self.assertGreaterEqual(len(rows),56)
-        self.assertIn("NOT",rows[-1]["Evidence"])
+        self.assertTrue(all(r["Evidence"] in ("NOT_RUN","BLOCKED_Q02","BLOCKED_Q10","OFFLINE") or "NOT" in r["Evidence"] for r in rows))
 if __name__=="__main__":unittest.main()

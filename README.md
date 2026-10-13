@@ -2,6 +2,13 @@
 
 **Ek engine, multiple sites.** Configurable historical reports for solar / grid / DG, industry, UPS, LPG, HVAC and utilities. **Currently in design/R&D**; no production or hardware acceptance claim.
 
+## NEW — Planning / Context / R&D vs Development
+**Project entrypoints are now separated without moving old files or breaking historical relative links:** [Planning & R&D navigation](planning-context-rnd/INDEX.md) · [Development hub](development/README.md).
+
+[Analyzer Detail 210 — reusable 61-meter engineering source](development/screens/analyzer-detail-210/README.md) · [Preview](development/screens/analyzer-detail-210/assets/preview.png) · [Background-only](development/screens/analyzer-detail-210/assets/background-only.png) · [Native Weintek object guide](development/screens/analyzer-detail-210/docs/EBPRO_OBJECT_BY_OBJECT.md) · [Downloadable source ZIP in repo](development/releases/UCS_FHDX220_Analyzer_Detail_210_Source_Pack.zip).
+
+**Evidence:** DOC/OFFLINE assets; not a compiled EBPro project, approved UI, running SQLite history or tested FHDX-220 hardware. The plant's actual SLD remains separately site-specific. Driver register maps, operator permissions and native history functions need real acceptance.
+
 ## Primary screen decision — authentic plant SLD, NOT synthetic dashboards
 **Owner rejected prior generated 110/120/130 generic role-home designs.** Main UCS display must be the **actual site electrical single-line diagram (SLD)** on cMT-FHDX-220, using EBPro native objects and supported JS Object Canvas. The electrical graph/coordinates are site-dependent configuration; no web app or extra runtime PC/IPC. **No actual plant SLD drawing/meter feeder map exists in this repo yet**, so visually accurate drawing is BLOCKED rather than invented. [Authoritative SLD design contract](docs/PLANT_SLD_PRIMARY_SCREEN_CONTRACT.md) · [Issue #43](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/43). Earlier 1080p screens are archived/rejected concept art only. GATE-1 DOC PASS preceded this design change, so this UI delta needs a new design audit.
 
