@@ -5,6 +5,9 @@
 **Authority:** [Command Centre #1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1); this document overrides **older conflicting architectural suggestions**.  
 **Purpose:** engineer can implement; independent AI auditor can audit; new chat can resume without owner retelling history.
 
+## Active hardware target — owner selection (2026-10-13)
+**Weintek cMT-FHDX-220** is the active UCS build target, *not* FHDX-820 or SVRX. [Model-specific engineering contract](HARDWARE_TARGET_FHDX_220.md) / [JSON](../contracts/hardware-target.json). Manufacturer datasheet: 4 GB Flash, 1 GB RAM, one USB2 host, **NO SD/microSD**, HDMI max 1920×1080, minimum EBPro V6.04.02. Manufacturer EBPro V6.10.01 matrix: JS Object and SQL Query Y; **PLC Web Browser is FHDX-820 ONLY, not 220**. Exact firmware, installed EBPro, local SQLite advanced custom SQL and 61-meter capacity remain unverified.
+
 ## 0. Executive contract and evidence policy
 Build a **reusable site-configurable, SCADA-grade visualisation, diagnostics and historical reporting system**. Start at **one site with 61 energy analyzers**; subsequent sites may use different meter brands, combinations, quantity and profiles. Build one reusable engine/driver mapping and shared screens, not 61 screen copies. Operators see live plant state; engineers see actionable diagnostics/commissioning; management sees defensible energy reports and exceptions.
 
@@ -27,7 +30,7 @@ flowchart TD
     E --> J["Persistent alarms -> role-specific actionable popup"]
     E --> K["Measured storage/resource monitor"]
   end
-  H --> S["Weintek USB / microSD / qualified USB-SSD"]
+  H --> S["cMT-FHDX-220 USB1 / qualified USB-SSD (NO SD)"]
   K --> S
   S --> BACKUP["Verified rotated export/backup media"]
 ```
@@ -35,7 +38,7 @@ flowchart TD
 
 ## 2. What this project evolved from — complete historical conversation
 1. Customer initially demanded meaningful **historical reports**, not simple log files. Early questions were whether cMT1102/cMT1106X or advanced cMT models could run SQLite directly from Macro/JS.
-2. Weintek manufacturer docs identify cMT1106X as Basic, unsuitable for the desired SQL Query/JS approach; `cMT1102` exact label has not been verified. cMT3102X and higher Advanced models were feasibility candidates, but **current target is SVRX/FHDX**. Actual exact SKU, firmware/OS and EBPro project/version remain unknown.
+2. Weintek manufacturer docs identify cMT1106X as Basic, unsuitable for the desired SQL Query/JS approach; `cMT1102` exact label has not been verified. cMT3102X and higher Advanced models were feasibility candidates, but **current target is cMT-FHDX-220**. Actual OS/firmware and installed EBPro project/version remain unknown.
 3. SQL Query object (some models) can access supported SQLite files on USB/SD. **No confirmed generic `sqlite.open()` in Macro/JS**; arbitrary SQL Advanced Mode against Local SQLite and direct native datalog tables are separate **unresolved tests**. `RecipeQuery()` isn't a generic historian API.
 4. Requirement expanded to universal 22-template historical reporting, indexed manufacturer R&D, fully traceable GitHub execution and a one-page pictorial owner view.
 5. Owner requested **61 energy analyzers on a real site**, Web-SCADA-quality modern screen designs, operator/engineer/manager roles, maximum useful per-meter variables, trends, charts, maintenance and international-management reporting. Device types vary from site to site; commissioning should take place **as far as technically possible through HMI settings screens**, with minimum EBPro editing.
@@ -50,7 +53,7 @@ flowchart TD
 
 ## 3. Hardware and sizing baseline
 - Initial deployment: **1 site, 61 energy analyzers**. Their exact manufacturer/model/register maps, Modbus network topology, reading intervals, number of logged metrics and historian duration are **TBD site facts**, not invented.
-- Target family: **Weintek cMT-SVRX / cMT-FHDX** (e.g. SVRX-820/822, FHDX-820 where officially supported); exact owned product must be shown by label and OS/firmware/EBPro version before function acceptance.
+- Target model: **Weintek cMT-FHDX-220** chosen by owner. Obtain actual OS/firmware/EBPro and on-device proof before function acceptance. Other model variants are not drop-in substitutes.
 - No assumption that manufacturer Basic/Standard/Advanced and SVRX/FHDX all expose identical JS Object, SQL Query, system tags, browser or private-index behaviour.
 - A 2-meter vertical slice must pass before load testing 61 physical/logical slots. Hardware limits on total Data Sampling objects/channels, tag connections, histories, polling/presentation load, simultaneous viewers and storage are measured not guessed.
 - Site drivers must support scale factors, engineering units, function codes, register address base, byte/word order, signedness, live request timeout, retries, device health and supported optional features. **Do not invent register maps.**
@@ -89,7 +92,7 @@ flowchart LR
 - Management: period KPIs, energy trends/variance, quality/coverage indicator, one-click report preview/export where supported; no full CPU/RAM charts on everyday home.
 - Reusable Meter Detail: L-N/L-L voltages, currents, kW/kvar/kVA by phase and total, PF, Hz, import/export kWh, kvarh, demand/peak, neutral current, phase rotation, THD/harmonics, status/alarms and metadata **only when meter driver provides valid values**. Bounded numbers and charts, source units, last good timestamps, stale indicator, capability-driven layout.
 - Cross-client selection uses separate client-private state; one viewer selecting Meter 37 cannot switch another viewer from Meter 1. UAC must authorize not only page but data/actions. Never assume JS in cMT Viewer necessarily executes on trusted HMI server.
-- Management's **Resource Manager** is a deep screen with CPU, memory, internal historian quota, USB/SD or qualified attached SSD, storage connected/write-read/actual persisted freshness, earliest/latest time, measured growth forecast, independent verified backup. Report-affecting failures show actionable alert to management.
+- Management's **Resource Manager** is a deep screen with CPU, memory, internal historian quota, USB1 or qualified USB-attached SSD (NO SD), storage connected/write-read/actual persisted freshness, earliest/latest time, measured growth forecast, independent verified backup. Report-affecting failures show actionable alert to management.
 - UI uses native EBPro Picture, Numeric Display, Bit/Word Lamp, Bar Graph, Trend Display, History Data Display, Event Display, Function Key and model-qualified JS Object Canvas; screen PNG only background. A concept donut is not automatically a native EBPro control. Use light executive visuals and accessible labels, no fake live values.
 - Action severity routing and dedupe are in [ROLE_BASED_UX_PLAN](ROLE_BASED_UX_PLAN.md) + [policy JSON](../contracts/ucs-role-ux-policy.json). All critical/alarm events persisted **before** popups; popups never constitute the only durable record.
 
@@ -115,7 +118,7 @@ Use on-device Macro/JS/SQL Query functionality only as verified; report requests
 Report header includes site, device, interval/timezone, units, aggregation definition, first/last covered timestamps, overall coverage, file creator/revision and missing intervals. Filtering and date boundaries must be tested against clock/timezone anomalies.
 
 ## 9. Storage, backup, and Resource Manager
-- Weintek USB 2.0/microSD local media; FAT32 compatibility and per-file limit constrain rotation. USB-attached SSD is conditional on exact enclosure/power/filesystem and real test. Do **not** claim internal SATA/NVMe or SMART access from HMI tags.
+- **cMT-FHDX-220 has one USB 2.0 host and NO SD/microSD slot**; FAT32 compatibility and per-file limit constrain rotation. USB-attached SSD is conditional on exact enclosure/power/filesystem and real test. Do **not** claim internal SATA/NVMe or SMART access from HMI tags.
 - Four **independent** storage states: `MEDIA_PRESENT` from USB system bit; `SPACE_AVAILABLE` from UINT32 free size/low-space bit; `WRITE_READ_VERIFIED` from scoped on-demand Local HMI JS probe where supported; `HISTORIAN_PERSISTING` from advancing *actual* stored history. Backup checksum/readback result tracked separately, with age/TTL to stop a latched good flag.
 - Existing [resource engineer assets](../designs/resource-manager/README.md), [tags](../tags/resource-manager-dictionary.csv), [JS probe](../js/ucs_usb_write_read_probe.js), [Macro](../macros/UCS_STORAGE_STATUS.mcr) require EBPro compilation/physical testing. No file probe can guarantee resilience over sudden power loss or represent all 61 devices.
 - Earliest/latest stored record and free-space runway based on measured data, not fake graphs. `days_remaining = usable_free_space / measured_bytes_per_day` only when supported by enough observations; include rotation policy, backup staging and reserve. Show `N/A—insufficient sample` otherwise.
@@ -124,7 +127,7 @@ Report header includes site, device, interval/timezone, units, aggregation defin
 
 ## 10. Native HTML/JS UI technology decision
 - **Mainline:** EasyBuilder Pro native object + JS Object Canvas widgets and Macro workflow: best chance of deterministic HMI-only implementation on eligible SVRX/FHDX.
-- **Experimental:** PLC Web Browser on supported **local-screen** model can show URLs; dynamic local `file:///usb/index.html` and register bindings unsupported until tested. A USB HTML file existing does **not** mean it can run embedded.
+- **Experimental:** PLC Web Browser is NOT supported on the selected FHDX-220 according to EBPro Appendix A (it lists FHDX-820 only); dynamic local `file:///usb/index.html` and register bindings unsupported until tested. A USB HTML file existing does **not** mean it can run embedded.
 - EasyWeb/WebView are HMI access options, not general custom HTML hosting.
 - The distinct cMT-FHDX-820 **(W)** is an HTML5/Chromium browser-focused device, not assumed to run the same native EBPro historian. Do not replace mainline architecture based on this name similarity.
 - [HTML test input](../experiments/html-poc/index.html) tests styling/JS only, never a live UCS. [18 demo catalog entries](../research/demo-catalog.json) index official sample projects; no demos are claimed downloaded/imported/tested.

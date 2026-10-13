@@ -2,6 +2,9 @@
 
 **Ek engine, multiple sites.** Configurable historical reports for solar / grid / DG, industry, UPS, LPG, HVAC and utilities. **Currently in design/R&D**; no production or hardware acceptance claim.
 
+## Active HMI target
+**Weintek cMT-FHDX-220 (owner-selected).** [Hardware plan](docs/HARDWARE_TARGET_FHDX_220.md), [test contract](contracts/hardware-target.json). One USB2 host, **no SD/microSD**, 1920×1080 HDMI; native EBPro JS Object and SQL Query listed, PLC Web Browser **820-only**. Actual OS/EBPro and performance pending. No PC/IPC runtime.
+
 ## FINAL BASELINE v1.0 — primary entrypoint
 **Read these first (authoritative, 2026-10-13):**
 1. **[UCS FINAL ENGINEERING MASTER PLAN](docs/UCS_FINAL_MASTER_PLAN.md)** — full customer context, architecture, registers, 61-meter historian, UX, reporting, hardware limits, milestones and constraints.

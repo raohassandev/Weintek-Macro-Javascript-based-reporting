@@ -4,14 +4,14 @@
 Aap ko lambi technical reports nahi parhni; yeh 1 screen ka status aur decisions hain. [CC #1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1) · [Diagram](VISUAL_PLAN.md) · [Role home UX](ROLE_BASED_UX_PLAN.md) · [HTML R&D](../research/WEINTEK_HTML_FEASIBILITY.md).
 
 ## Our implementation boundary
-**61 energy analyzers**, **Weintek cMT-SVRX/FHDX**, **USB/SD/qualified USB-SSD**. **No additional computer/server.** Site meter brand, register map, energy units, thresholds and retention are configurable.
+**61 energy analyzers**, **Weintek cMT-FHDX-220**, **USB1/qualified USB-SSD; NO SD slot**. **No additional computer/server.** Site meter brand, register map, energy units, thresholds and retention are configurable.
 
 ```mermaid
 flowchart LR
- M["61 Meters"] --> W["Weintek UCS"]
+ M["61 Meters"] --> W["cMT-FHDX-220 UCS"]
  W --> S["Continuous historian • Alarms • Report logic"]
  W --> H["Operator / Engineer / Manager"]
- S --> USB["Weintek USB/SD/qualified SSD"]
+ S --> USB["FHDX-220 USB1 / qualified SSD; NO SD"]
 ```
 
 ## Who sees what?

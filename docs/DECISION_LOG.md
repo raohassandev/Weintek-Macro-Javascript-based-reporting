@@ -33,3 +33,6 @@ All decisions need an owner, date, evidence URL and fallback. Draft assumptions 
 
 | D-023 | 2026-10-13 | Freeze UCS v1.0 as **execution/scope baseline**, not physical release | ACCEPTED FOR PLANNING | [Final master plan](UCS_FINAL_MASTER_PLAN.md), [36 requirement matrix](UCS_REQUIREMENTS_TRACEABILITY.md), [AI agent brief](AI_AGENT_EXECUTION_BRIEF.md), [independent audit](INDEPENDENT_AUDIT_PROTOCOL.md) |
 | D-024 | 2026-10-13 | Every future active plan/issue must flag old PC/IPC proposal as superseded; unsupported Weintek report features remain explicit BLOCKED | ACCEPTED GUARDRAIL | [No-PC runtime policy](UCS_FINAL_MASTER_PLAN.md), [Weintek-only tests](../tests/test_ucs_scope.py) |
+
+| D-028 | 2026-10-13 | Owner-selected primary UCS target is **cMT-FHDX-220** (not 820). NO SD slot, single USB2 host, 1920×1080 UI canvas. | ACCEPTED HARDWARE TARGET (not physical PASS) | [Official specs + feature matrix](HARDWARE_TARGET_FHDX_220.md); [#2](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/2) |
+| D-029 | 2026-10-13 | FHDX-220 release uses native EBPro + JS Object; PLC Web Browser **820-only** in official feature matrix, not approved on 220. | ACCEPTED GUARDRAIL | [Official matrix](https://dl.weintek.com/public/EBPro/UserManual/eng/UserManual_separate_chapter/Appendix-A-Comparison-of-HMI-Software-Features-UserManual-eng.pdf) |

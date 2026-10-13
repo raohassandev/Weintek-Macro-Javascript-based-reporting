@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "target_model": "cMT-FHDX-220",
+  "target_status": "OWNER_SELECTED_NOT_DEVICE_VERIFIED",
+  "selection_date": "2026-10-13",
+  "runtime_scope": "WEINTEK_ONLY",
+  "specification": {
+    "cpu": "quad-core Cortex-A17",
+    "ram_mb": 1024,
+    "flash_gb": 4,
+    "hdmi_max": [
+      1920,
+      1080
+    ],
+    "recommended_resolution": [
+      1920,
+      1080
+    ],
+    "usb_host_count": 1,
+    "usb_type": "USB 2.0",
+    "sd_card_slot": false,
+    "microsd_slot": false,
+    "ethernet_port_count": 2,
+    "serial": [
+      "COM1 RS232",
+      "COM2 RS485 2W/4W",
+      "COM3 RS485 2W"
+    ],
+    "ebpro_datasheet_minimum": "6.04.02"
+  },
+  "software_matrix_v61001": {
+    "js_object": "DOCUMENTED_Y",
+    "sql_query": "DOCUMENTED_Y",
+    "pdf_reader": "DOCUMENTED_Y_NOT_GENERATOR",
+    "plc_web_browser": "DOCUMENTED_820_ONLY_NOT_220"
+  },
+  "unverified": [
+    "hmi_os_build",
+    "actual_ebpro_installed",
+    "physical_device_present",
+    "native_SQLite_Advanced_mode_custom_SQL",
+    "USB_SSD_bridge",
+    "USB_historian_61_meter_capacity",
+    "USB_touchscreen_storage_sharing",
+    "client_private_index_runtime"
+  ],
+  "references": [
+    "https://dl.weintek.com/public/cMT/eng/Datasheet/cMT-FHDX-220_Datasheet_ENG.pdf",
+    "https://dl.weintek.com/public/EBPro/UserManual/eng/UserManual_separate_chapter/Appendix-A-Comparison-of-HMI-Software-Features-UserManual-eng.pdf"
+  ]
+}

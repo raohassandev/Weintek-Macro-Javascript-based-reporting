@@ -1,11 +1,11 @@
 # UCS — Resource & Storage Manager (ONE reusable global window)
-**Target:** cMT-SVRX-820/822 / cMT-FHDX-820 cMT Viewer; 1920×1080 design target (actual EBPro resolution chosen after hardware screen tests). **Status:** visual/functional specification, *not* a loaded .emtp/.cmtp EasyBuilder Pro project. [Feature issue #19](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/19).
+**Target:** cMT-FHDX-220, one USB2 host and NO SD/microSD; 1920×1080 design target (actual EBPro resolution chosen after hardware screen tests). **Status:** visual/functional specification, *not* a loaded .emtp/.cmtp EasyBuilder Pro project. [Feature issue #19](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/19).
 
 ## Operator-friendly full-screen layout
 ```mermaid
 flowchart TB
     HDR["UCS RESOURCE & STORAGE MANAGER • live time • Health • logged-in role"]
-    HDR --> TOP["4 large gauges: CPU • RAM • HMI history/storage • USB/SD/IPC storage"]
+    HDR --> TOP["4 large gauges: CPU • RAM • HMI history/storage • USB1 / qualified USB-SSD storage"]
     TOP --> MID["61 meter capture: ONLINE / STALE / OFFLINE / Data coverage%"]
     MID --> ROW["LEFT: storage capacity bars & storage growth line chart"]
     MID --> HIST["RIGHT: earliest/latest stored record, retained days, predicted free-space runway"]
@@ -21,7 +21,7 @@ flowchart TB
 | Memory utilization | donut + used/free | `LW-11159` 16-bit memory loading x100%; `LW-11155` 32bit total size KBytes and `LW-11157` 32bit free KBytes | HMI memory is RAM, not FLASH disk; use 32-bit objects |
 | Internal FLASH / HMI history | capacity/free segmented bars | `LW-9072` 32-bit free KB; `LW-11458` 32-bit total **HMI history reservation** KB, `LW-11460` 32-bit free history KB; `LW-12829` available history KB | Manufacturer distinguishes flash vs allocated historian quota; don't show these as 4GB flash full-size percentage |
 | USB1 FAT32 | media present, free KB, warning | `LB-12048` USB1 exists, `LB-9037` low space, `LW-9076` 32bit free KB | TRUE used% needs validated **total current partition**; `LW-12496` is *last detected* USB partition GB, not guaranteed current; match partition identity first |
-| microSD | present, free KB, warning | `LB-12050` present, `LB-9036` low space, `LW-9074` 32-bit free KB | Same capacity/identity check |
+| SD/microSD | **NOT PRESENT on cMT-FHDX-220** | N/A | Hide SD section; SD system tags not applicable to the selected device |
 | HMI general free-space alarms | icon + threshold event | `LB-9035`, `LB-9036`, `LB-9037` | Manufacturer warning near low free space; threshold/value version dependent |
 | USB-attached SSD (optional) | optional storage bar & SMART-health panel | HMI system tags and scoped USB/media IO probe when compatible | USB SSD hardware/SMART data cannot be assumed available from Weintek system tags; show N/A until proven |
 | Site capture | online/stale/offline/dropped events/coverage | 61-meter collector/historian quality ledger | Must include timestamps, report missing as a distinct event, no 0 substitution |
