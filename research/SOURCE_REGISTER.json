@@ -211,6 +211,71 @@
       "limitations": "Confirm documented SQL dialect, especially on Local SQLite target.",
       "open_questions": "Q02",
       "related_issue": "#3"
+    },
+    {
+      "source_id": "SRC-017",
+      "publisher": "Weintek",
+      "authority": "manufacturer-manual",
+      "topic": "CPU/RAM/system resources",
+      "url": "https://dl.weintek.com/public/EBPro/UserManual/eng/UserManual_separate_chapter/Chapter-22-System-Registers-UserManual-eng.pdf",
+      "version_or_date": "EasyBuilder Pro v6.10.01 ch22",
+      "claim": "System tags CPU LW-9025 (16bit), memory size/free LW-11155/11157 (32bit), memory load LW-11159 (16bit), media presence LB-12048 USB/LB-12050 SD, storage free LW-9072/9074/9076, history capacity/free LW-11458/11460 (32bit).",
+      "evidence_level": "MANUFACTURER_DOCUMENTED",
+      "limitations": "Check exact cMT firmware and address support; RAM and HMI-history space are not the same as full Flash disk used %. USB last-detected partition total is not guaranteed current. UI percent scaling and rollover require device validation.",
+      "open_questions": "Q05,Q10",
+      "related_issue": "#19"
+    },
+    {
+      "source_id": "SRC-018",
+      "publisher": "Weintek",
+      "authority": "manufacturer-product",
+      "topic": "SVRX-822 storage hardware",
+      "url": "https://www.weintek.com/Product/Model/cMT-SVRX-822",
+      "version_or_date": "Manufacturer product specification accessed 2026-10-13",
+      "claim": "HMI server 4GB Flash, 1GB RAM, USB2.0 Host x1, microSD x1, not an internal SSD-bay claim.",
+      "evidence_level": "MANUFACTURER_DOCUMENTED",
+      "limitations": "USB SSD bridge/power/file system endurance not qualified by product port listing alone.",
+      "open_questions": "Q10",
+      "related_issue": "#18"
+    },
+    {
+      "source_id": "SRC-019",
+      "publisher": "Weintek",
+      "authority": "manufacturer-product",
+      "topic": "FHDX-820 storage and display hardware",
+      "url": "https://www.weintek.com/Product/Model/cMT-FHDX-820",
+      "version_or_date": "Manufacturer product specification accessed 2026-10-13",
+      "claim": "External touchscreen HMI 4GB Flash, 1GB RAM, USB2.0 Host x1, microSD x1, Full HD HDMI.",
+      "evidence_level": "MANUFACTURER_DOCUMENTED",
+      "limitations": "USB2 and external SSD qualification/power draw still need real test.",
+      "open_questions": "Q10",
+      "related_issue": "#18"
+    },
+    {
+      "source_id": "SRC-020",
+      "publisher": "WeintekUSA",
+      "authority": "vendor-support",
+      "topic": "FAT32-only USB/SD data media",
+      "url": "https://forum.weintekusa.com/t/usb-project-download-upload-dos-and-donts/1848",
+      "version_or_date": "WeintekUSA 2024-06-25",
+      "claim": "FAT/FAT32 supported; NTFS/exFAT USB/SD commonly not readable/writeable by HMI; USB is a host peripheral connection.",
+      "evidence_level": "VENDOR_SUPPORT",
+      "limitations": "Support note is general. Verify exact SVRX/FHDX firmware/mounting for USB SSD bridge; FAT32 file size limit (~4GiB).",
+      "open_questions": "Q10",
+      "related_issue": "#18"
+    },
+    {
+      "source_id": "SRC-021",
+      "publisher": "Weintek",
+      "authority": "manufacturer-manual",
+      "topic": "Flash wear, external history backup, checksums",
+      "url": "https://dl.weintek.com/public/Document/UM0/Product-Security-User-Manual-eng.pdf",
+      "version_or_date": "Weintek Product Security Guide, published version unspecified",
+      "claim": "Weintek advises external USB/SD or database sync for backup of history, larger external media for frequent writes, and checksum enabled for data integrity where supported; LB-9034 before HMI shutdown.",
+      "evidence_level": "MANUFACTURER_DOCUMENTED",
+      "limitations": "Backup workflow/remote disk restore and checksum compatibility are version-dependent; this document is not an uptime guarantee.",
+      "open_questions": "Q10",
+      "related_issue": "#18"
     }
   ]
 }
