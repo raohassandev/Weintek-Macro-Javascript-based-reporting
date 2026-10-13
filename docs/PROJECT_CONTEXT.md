@@ -1,6 +1,13 @@
 # Project context — handoff document
 **Last updated:** 2026-10-13. **Source:** project owner conversation and verified product references. **Command Centre:** [#1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1).
 
+## Additional owner directive — 2026-10-13
+- Commission initial 61 energy analyzers using cMT-SVRX / cMT-FHDX, share dynamic screens where possible, site-variable tags/device mapping, scalable site configuration and evidence-based historian.
+- A dedicated **UCS Resource & Storage Manager** graphical screen must display CPU, RAM, HMI flash/history quota, USB/SSD/SD, oldest/latest record, actual coverage, remaining estimated retention, per-device communication health and backup status. Human owner should receive a visual SCADA-level screen rather than lengthy test text.
+- USB vs SSD: external FAT32 USB/SD can support HMI-native backups; a **USB-SSD connection is not automatically qualified**; for advanced continuous 61-meter historian prefer monitored IPC with industrial SSD plus independent off-device backup, pending workload and vendor tests.
+- Real measured capacity growth / backup verification / all-meters independent recording are required. Storage disconnected or meter unavailable must be logged with actual reason and time window.
+- New sources [R&D #17–21](../research/SOURCE_REGISTER.json), [visual/resource spec](RESOURCE_STORAGE_MANAGER_SCREEN.md), [capacity/backup decision](STORAGE_DECISION_AND_CAPACITY.md), work [#18](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/18), [#19](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/19).
+
 ## Latest owner directive — 2026-10-13
 - Make the project a **generalized reusable industrial historian** across solar, DG, factory, UPS, LPG, HVAC and other sites; each site varies only by device/tag/rules/profile.
 - Research must be **completely indexed**: source URLs, vendor manuals, caveats, validation state, failed/successful experiments, decisions and new chat handoff.
