@@ -1,6 +1,6 @@
 # UCS — Design Plan Freeze & PRE-IMPLEMENTATION INDEPENDENT AUDIT GATE
 **Target:** Weintek **cMT-FHDX-220** (selected). **Scope:** one site, 61 configurable energy analyzers, 3 user roles, 22 report-template concepts. **Date:** 2026-10-13.
-**Status terminology:** A plan can be **DESIGN-FROZEN FOR AUDIT** while product feasibility remains **BLOCKED / DEVICE NOT RUN**. Independent audit **must occur after plan documentation lands and before implementation is authorized**. Do not claim 100% project complete.
+**Single-USB safety:** historian storage/backup conflict and touch input need physical verification; no SD slot.\n**Status terminology:** A plan can be **DESIGN-FROZEN FOR AUDIT** while product feasibility remains **BLOCKED / DEVICE NOT RUN**. Independent audit **must occur after plan documentation lands and before implementation is authorized**. Do not claim 100% project complete.
 
 ## Governing decision / authority
 - No computer/IPC/Linux box/external SQL/Node/cloud processor in runtime; only native supported Weintek firmware/EBPro and passive USB storage. Existing cMT Viewer clients may view but cannot be mandatory report processors.
