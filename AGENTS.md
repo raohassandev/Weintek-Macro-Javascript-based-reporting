@@ -11,3 +11,6 @@
 - User favors light, management-class executive UI; three purpose-built homes, alarms context-based, not a daily storage/CPU dashboard for managers. AI manages R&D/long manuals/tests so owner is asked only essential information.
 - Use `research/SOURCE_REGISTER.json`, `research/DEMO_PROJECTS_REVIEW.md`, `docs/PROJECT_CONTEXT.md`, `docs/DECISION_LOG.md`, `docs/ACTIVITY_LOG.md` as durable knowledge and keep updated. This is a **PUBLIC REPO**, exclude personal/customer production data, passwords and proprietary archives.
 - Independent audit separate from implementation (issue #30); customer signoff and tested restore needed before 'released/100%'.
+
+- External audit reconciliation: [docs/PLAN_AUDIT.md](docs/PLAN_AUDIT.md), [M0–M6 current flags](docs/UCS_FINAL_MASTER_PLAN.md#12-milestones-and-exit-gates). Do not treat superseded old MASTER_PLAN M0–M5 as live.
+- Add real expected-vs-observed kWh fixture tests before implementing matching on-HMI Macro/JS reporting; sample quality/null/rollover semantics must align with [offline reference](tests/fixtures/energy_reference_cases.json), but offline CI is NOT device validation.

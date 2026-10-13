@@ -140,17 +140,20 @@ Report header includes site, device, interval/timezone, units, aggregation defin
 - Source changes via issue → scoped branch/PR → actual automated tests + evidence → independent review → merge; CI pass is not hardware proof.
 
 ## 12. Milestones and exit gates
-| Milestone | Required objective | Done evidence | Depends |
-|---|---|---|---|
-| M0 — Baseline | This master plan, all scope, AI handoff, auditable R&D | Merged docs, source map, CI and owner view | #27 |
-| M1 — Hardware/feature proof | Exact SVRX/FHDX, EBPro/OS, native JS/Macro/tag/storage/browser/SQL feasibility | Manufacturer citations + HMI model proof and explicit feature outcomes | #2, #3, #25 |
-| M2 — 2-meter pilot | Shared detail, independent client selection, simultaneous logging of both meters, gap events, USB/CSV | **Real EBPro project** + exact-device logs and results | #28, #15–#17 |
-| M3 — Generic commissioning | Reconfigure both meter profile types through permitted on-HMI settings, guarded apply/rollback | Commissioning HMI screens + audit tests + manual | #29, #16 |
-| M4 — 61-meter site | Background data/logging, time/quality, multi-user UI, performance and alerts on chosen equipment | Actual 61-device run or rigorously disclosed equivalent + field acceptance | #17, #7, #9 |
-| M5 — Reporting and backups | Approved daily/monthly/history summaries, CSV, no-data evidence and validated storage recovery | Reconciled report samples + backup and restore logs, documented unsupported PDF | #4–#8, #18–#19 |
-| M6 — Release & independent audit | All P0 gates green, regression, security/role separation, signed customer acceptance | [Audit #30](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/30) + [Release #10](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/10) | All |
+| Milestone | Current status (2026-10-13) | Required objective | Done evidence | Depends |
+|---|---|---|---|---|
+| M0 — Baseline | **[COMPLETED PR#31/2965ae6] — PLANNING ONLY** | Master plan, AI handoff, acceptance and audit spec | Docs merged, exact-head [CI PASS](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/actions/runs/38365571787); **no hardware claim** | #27 |
+| M1 — Hardware/feature proof | **[BLOCKED: target SVRX/FHDX SKU/OS/EBPro unknown; Q02 SQL unverified]** | Exact platform capabilities and HMI-native SQL/JS/Macro/storage limits | Actual labelled Weintek SKU and direct bench evidence | #2, #3 |
+| M2 — 2-meter pilot | **[AVAILABLE: hardware-gated, NOT RUN]** | Shared detail, two simultaneous sampled meters, communication gaps, USB/CSV | Actual EBPro project + named-device logs | #28, #15–#17 |
+| M3 — Generic commissioning | **[AVAILABLE: design ready, implementation NOT RUN]** | Predeclared profiles configured in HMI, secured apply and rollback | Native HMI wizard, tested permissions, audit records | #29, #16, M2 |
+| M4 — 61-meter site | **[BLOCKED: M2 plus full site devices/requirements; NOT RUN]** | 61 background meters, quality, multi-user screens, performance | Timed hardware results, exact measured CPU/RAM/storage | #17, #7, #9 |
+| M5 — Reporting and backups | **[INPROGRESS: offline reference cases only; HMI proof NOT RUN]** | Correct reports, CSV, quality/gaps, backup/restore | Reference cases #34 plus future actual on-device reconciled files | #3–#8, #18–#19 |
+| M6 — Release & independent audit | **[BLOCKED: device tests and customer signoff; NOT READY]** | Full production QA, independent reviewer, site signoff | [#30](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/30) + [#10](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/10) | All |
 
 **Gates are not a sequential staffing prohibition.** Independent documentation/R&D, offline tests and visual work can run parallel; do not start physical acceptance or merge “fully working” claims before prereq evidence.
+
+## 12A. External plan audit remediation (2026-10-13)
+[Audit findings and resolution pathways](PLAN_AUDIT.md) cover hardware evidence, Advanced SQLite Q02, output specification Q04, Weintek-only native retention/PDF Q10/Q12, staged milestones, and offline golden energy fixtures. The scope is unchanged: **no PC/IPC**. Runtime report feasibility is not established by offline Python reference tests.
 
 ## 13. Open P0 risks requiring proof (not owner homework)
 1. Exact physical SVRX/FHDX SKU, OS/firmware build, EBPro version, and actual tag export; HMI power/network.

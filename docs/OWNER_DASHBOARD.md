@@ -3,6 +3,18 @@
 **Plan finalized for implementation/audit as v1.0 (not hardware-deployed):** [Main Plan](UCS_FINAL_MASTER_PLAN.md) · [AI Handoff](AI_AGENT_EXECUTION_BRIEF.md) · [Acceptance](UCS_REQUIREMENTS_TRACEABILITY.md) · [Work Packages](UCS_DELIVERY_WORKPACKAGES.md)
 Aap ko lambi technical reports nahi parhni; yeh 1 screen ka status aur decisions hain. [CC #1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1) · [Diagram](VISUAL_PLAN.md) · [Role home UX](ROLE_BASED_UX_PLAN.md) · [HTML R&D](../research/WEINTEK_HTML_FEASIBILITY.md).
 
+## Actual progress — current implementation gates
+| Milestone | State |
+|---|---|
+| Baseline planning M0 | **Complete (documents / CI only)** |
+| HMI model/firmware & SQL Q02 M1 | **Blocked: exact model + real test** |
+| 2-meter live HMI pilot M2 | **Not run** |
+| 61-meter quality-aware historian M4 | **Not run** |
+| Report output M5 | **Offline energy fixtures in progress; on-device export not run** |
+| Production release M6 | **Not ready; independent audit/customer pending** |
+
+[Independent audit findings](PLAN_AUDIT.md) · [Exact M0–M6 table](UCS_FINAL_MASTER_PLAN.md#12-milestones-and-exit-gates).
+
 ## Our implementation boundary
 **61 energy analyzers**, **Weintek cMT-SVRX/FHDX**, **USB/SD/qualified USB-SSD**. **No additional computer/server.** Site meter brand, register map, energy units, thresholds and retention are configurable.
 

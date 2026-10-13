@@ -13,6 +13,9 @@
 
 Baseline **finalizes plan/scope**, not physical HMI functionality or customer acceptance. Weintek only; no PC/IPC/server runtime.
 
+## External plan audit corrective actions
+[External audit findings & response](docs/PLAN_AUDIT.md) · [M0–M6 live flags](docs/UCS_FINAL_MASTER_PLAN.md#12-milestones-and-exit-gates) · [WP0–11 current status](docs/UCS_DELIVERY_WORKPACKAGES.md#live-work-package-status-snapshot--2026-10-13) · [12 energy golden cases](tests/fixtures/energy_reference_cases.json). **Python fixtures are offline oracle tests only**, never HMI proof. [#33](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/33) [#34](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/34).
+
 ## Owner quick navigation
 | See this | Link |
 |---|---|
