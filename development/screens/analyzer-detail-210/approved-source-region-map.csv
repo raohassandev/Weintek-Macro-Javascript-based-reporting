@@ -1,0 +1,13 @@
+Region,Original_X,Original_Y,Original_W,Original_H,HMI_1920_X,HMI_1080_Y,HMI_1920_W,HMI_1080_H,Planned_EBPro_Objects,Evidence
+header,0,0,1672,73,0,0,1920,84,native Picture + static labels / buttons,IMAGE-DERIVED_LAYOUT_NOT_EBPRO_VERIFIED
+selected-analyzer-sidebar,0,75,225,865,0,86,258,993,"static Picture, local user selection PLW",IMAGE-DERIVED_LAYOUT_NOT_EBPRO_VERIFIED
+phase-voltage,231,76,374,242,265,87,429,278,Numeric Display + unit labels,IMAGE-DERIVED_LAYOUT_NOT_EBPRO_VERIFIED
+phase-current,610,77,364,240,700,88,418,275,Numeric Display + optional native bars,IMAGE-DERIVED_LAYOUT_NOT_EBPRO_VERIFIED
+phase-power,978,77,399,242,1123,88,458,278,Numeric Display + word/bit quality lamp,IMAGE-DERIVED_LAYOUT_NOT_EBPRO_VERIFIED
+frequency-demand-loading,1380,77,284,242,1585,88,326,278,Numeric Display + native graph,IMAGE-DERIVED_LAYOUT_NOT_EBPRO_VERIFIED
+power-quality,234,320,626,214,269,367,719,246,Native numeric displays; capability-aware,IMAGE-DERIVED_LAYOUT_NOT_EBPRO_VERIFIED
+computed-maintenance,865,320,801,215,993,367,920,247,Derived computed indicators with fail-closed NA,IMAGE-DERIVED_LAYOUT_NOT_EBPRO_VERIFIED
+24h-trend,235,536,828,204,270,615,951,234,Native Trend Display bound persisted log,IMAGE-DERIVED_LAYOUT_NOT_EBPRO_VERIFIED
+7d-energy-comparison,1068,536,597,204,1226,615,686,234,Native Bar Graph from proven history aggregation,IMAGE-DERIVED_LAYOUT_NOT_EBPRO_VERIFIED
+historical-snapshot,235,741,953,190,270,850,1094,218,Native SQL Query/History Display based on capability,IMAGE-DERIVED_LAYOUT_NOT_EBPRO_VERIFIED
+recent-alarms,1195,741,470,190,1372,850,540,218,Native Event/Alarm Display ONLY,IMAGE-DERIVED_LAYOUT_NOT_EBPRO_VERIFIED
