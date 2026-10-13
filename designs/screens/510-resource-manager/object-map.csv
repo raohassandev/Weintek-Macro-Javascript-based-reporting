@@ -1,0 +1,10 @@
+Panel,EBPro_Object,Binding,Tag_or_Action,Data_Type,Provenance,Current_Status
+USB CONNECTION,Numeric Display + Word Lamp,Weintek system tag LB-12048 candidate,usb1_present,BIT,vendor version check,DESIGN/NOT EBPRO VERIFIED
+WRITE / READ PROOF,Numeric Display + Word Lamp,Application LW-8250 candidate,usb_probe_state,UINT16,recent byte-compare,DESIGN/NOT EBPRO VERIFIED
+HISTORY PERSISTENCE,Numeric Display + Word Lamp,Application LW-8252 candidate,recorder_state,UINT16,last persisted record,DESIGN/NOT EBPRO VERIFIED
+BACKUP VERIFICATION,Numeric Display + Word Lamp,Native Backup object + independent evidence,backup_proof_state,ENUM,verification age,DESIGN/NOT EBPRO VERIFIED
+INTERNAL FLASH & USB1 CAPACITY,Picture + native Numeric/Bit Lamp / History Trend (where supported),Quality-tagged logical meter window,meter_indexed_data / historian,MIXED,Private Index UI does NOT index native historian,DESIGN
+RETENTION / BACKUP ASSURANCE,Event Display + Word Lamp or supported JS Object Canvas,HMI Event log / bounded report result,event_status,EVENT,Persistent+UAC gating required,DESIGN
+RECORDER INCIDENTS / PROOF AGE / RECOVERY,Event/History Data Display + Function Key,Stored log or report,event_log / report_id,EVENT,History source on-device only,DESIGN
+Navigation,Function Key + supported client-private PLW,PLW-100 / index PLW-9200,client_selected_meter,UINT16,Verify OS + Viewer session behaviour,DESIGN
+Backdrop,Picture static PNG,Local project asset,background-only.png,PNG,No dynamic values baked in,OFFLINE

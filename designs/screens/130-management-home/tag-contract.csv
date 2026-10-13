@@ -1,0 +1,9 @@
+Tag_Name,Origin,Proposed_Type,Quality_Requirement,EBPro_Import_Status
+net_energy_kwh,Historian report engine,FLOAT64,source+coverage,NOT NATIVE IMPORT CSV; requires EBPro exported template
+grid_import_kwh,Counter delta/report,FLOAT64,gap-aware,NOT NATIVE IMPORT CSV; requires EBPro exported template
+demand_peak_kw,Verified sample/report,FLOAT32,quality+time,NOT NATIVE IMPORT CSV; requires EBPro exported template
+period_coverage_pct,Expected-vs-valid log ledger,FLOAT32,quality provenance,NOT NATIVE IMPORT CSV; requires EBPro exported template
+trend_history,Proven native Trend/History query,HISTORY,persisted samples only,NOT NATIVE IMPORT CSV; requires EBPro exported template
+report_export_csv,Weintek-native backup/export object,ACTION,DEVICE-PASS required,NOT NATIVE IMPORT CSV; requires EBPro exported template
+selected_meter_client_private,PLW-100 proposed,UINT16,range 1..61 per client,MODEL/OS TEST REQUIRED
+private_index0,PLW-9200 Weintek private index register 0,UINT16,(meterId-1)*128,MODEL/OS TEST REQUIRED

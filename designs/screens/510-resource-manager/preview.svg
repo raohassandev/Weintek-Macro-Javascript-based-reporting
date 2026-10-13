@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<title>RESOURCE &amp; STORAGE MANAGEMENT - illustrative preview</title>
+<rect width="1920" height="1080" fill="#F6F6F2"/>
+<rect width="205" height="1080" fill="#EEF2EA"/>
+<rect x="205" y="0" width="1715" height="86" rx="0" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1.4"/>
+<text x="30" y="52" font-family="Arial,DejaVu Sans,sans-serif" font-size="37" font-weight="800" fill="#244D3C" text-anchor="start" opacity="1.0">UCS</text>
+<text x="29" y="72" font-family="Arial,DejaVu Sans,sans-serif" font-size="11" font-weight="700" fill="#68756E" text-anchor="start" opacity="1.0">ENERGY INTELLIGENCE</text>
+<text x="34" y="147" font-family="Arial,DejaVu Sans,sans-serif" font-size="19" font-weight="400" fill="#68756E" text-anchor="start" opacity="1.0">Operator</text>
+<text x="34" y="218" font-family="Arial,DejaVu Sans,sans-serif" font-size="19" font-weight="400" fill="#68756E" text-anchor="start" opacity="1.0">Engineer</text>
+<text x="34" y="289" font-family="Arial,DejaVu Sans,sans-serif" font-size="19" font-weight="400" fill="#68756E" text-anchor="start" opacity="1.0">Management</text>
+<text x="34" y="360" font-family="Arial,DejaVu Sans,sans-serif" font-size="19" font-weight="400" fill="#68756E" text-anchor="start" opacity="1.0">Meter Detail</text>
+<text x="34" y="431" font-family="Arial,DejaVu Sans,sans-serif" font-size="19" font-weight="400" fill="#68756E" text-anchor="start" opacity="1.0">Trends</text>
+<text x="34" y="502" font-family="Arial,DejaVu Sans,sans-serif" font-size="19" font-weight="400" fill="#68756E" text-anchor="start" opacity="1.0">Reports</text>
+<text x="34" y="573" font-family="Arial,DejaVu Sans,sans-serif" font-size="19" font-weight="400" fill="#68756E" text-anchor="start" opacity="1.0">Diagnostics</text>
+<rect x="16" y="611" width="172" height="46" rx="10" fill="#EAF1E8" stroke="#EAF1E8" stroke-width="1.4"/>
+<text x="34" y="644" font-family="Arial,DejaVu Sans,sans-serif" font-size="19" font-weight="700" fill="#244D3C" text-anchor="start" opacity="1.0">Resources</text>
+<text x="234" y="40" font-family="Arial,DejaVu Sans,sans-serif" font-size="30" font-weight="750" fill="#27332D" text-anchor="start" opacity="1.0">RESOURCE &amp; STORAGE MANAGEMENT</text>
+<text x="234" y="67" font-family="Arial,DejaVu Sans,sans-serif" font-size="15" font-weight="450" fill="#68756E" text-anchor="start" opacity="1.0">Device capacity / logging assurance / backups (occasional use)</text>
+<rect x="1650" y="22" width="238" height="32" rx="12" fill="#EAF1E8" stroke="#EAF1E8" stroke-width="1.4"/><text x="1769.0" y="44" font-family="Arial,DejaVu Sans,sans-serif" font-size="14" font-weight="700" fill="#244D3C" text-anchor="middle" opacity="1.0">UCS • DESIGN SOURCE</text>
+<text x="234" y="118" font-family="Arial,DejaVu Sans,sans-serif" font-size="15" font-weight="700" fill="#68756E" text-anchor="start" opacity="1.0">PERFORMANCE / STATUS</text>
+<rect x="234" y="142" width="399" height="153" rx="14" fill="#FFFFFF" stroke="#DCE5D9" stroke-width="1.4"/><text x="256" y="177" font-family="Arial,DejaVu Sans,sans-serif" font-size="15" font-weight="700" fill="#68756E" text-anchor="start" opacity="1.0">USB CONNECTION</text>
+<text x="257" y="222" font-family="Arial,DejaVu Sans,sans-serif" font-size="35" font-weight="750" fill="#244D3C" text-anchor="start" opacity="1.0">—</text>
+<text x="257" y="265" font-family="Arial,DejaVu Sans,sans-serif" font-size="11" font-weight="600" fill="#68756E" text-anchor="start" opacity="1.0">ILLUSTRATIVE / NOT LIVE</text>
+<rect x="647" y="142" width="399" height="153" rx="14" fill="#FFFFFF" stroke="#DCE5D9" stroke-width="1.4"/><text x="669" y="177" font-family="Arial,DejaVu Sans,sans-serif" font-size="15" font-weight="700" fill="#68756E" text-anchor="start" opacity="1.0">WRITE / READ PROOF</text>
+<text x="670" y="222" font-family="Arial,DejaVu Sans,sans-serif" font-size="35" font-weight="750" fill="#244D3C" text-anchor="start" opacity="1.0">NOT TESTED</text>
+<text x="670" y="265" font-family="Arial,DejaVu Sans,sans-serif" font-size="11" font-weight="600" fill="#68756E" text-anchor="start" opacity="1.0">ILLUSTRATIVE / NOT LIVE</text>
+<rect x="1060" y="142" width="399" height="153" rx="14" fill="#FFFFFF" stroke="#DCE5D9" stroke-width="1.4"/><text x="1082" y="177" font-family="Arial,DejaVu Sans,sans-serif" font-size="15" font-weight="700" fill="#68756E" text-anchor="start" opacity="1.0">HISTORY PERSISTENCE</text>
+<text x="1083" y="222" font-family="Arial,DejaVu Sans,sans-serif" font-size="35" font-weight="750" fill="#244D3C" text-anchor="start" opacity="1.0">UNVERIFIED</text>
+<text x="1083" y="265" font-family="Arial,DejaVu Sans,sans-serif" font-size="11" font-weight="600" fill="#68756E" text-anchor="start" opacity="1.0">ILLUSTRATIVE / NOT LIVE</text>
+<rect x="1473" y="142" width="399" height="153" rx="14" fill="#FFFFFF" stroke="#DCE5D9" stroke-width="1.4"/><text x="1495" y="177" font-family="Arial,DejaVu Sans,sans-serif" font-size="15" font-weight="700" fill="#68756E" text-anchor="start" opacity="1.0">BACKUP VERIFICATION</text>
+<text x="1496" y="222" font-family="Arial,DejaVu Sans,sans-serif" font-size="35" font-weight="750" fill="#244D3C" text-anchor="start" opacity="1.0">—</text>
+<text x="1496" y="265" font-family="Arial,DejaVu Sans,sans-serif" font-size="11" font-weight="600" fill="#68756E" text-anchor="start" opacity="1.0">ILLUSTRATIVE / NOT LIVE</text>
+<rect x="234" y="314" width="1016" height="524" rx="14" fill="#FFFFFF" stroke="#DCE5D9" stroke-width="1.4"/><text x="256" y="349" font-family="Arial,DejaVu Sans,sans-serif" font-size="15" font-weight="700" fill="#68756E" text-anchor="start" opacity="1.0">INTERNAL FLASH &amp; USB1 CAPACITY</text>
+<rect x="1266" y="314" width="606" height="524" rx="14" fill="#FFFFFF" stroke="#DCE5D9" stroke-width="1.4"/><text x="1288" y="349" font-family="Arial,DejaVu Sans,sans-serif" font-size="15" font-weight="700" fill="#68756E" text-anchor="start" opacity="1.0">RETENTION / BACKUP ASSURANCE</text>
+<rect x="234" y="855" width="1638" height="170" rx="14" fill="#FFFFFF" stroke="#DCE5D9" stroke-width="1.4"/><text x="256" y="890" font-family="Arial,DejaVu Sans,sans-serif" font-size="15" font-weight="700" fill="#68756E" text-anchor="start" opacity="1.0">RECORDER INCIDENTS / PROOF AGE / RECOVERY</text>
+<text x="265" y="409" font-family="Arial,DejaVu Sans,sans-serif" font-size="20" font-weight="500" fill="#27332D" text-anchor="start" opacity="1.0">Internal history quota</text>
+<rect x="265" y="427" width="890" height="23" rx="9" fill="#E4E8DF" stroke="#E4E8DF" stroke-width="1.4"/>
+<rect x="265" y="427" width="0" height="23" rx="9" fill="#244D3C" stroke="#244D3C" stroke-width="1.4"/>
+<text x="265" y="497" font-family="Arial,DejaVu Sans,sans-serif" font-size="20" font-weight="500" fill="#27332D" text-anchor="start" opacity="1.0">USB1 free capacity</text>
+<rect x="265" y="515" width="890" height="23" rx="9" fill="#E4E8DF" stroke="#E4E8DF" stroke-width="1.4"/>
+<rect x="265" y="515" width="0" height="23" rx="9" fill="#244D3C" stroke="#244D3C" stroke-width="1.4"/>
+<text x="265" y="585" font-family="Arial,DejaVu Sans,sans-serif" font-size="20" font-weight="500" fill="#27332D" text-anchor="start" opacity="1.0">CPU / RAM load</text>
+<rect x="265" y="603" width="890" height="23" rx="9" fill="#E4E8DF" stroke="#E4E8DF" stroke-width="1.4"/>
+<rect x="265" y="603" width="0" height="23" rx="9" fill="#244D3C" stroke="#244D3C" stroke-width="1.4"/>
+<text x="265" y="673" font-family="Arial,DejaVu Sans,sans-serif" font-size="20" font-weight="500" fill="#27332D" text-anchor="start" opacity="1.0">Recorder-proof freshness</text>
+<rect x="265" y="691" width="890" height="23" rx="9" fill="#E4E8DF" stroke="#E4E8DF" stroke-width="1.4"/>
+<rect x="265" y="691" width="0" height="23" rx="9" fill="#244D3C" stroke="#244D3C" stroke-width="1.4"/>
+<text x="1290" y="429" font-family="Arial,DejaVu Sans,sans-serif" font-size="18" font-weight="500" fill="#27332D" text-anchor="start" opacity="1.0">Stored since: —</text>
+<text x="1290" y="474" font-family="Arial,DejaVu Sans,sans-serif" font-size="18" font-weight="500" fill="#27332D" text-anchor="start" opacity="1.0">Most recent: —</text>
+<text x="1290" y="520" font-family="Arial,DejaVu Sans,sans-serif" font-size="18" font-weight="500" fill="#27332D" text-anchor="start" opacity="1.0">Retention: UNVERIFIED</text>
+<rect x="1290" y="615" width="265" height="32" rx="12" fill="#F7F0E5" stroke="#F7F0E5" stroke-width="1.4"/><text x="1422.5" y="637" font-family="Arial,DejaVu Sans,sans-serif" font-size="14" font-weight="700" fill="#B57C2A" text-anchor="middle" opacity="1.0">BACKUP NOT VERIFIED</text>
+<text x="260" y="932" font-family="Arial,DejaVu Sans,sans-serif" font-size="18" font-weight="500" fill="#27332D" text-anchor="start" opacity="1.0">ALARM / EVENT HISTORY: device data required • action rights enforced in EBPro</text>
+<text x="260" y="980" font-family="Arial,DejaVu Sans,sans-serif" font-size="16" font-weight="500" fill="#68756E" text-anchor="start" opacity="1.0">Visual layout demo only — not connected to any meter, historian or HMI</text>
+<rect x="1540" y="920" width="250" height="32" rx="12" fill="#F7F0E5" stroke="#F7F0E5" stroke-width="1.4"/><text x="1665.0" y="942" font-family="Arial,DejaVu Sans,sans-serif" font-size="14" font-weight="700" fill="#B57C2A" text-anchor="middle" opacity="1.0">CONCEPT • NOT LIVE</text>
+</svg>
