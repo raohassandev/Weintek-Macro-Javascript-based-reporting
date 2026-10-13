@@ -1,11 +1,11 @@
 # UCS VISUAL PLAN — WEINTEK-ONLY ARCHITECTURE
-**Current approved deployment rule (2026-10-13): no external PC/IPC, server or SQL computer.** Actual SVRX/FHDX model and storage benchmark pending. [Command Centre #1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1) · [Role-based UI](ROLE_BASED_UX_PLAN.md) · [HTML evaluation](../research/WEINTEK_HTML_FEASIBILITY.md).
+**Current approved deployment rule (2026-10-13): no external PC/IPC, server or SQL computer.** Owner-selected **cMT-FHDX-220**; OS/firmware and 61-meter benchmark pending. [Hardware plan](HARDWARE_TARGET_FHDX_220.md). [Command Centre #1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1) · [Role-based UI](ROLE_BASED_UX_PLAN.md) · [HTML evaluation](../research/WEINTEK_HTML_FEASIBILITY.md).
 
 ## A. Runtime / physical topology
 ```mermaid
 flowchart TB
     M["61 different energy analyzers (Modbus TCP / RTU via supported gateways)"]
-    subgraph HMI["WEINTEK UCS — cMT-SVRX / cMT-FHDX • only runtime"]
+    subgraph HMI["WEINTEK UCS — cMT-FHDX-220 • only runtime"]
        DRIVER["Preconfigured device drivers + site-to-meter mapping"]
        ACQ["Always-on polling; value + quality + timestamps"]
        HIST["Native Data Sampling, event/operation log, macros"]
@@ -18,7 +18,7 @@ flowchart TB
        REPORT --> VIEW
     end
     M --> DRIVER
-    HIST --> MEDIA["Attached Weintek USB / microSD / qualified USB-SSD • rotate/backup"]
+    HIST --> MEDIA["FHDX-220 USB1 / qualified USB-SSD; NO SD"]
     REPORT --> MEDIA
     ALARM["Critical exception"] --> ROUTE["UCS severity + role routing / popup"]
     HIST --> ALARM
@@ -61,7 +61,7 @@ flowchart LR
 ## D. Weintek-only storage lifecycle
 ```mermaid
 flowchart TD
-   USB["USB/SD present?"] --> YES{"Writable & capacity valid?"}
+   USB["FHDX-220 USB1 present?"] --> YES{"Writable & capacity valid?"}
    YES -->|No| ALERT["Record storage incident • show role-directed warning"]
    YES -->|Yes| REC{"Persisted historical records advancing?"}
    REC -->|No| ALERT

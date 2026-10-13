@@ -458,6 +458,32 @@
       "limitations": "Not proof same hardware runs EBPro project + all historian features.",
       "open_questions": "Q11",
       "related_issue": "#25"
+    },
+    {
+      "source_id": "SRC-037",
+      "publisher": "Weintek",
+      "authority": "manufacturer-datasheet",
+      "topic": "Selected cMT-FHDX-220 specs and NO SD slot",
+      "url": "https://dl.weintek.com/public/cMT/eng/Datasheet/cMT-FHDX-220_Datasheet_ENG.pdf",
+      "version_or_date": "2021-10-21",
+      "claim": "4GB Flash, 1GB RAM, HDMI up to 1920x1080, USB2 host x1, SD N/A, serial COM1/2/3 and min EBPro V6.04.02.",
+      "evidence_level": "MANUFACTURER_DOCUMENTED",
+      "limitations": "Firmware/OS and actual 61-meter performance are untested; do not use 820 microSD spec.",
+      "open_questions": "Q01,Q10",
+      "related_issue": "#2"
+    },
+    {
+      "source_id": "SRC-039",
+      "publisher": "Wachendorff",
+      "authority": "distributor",
+      "topic": "Legacy cMT-FHDX-220 lifecycle",
+      "url": "https://www.wachendorff-prozesstechnik.de/en/product-groups/archive/discontinued-products/archive-hmi-iiot-edge-gateways/TV-machine-interface-CMT-FHDX-220/",
+      "version_or_date": "accessed 2026-10-13",
+      "claim": "Distributor indicates 220 replaced by 820 with optimized heat/power behavior.",
+      "evidence_level": "DISTRIBUTOR_RESEARCH",
+      "limitations": "Not a reason to silently change owner-selected hardware.",
+      "open_questions": "Q01",
+      "related_issue": "#2"
     }
   ]
 }

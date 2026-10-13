@@ -1,5 +1,9 @@
 # Project context — chat chronology & handoff source
 
+## Hardware decision (owner, 2026-10-13)
+Owner selected **Weintek cMT-FHDX-220** for current project. It has **one USB2 host and NO SD/microSD**, quad-core Cortex-A17, 4GB Flash, 1GB RAM, HDMI 1920×1080. EBPro v6.10.01 comparison supports JS Object and SQL Query but PLC Web Browser only on **FHDX-820**. No deployed device OS/firmware or EBPro versions supplied. Other model references (SVRX, FHDX-820) are historical alternatives. [Hardware plan](HARDWARE_TARGET_FHDX_220.md).
+
+
 > **UCS BASELINE v1.0 (2026-10-13) is now authoritative:** [FINAL_MASTER_PLAN](UCS_FINAL_MASTER_PLAN.md). Older statements mentioning external IPC/PC are **preserved only as superseded historical conversation**, not current instructions. See [D-018](DECISION_LOG.md) for the explicit no-PC owner rule and [AI Agent brief](AI_AGENT_EXECUTION_BRIEF.md) for execution.
 **Last updated:** 2026-10-13. **Source:** project owner conversation and verified product references. **Command Centre:** [#1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1).
 

@@ -1,12 +1,12 @@
 # Weintek-only UCS storage and backup decision — 61 analyzers
-**Current direction:** no additional PC / IPC / external SQL server. This supersedes any prior IPC historian architecture described in older design commits. [Visual](VISUAL_PLAN.md) · [Resource Manager](RESOURCE_STORAGE_MANAGER_SCREEN.md) · [HTML R&D](../research/WEINTEK_HTML_FEASIBILITY.md).
+**Current direction:** owner-selected **cMT-FHDX-220**, **one USB2 host and NO SD/microSD**; no PC/IPC/server. [Hardware details](HARDWARE_TARGET_FHDX_220.md). This supersedes any prior IPC historian architecture described in older design commits. [Visual](VISUAL_PLAN.md) · [Resource Manager](RESOURCE_STORAGE_MANAGER_SCREEN.md) · [HTML R&D](../research/WEINTEK_HTML_FEASIBILITY.md).
 
 ## Approved physical setup (pending actual Weintek hardware proof)
 ```mermaid
 flowchart TB
-  M["61 energy analyzers"] --> W["cMT-SVRX / cMT-FHDX Weintek UCS"]
+  M["61 energy analyzers"] --> W["cMT-FHDX-220 Weintek UCS"]
   W --> DS["HMI-native Data Sampling + Event/Operation Log"]
-  DS --> USB["HMI USB2 / microSD / physically qualified USB-SSD (FAT32)"]
+  DS --> USB["FHDX-220 USB2 (single port) / qualified USB-SSD • NO SD"]
   USB --> BACKUP["Rotated, checksum-verified backup on separate removable media"]
   W --> R["Per-role screens + validated on-device report logic"]
   DS --> R
@@ -14,14 +14,14 @@ flowchart TB
 An independent removable archive does not execute software. An **industrial SSD in an untested USB enclosure is not a guaranteed Weintek feature**; qualify filesystem, power, detection, write/read, removal/recovery, and flash endurance. No internal SATA/NVMe slot is claimed.
 
 ## Source facts and constraints
-- SVRX-822/FHDX-820 specs: 1×USB2 host and 1×microSD, 4GB flash and 1GB RAM. 1×USB port can be occupied by historian media, complicating local backup.
+- **Selected FHDX-220 official datasheet:** 1×USB2 host, SD card N/A, 4GB flash, 1GB RAM. Unlike FHDX-820, there is no SD slot. USB storage may contend with USB touchscreen/mouse and offline backup; any hub must be physically/vendor qualified.
 - Manufacturer support generally recommends FAT32; ~4GiB maximum single file; design bounded rotation and never single unlimited SQLite journal.
 - Verify mounted, writable **and** last persisted sample timestamp advancing. Presence = `LB-12048` is insufficient.
 - Track `MEDIA_ABSENT`, `MEDIA_READONLY`, `WRITE_FAILED`, `LOW_SPACE`, `BACKUP_FAILED`, `RECOVERED`; record exact start/end plus per-meter gaps separately.
 - Guarantee of *no missing records* cannot be made when meter/network/recorder lacks power. Always record missing intervals and measured data coverage.
 
 ## Capacity model (not imaginary GB estimates)
-- Live 61-meter logging must be tested at chosen interval on named SVRX/FHDX model with real EBPro software.
+- Live 61-meter logging must be tested at chosen interval on selected cMT-FHDX-220 with real EBPro software.
 - `daily_growth_bytes`: measured rolling growth of log files + event logs + indices/metadata; compare short-term and rolling-week median.
 - `usable_free_bytes`: detected media free minus reserved headroom, pending file rotations and backup staging.
 - Estimate remaining days from **measured positive growth** only. If no growth data or auto-purge/rotation is active, show retention policy and observed free-space margin; do not fabricate a fixed 218/245-day forecast.
