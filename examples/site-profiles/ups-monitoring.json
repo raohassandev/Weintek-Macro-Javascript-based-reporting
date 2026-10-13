@@ -1,0 +1,91 @@
+{
+  "schema_version": "1.0",
+  "site_id": "example-ups-c",
+  "display_name": "Demo UPS (synthetic example)",
+  "industry": "critical-power",
+  "timezone": "Asia/Karachi",
+  "collection": {
+    "default_interval_seconds": 30,
+    "missing_data_policy": "mark_gap"
+  },
+  "storage": {
+    "mode": "external_service",
+    "retention_days": 730,
+    "preferred_export": [
+      "screen",
+      "csv",
+      "pdf"
+    ]
+  },
+  "devices": [
+    {
+      "device_id": "ups-1",
+      "label": "UPS unit 1",
+      "source": {
+        "protocol": "modbus_tcp",
+        "endpoint_alias": "ups-address-placeholder"
+      },
+      "metrics": [
+        {
+          "metric_id": "ups_load_pct",
+          "label": "UPS Load",
+          "kind": "sample",
+          "unit": "percent",
+          "source_tag": "UPS_LOAD_PERCENT",
+          "aggregation": "avg_min_max"
+        },
+        {
+          "metric_id": "ups_on_battery",
+          "label": "On battery state",
+          "kind": "state",
+          "unit": "bool",
+          "source_tag": "UPS_ON_BATTERY",
+          "aggregation": "duration_from_transitions"
+        },
+        {
+          "metric_id": "ups_alarm_event",
+          "label": "Alarm event",
+          "kind": "event",
+          "unit": "event",
+          "source_tag": "UPS_EVENT",
+          "aggregation": "event_count"
+        }
+      ]
+    }
+  ],
+  "reports": [
+    {
+      "report_id": "RPT-18",
+      "metrics": [
+        "ups_on_battery",
+        "ups_alarm_event"
+      ],
+      "periods": [
+        "day",
+        "month"
+      ],
+      "output": [
+        "screen",
+        "csv",
+        "pdf"
+      ],
+      "enabled": true,
+      "availability": "planned"
+    },
+    {
+      "report_id": "RPT-11",
+      "metrics": [
+        "ups_alarm_event"
+      ],
+      "periods": [
+        "custom"
+      ],
+      "output": [
+        "screen",
+        "csv"
+      ],
+      "enabled": true,
+      "availability": "planned"
+    }
+  ]
+}

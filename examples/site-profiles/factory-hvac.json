@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0",
+  "site_id": "example-factory-b",
+  "display_name": "Demo Factory + HVAC (synthetic example)",
+  "industry": "manufacturing",
+  "timezone": "Asia/Karachi",
+  "collection": {
+    "default_interval_seconds": 10,
+    "missing_data_policy": "mark_gap"
+  },
+  "storage": {
+    "mode": "weintek_native",
+    "retention_days": 30,
+    "preferred_export": [
+      "screen",
+      "csv"
+    ]
+  },
+  "devices": [
+    {
+      "device_id": "line-1-plc",
+      "label": "Production Line 1",
+      "source": {
+        "protocol": "plc_tag",
+        "endpoint_alias": "line-1-placeholder"
+      },
+      "metrics": [
+        {
+          "metric_id": "line1_produced_total",
+          "label": "Total pieces counter",
+          "kind": "counter",
+          "unit": "pcs",
+          "source_tag": "PLC_TAG_TOTAL_PRODUCED",
+          "aggregation": "delta_reset_aware",
+          "counter_reset_policy": "detect_reset"
+        },
+        {
+          "metric_id": "line1_running",
+          "label": "Line running state",
+          "kind": "state",
+          "unit": "bool",
+          "source_tag": "PLC_TAG_RUN",
+          "aggregation": "duration_from_transitions"
+        }
+      ]
+    },
+    {
+      "device_id": "hvac-controller",
+      "label": "Factory air handler",
+      "source": {
+        "protocol": "plc_tag",
+        "endpoint_alias": "hvac-placeholder"
+      },
+      "metrics": [
+        {
+          "metric_id": "room_temperature_c",
+          "label": "Room temperature",
+          "kind": "sample",
+          "unit": "degC",
+          "source_tag": "PLC_TAG_TEMP_C",
+          "aggregation": "avg_min_max"
+        }
+      ]
+    }
+  ],
+  "reports": [
+    {
+      "report_id": "RPT-03",
+      "metrics": [
+        "room_temperature_c"
+      ],
+      "periods": [
+        "day",
+        "month",
+        "custom"
+      ],
+      "output": [
+        "screen",
+        "csv"
+      ],
+      "enabled": true,
+      "availability": "planned"
+    },
+    {
+      "report_id": "RPT-10",
+      "metrics": [
+        "line1_running"
+      ],
+      "periods": [
+        "day",
+        "week"
+      ],
+      "output": [
+        "screen",
+        "csv"
+      ],
+      "enabled": true,
+      "availability": "planned"
+    },
+    {
+      "report_id": "RPT-13",
+      "metrics": [
+        "line1_produced_total"
+      ],
+      "periods": [
+        "shift",
+        "day"
+      ],
+      "output": [
+        "screen",
+        "csv"
+      ],
+      "enabled": true,
+      "availability": "planned"
+    }
+  ]
+}

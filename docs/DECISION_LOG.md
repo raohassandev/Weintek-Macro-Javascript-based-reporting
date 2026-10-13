@@ -11,3 +11,7 @@ All decisions need an owner, date, evidence URL and fallback. Draft assumptions 
 | D-006 | 2026-10-13 | Custom formatted PDF is a distinct deliverable | ACCEPTED GUARDRAIL | Not an automatic consequence of SQLite / HMI history; external service may be required |
 | D-007 | 2026-10-13 | Unknown 'cMT1102' identity must be checked | OPEN | May be typo / different model; never silently substitute cMT2102X |
 | D-008 | 2026-10-13 | Real user data store and HMI internal historian DB must not be equated | ACCEPTED GUARDRAIL | SQL Query local file access does not prove ability to query any internal logger schema |
+| D-009 | 2026-10-13 | Common engine + site-specific profiles and report catalog | ACCEPTED DIRECTION | Owner explicitly wants one solution adaptable to multiple industrial sites; [config design](SITE_PROFILE_GUIDE.md) |
+| D-010 | 2026-10-13 | Explicitly treat SQL Query Advanced Mode on Local SQLite as **UNVERIFIED** | ACCEPTED GUARDRAIL | Weintek v6.01.02 local SQLite support vs manuals describing custom Advanced SQL for MySQL/MS SQL; targeted test required [Q02](../research/OPEN_QUESTIONS.md) |
+| D-011 | 2026-10-13 | Owner-first visuals and short progress, engineering-managed tests | ACCEPTED WORKFLOW | Human user does not want large text/tests. [Owner view](OWNER_DASHBOARD.md) |
+| D-012 | 2026-10-13 | Indexed R&D source ledger with version, authority and evidence | ACCEPTED WORKFLOW | [R&D register](../research/SOURCE_REGISTER.json); don't upload copyrighted manuals by default |
