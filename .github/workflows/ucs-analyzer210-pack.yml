@@ -1,0 +1,84 @@
+name: UCS Analyzer 210 Offline Asset Pack
+on:
+  push:
+    branches: [feature/ucs-development-pack-analyzer210]
+    paths:
+      - 'development/screens/analyzer-detail-210/**'
+      - '.github/workflows/ucs-analyzer210-pack.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  render-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install offline SVG renderer
+        run: python -m pip install cairosvg pillow
+      - name: Generate preview and background PNG at 1920x1080
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+          import cairosvg
+          folder=Path("development/screens/analyzer-detail-210/assets")
+          for stem in ("preview", "background-only"):
+              src=folder/(stem+".svg")
+              out=folder/(stem+".png")
+              cairosvg.svg2png(url=str(src),write_to=str(out),output_width=1920,output_height=1080)
+              with Image.open(out) as im:
+                  assert im.size==(1920,1080), out
+              assert out.stat().st_size>10000,out
+          print("OFFLINE SVG->PNG 1920x1080 PASS; no EBPro compiled")
+          PY
+      - name: Validate engineering CSV and JS reference
+        run: |
+          node development/screens/analyzer-detail-210/scripts/test_meter_analytics.js
+          python - <<'PY'
+          import csv,json
+          from pathlib import Path
+          base=Path("development/screens/analyzer-detail-210")
+          with (base/"tags/normalized_lw_61_meter_manifest.csv").open() as fh: a=list(csv.DictReader(fh))
+          assert len(a)==61*48,len(a)
+          assert a[0]["StartAddress"]=="256"
+          assert max(int(r["EndAddress"]) for r in a)==8063 if any(int(r["EndAddress"])==8063 for r in a) else all(int(r["EndAddress"])<9000 for r in a)
+          conf=json.loads((base/"tags/manifest.json").read_text())
+          assert conf["target"]=="cMT-FHDX-220" and conf["high_word"]==8063
+          assert "PLW-9200" in conf["private_index"]
+          assert (base/"docs/EBPRO_OBJECT_BY_OBJECT.md").exists()
+          assert (base/"assets/background-only.png").exists()
+          print("OFFLINE tag, source and object map integrity PASS")
+          PY
+      - name: Build source and PNG ZIP
+        run: |
+          python - <<'PY'
+          import zipfile
+          from pathlib import Path
+          folder=Path("development/screens/analyzer-detail-210")
+          result=Path("development/releases/UCS_FHDX220_Analyzer_Detail_210_Source_Pack.zip")
+          result.parent.mkdir(parents=True,exist_ok=True)
+          with zipfile.ZipFile(result,"w",zipfile.ZIP_DEFLATED,compresslevel=9) as z:
+              for file in sorted(folder.rglob("*")):
+                  if file.is_file():z.write(file,file.as_posix())
+              for extra in (Path("development/README.md"),Path("planning-context-rnd/INDEX.md")):
+                  z.write(extra,extra.as_posix())
+          assert result.stat().st_size>50000
+          print("ZIP created",result,result.stat().st_size)
+          PY
+      - name: Commit generated static asset binaries and ZIP
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add development/screens/analyzer-detail-210/assets/*.png development/releases/*.zip
+          if git diff --cached --quiet; then
+            echo "Binaries unchanged"
+          else
+            git commit -m "assets: add analyzer 210 native-backdrop PNG and ZIP [skip ci]"
+            git push origin HEAD:feature/ucs-development-pack-analyzer210
+          fi

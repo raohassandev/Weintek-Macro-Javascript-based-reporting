@@ -1,0 +1,38 @@
+ObjectName,EBProObject,RegisterOrSource,X,Y,W,H,ValueType,Purpose,Evidence
+BACKGROUND,Picture,static PNG,0,0,1920,1080,STATIC,Full design sans live data,OFFLINE
+SELECT_METER,Function Key or Combo Box,PLW-100 client private,340,119,326,48,UINT16,One logical meter 1..61,NOT_RUN
+DATA_QUALITY,Word Lamp,LW-257 indexed,1018,119,220,48,UINT16,GOOD STALE OFFLINE,NOT_RUN
+PHASE_1_1,Numeric Display,LW-274 indexed,485,320,176,30,FLOAT32,voltage_a_v,NOT_RUN
+PHASE_2_1,Numeric Display,LW-276 indexed,694,320,176,30,FLOAT32,voltage_b_v,NOT_RUN
+PHASE_3_1,Numeric Display,LW-278 indexed,904,320,176,30,FLOAT32,voltage_c_v,NOT_RUN
+PHASE_1_2,Numeric Display,LW-280 indexed,485,355,176,30,FLOAT32,voltage_ab_v,NOT_RUN
+PHASE_2_2,Numeric Display,LW-282 indexed,694,355,176,30,FLOAT32,voltage_bc_v,NOT_RUN
+PHASE_3_2,Numeric Display,LW-284 indexed,904,355,176,30,FLOAT32,voltage_ca_v,NOT_RUN
+PHASE_1_3,Numeric Display,LW-286 indexed,485,390,176,30,FLOAT32,current_a_a,NOT_RUN
+PHASE_2_3,Numeric Display,LW-288 indexed,694,390,176,30,FLOAT32,current_b_a,NOT_RUN
+PHASE_3_3,Numeric Display,LW-290 indexed,904,390,176,30,FLOAT32,current_c_a,NOT_RUN
+PHASE_1_4,Numeric Display,LW-292 indexed,485,425,176,30,FLOAT32,power_a_kw,NOT_RUN
+PHASE_2_4,Numeric Display,LW-294 indexed,694,425,176,30,FLOAT32,power_b_kw,NOT_RUN
+PHASE_3_4,Numeric Display,LW-296 indexed,904,425,176,30,FLOAT32,power_c_kw,NOT_RUN
+PHASE_1_5,Numeric Display,LW-298 indexed,485,460,176,30,FLOAT32,reactive_a_kvar,NOT_RUN
+PHASE_2_5,Numeric Display,LW-300 indexed,694,460,176,30,FLOAT32,reactive_b_kvar,NOT_RUN
+PHASE_3_5,Numeric Display,LW-302 indexed,904,460,176,30,FLOAT32,reactive_c_kvar,NOT_RUN
+PHASE_1_6,Numeric Display,DERIVED_OR_NA,485,495,176,30,FLOAT32,phase_a_apparent_kva,NOT_RUN
+PHASE_2_6,Numeric Display,DERIVED_OR_NA,694,495,176,30,FLOAT32,phase_b_apparent_kva,NOT_RUN
+PHASE_3_6,Numeric Display,DERIVED_OR_NA,904,495,176,30,FLOAT32,phase_c_apparent_kva,NOT_RUN
+PHASE_1_7,Numeric Display,DERIVED_OR_NA,485,530,176,30,FLOAT32,phase_a_pf,NOT_RUN
+PHASE_2_7,Numeric Display,DERIVED_OR_NA,694,530,176,30,FLOAT32,phase_b_pf,NOT_RUN
+PHASE_3_7,Numeric Display,DERIVED_OR_NA,904,530,176,30,FLOAT32,phase_c_pf,NOT_RUN
+PHASE_1_8,Numeric Display,LW-304 indexed,485,565,176,30,FLOAT32,thd_va_pct,NOT_RUN
+PHASE_2_8,Numeric Display,LW-306 indexed,694,565,176,30,FLOAT32,thd_vb_pct,NOT_RUN
+PHASE_3_8,Numeric Display,LW-308 indexed,904,565,176,30,FLOAT32,thd_vc_pct,NOT_RUN
+IMPORT,Numeric Display,LW-316 indexed,1204,302,225,34,float64,import_energy_kwh,NOT_RUN
+EXPORT,Numeric Display,LW-320 indexed,1568,302,225,34,float64,export_energy_kwh,NOT_RUN
+PEAK,Numeric Display,LW-334 indexed,1204,385,225,34,float32,peak_demand_kw,NOT_RUN
+FREQ,Numeric Display,LW-272 indexed,1568,385,225,34,float32,frequency_hz,NOT_RUN
+POWER_TREND,Trend Display,per-meter persisted Data Sampling,110,737,997,108,DATA,Trend gaps and time bounds,BLOCKED_Q02
+INSIGHT_BLOCK,Numeric Display Word Lamp,quality-gated calculations,1194,735,682,117,DERIVED,Insufficient data N/A,NOT_RUN
+HISTORY_FILTER,Combo Box and Date Time,per-client history request,38,936,1190,42,CONTROL,Date and metric not SQL code,BLOCKED_Q02
+SHOW_HISTORY,Function Key,documented SQL Query object,1248,936,185,42,ACTION,Query bounded private state,BLOCKED_Q02
+EXPORT_CSV,Native Backup Function Key,USB1 proven file exporter,1446,936,187,42,ACTION,No on-device proof,BLOCKED_Q10
+HISTORY_RESULTS,SQL Query or History Data Display,verified persist data,38,1018,1840,40,HISTORIAN,Rows timestamps coverage,BLOCKED_Q02

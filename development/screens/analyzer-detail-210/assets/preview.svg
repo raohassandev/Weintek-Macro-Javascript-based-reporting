@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<defs><linearGradient id="header" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#244D3C"/><stop offset=".55" stop-color="#3E735A"/><stop offset="1" stop-color="#699681"/></linearGradient><linearGradient id="card" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FFFFFF"/><stop offset="1" stop-color="#F7FAF7"/></linearGradient></defs>
+<rect width="1920" height="1080" fill="#F6F6F2"/>
+<rect x="16" y="12" width="1888" height="82" rx="19" fill="url(#header)" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="44" y="51" font-size="29" font-family="DejaVu Sans,Arial,sans-serif" font-weight="750" fill="#FFFFFF" text-anchor="start">UCS  /  ELECTRICAL ANALYZER</text>
+<text x="45" y="77" font-size="15" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#E7F2EC" text-anchor="start">Phase measurements  ·  electrical history  ·  calculated engineering insight</text>
+<text x="1874" y="51" font-size="15" font-family="DejaVu Sans,Arial,sans-serif" font-weight="700" fill="#FFFFFF" text-anchor="end">METER DETAIL  210</text>
+<rect x="16" y="106" width="1888" height="78" rx="15" fill="#FFFFFF" stroke="#DCE5DF" stroke-width="1.4"/><text x="38" y="140" font-size="22" font-family="DejaVu Sans,Arial,sans-serif" font-weight="720" fill="#244D3C" text-anchor="start">SELECTED ANALYZER</text><text x="38" y="162" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="start"></text><text x="1882" y="138" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="600" fill="#66766F" text-anchor="end">PREV     |     NEXT</text>
+<text x="40" y="166" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="start">ONE reusable page · meter 1–61 · logging independent of selection</text>
+<rect x="350" y="120" width="320" height="45" rx="9" fill="#F5F9F5" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="362" y="149" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="start">Meter:</text>
+<rect x="684" y="120" width="320" height="45" rx="9" fill="#F5F9F5" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="696" y="149" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="start">Feeder:</text>
+<rect x="1017" y="120" width="220" height="45" rx="9" fill="#F5F9F5" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="1029" y="149" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="start">Quality:</text>
+<rect x="16" y="198" width="1138" height="451" rx="15" fill="#FFFFFF" stroke="#DCE5DF" stroke-width="1.4"/><text x="38" y="232" font-size="22" font-family="DejaVu Sans,Arial,sans-serif" font-weight="720" fill="#244D3C" text-anchor="start">PHASE-BY-PHASE ELECTRICAL MEASUREMENTS</text><text x="38" y="254" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="start">Current values must pass device capability and quality checks</text><text x="1132" y="230" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="600" fill="#66766F" text-anchor="end">3 PHASES</text>
+<rect x="1168" y="198" width="736" height="229" rx="15" fill="#FFFFFF" stroke="#DCE5DF" stroke-width="1.4"/><text x="1190" y="232" font-size="22" font-family="DejaVu Sans,Arial,sans-serif" font-weight="720" fill="#244D3C" text-anchor="start">ENERGY &amp; DEMAND</text><text x="1190" y="254" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="start">Verified counters, export directions and periods only</text><text x="1882" y="230" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="600" fill="#66766F" text-anchor="end">kWh / kW</text>
+<rect x="1168" y="440" width="736" height="209" rx="15" fill="#FFFFFF" stroke="#DCE5DF" stroke-width="1.4"/><text x="1190" y="474" font-size="22" font-family="DejaVu Sans,Arial,sans-serif" font-weight="720" fill="#244D3C" text-anchor="start">MEASUREMENT CONTEXT</text><text x="1190" y="496" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="start">Counter basis, missing samples and source validity</text><text x="1882" y="472" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="600" fill="#66766F" text-anchor="end">QUALITY FIRST</text>
+<rect x="16" y="662" width="1138" height="201" rx="15" fill="#FFFFFF" stroke="#DCE5DF" stroke-width="1.4"/><text x="38" y="696" font-size="22" font-family="DejaVu Sans,Arial,sans-serif" font-weight="720" fill="#244D3C" text-anchor="start">POWER TREND / SELECTED PARAMETER</text><text x="38" y="718" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="start">Persisted history with visible gaps; not indexed live snapshot</text><text x="1132" y="694" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="600" fill="#66766F" text-anchor="end">1 H   /   24 H   /   7 D</text>
+<rect x="1168" y="662" width="736" height="201" rx="15" fill="#FFFFFF" stroke="#DCE5DF" stroke-width="1.4"/><text x="1190" y="696" font-size="22" font-family="DejaVu Sans,Arial,sans-serif" font-weight="720" fill="#244D3C" text-anchor="start">MAINTENANCE INSIGHTS</text><text x="1190" y="718" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="start">Computed from qualified measurements; else show N/A</text><text x="1882" y="694" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="600" fill="#66766F" text-anchor="end">DIAGNOSTICS</text>
+<rect x="16" y="875" width="1888" height="191" rx="15" fill="#FFFFFF" stroke="#DCE5DF" stroke-width="1.4"/><text x="38" y="909" font-size="22" font-family="DejaVu Sans,Arial,sans-serif" font-weight="720" fill="#244D3C" text-anchor="start">HISTORICAL DATA</text><text x="38" y="931" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="start">Choose analyzer, parameter and date interval; SQL code stays behind the UI</text><text x="1882" y="907" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="600" fill="#66766F" text-anchor="end">FILTER / RESULT</text>
+<rect x="480" y="268" width="186" height="40" rx="10" fill="#E8F2EA" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="570" y="295" font-size="18" font-family="DejaVu Sans,Arial,sans-serif" font-weight="700" fill="#244D3C" text-anchor="middle">L1 / A</text>
+<rect x="689" y="268" width="186" height="40" rx="10" fill="#E8F2EA" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="779" y="295" font-size="18" font-family="DejaVu Sans,Arial,sans-serif" font-weight="700" fill="#244D3C" text-anchor="middle">L2 / B</text>
+<rect x="899" y="268" width="186" height="40" rx="10" fill="#E8F2EA" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="989" y="295" font-size="18" font-family="DejaVu Sans,Arial,sans-serif" font-weight="700" fill="#244D3C" text-anchor="middle">L3 / C</text>
+<rect x="30" y="319" width="1100" height="31" rx="5" fill="#F5F9F6" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="43" y="344" font-size="18" font-family="DejaVu Sans,Arial,sans-serif" font-weight="650" fill="#27332D" text-anchor="start">Voltage L-N</text>
+<text x="427" y="344" font-size="15" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="end">V</text>
+<rect x="485" y="321" width="175" height="31" rx="7" fill="#FFFFFF" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="572" y="343" font-size="23" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="middle">—</text>
+<rect x="694" y="321" width="175" height="31" rx="7" fill="#FFFFFF" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="781" y="343" font-size="23" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="middle">—</text>
+<rect x="904" y="321" width="175" height="31" rx="7" fill="#FFFFFF" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="991" y="343" font-size="23" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="middle">—</text>
+<text x="43" y="379" font-size="18" font-family="DejaVu Sans,Arial,sans-serif" font-weight="650" fill="#27332D" text-anchor="start">Voltage L-L</text>
+<text x="427" y="379" font-size="15" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="end">V</text>
+<rect x="485" y="356" width="175" height="31" rx="7" fill="#FFFFFF" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="572" y="378" font-size="23" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="middle">—</text>
+<rect x="694" y="356" width="175" height="31" rx="7" fill="#FFFFFF" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="781" y="378" font-size="23" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="middle">—</text>
+<rect x="904" y="356" width="175" height="31" rx="7" fill="#FFFFFF" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="991" y="378" font-size="23" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="middle">—</text>
+<rect x="30" y="389" width="1100" height="31" rx="5" fill="#F5F9F6" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="43" y="414" font-size="18" font-family="DejaVu Sans,Arial,sans-serif" font-weight="650" fill="#27332D" text-anchor="start">Current</text>
+<text x="427" y="414" font-size="15" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="end">A</text>
+<rect x="485" y="391" width="175" height="31" rx="7" fill="#FFFFFF" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="572" y="413" font-size="23" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="middle">—</text>
+<rect x="694" y="391" width="175" height="31" rx="7" fill="#FFFFFF" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="781" y="413" font-size="23" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="middle">—</text>
+<rect x="904" y="391" width="175" height="31" rx="7" fill="#FFFFFF" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="991" y="413" font-size="23" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="middle">—</text>
+<text x="43" y="449" font-size="18" font-family="DejaVu Sans,Arial,sans-serif" font-weight="650" fill="#27332D" text-anchor="start">Active power</text>
+<text x="427" y="449" font-size="15" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="end">kW</text>
+<rect x="485" y="426" width="175" height="31" rx="7" fill="#FFFFFF" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="572" y="448" font-size="23" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="middle">—</text>
+<rect x="694" y="426" width="175" height="31" rx="7" fill="#FFFFFF" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="781" y="448" font-size="23" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="middle">—</text>
+<rect x="904" y="426" width="175" height="31" rx="7" fill="#FFFFFF" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="991" y="448" font-size="23" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="middle">—</text>
+<rect x="30" y="459" width="1100" height="31" rx="5" fill="#F5F9F6" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="43" y="484" font-size="18" font-family="DejaVu Sans,Arial,sans-serif" font-weight="650" fill="#27332D" text-anchor="start">Reactive power</text>
+<text x="427" y="484" font-size="15" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="end">kvar</text>
+<rect x="485" y="461" width="175" height="31" rx="7" fill="#FFFFFF" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="572" y="483" font-size="23" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="middle">—</text>
+<rect x="694" y="461" width="175" height="31" rx="7" fill="#FFFFFF" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="781" y="483" font-size="23" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="middle">—</text>
+<rect x="904" y="461" width="175" height="31" rx="7" fill="#FFFFFF" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="991" y="483" font-size="23" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="middle">—</text>
+<text x="43" y="519" font-size="18" font-family="DejaVu Sans,Arial,sans-serif" font-weight="650" fill="#27332D" text-anchor="start">Apparent power</text>
+<text x="427" y="519" font-size="15" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="end">kVA</text>
+<rect x="485" y="496" width="175" height="31" rx="7" fill="#FFFFFF" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="572" y="518" font-size="23" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="middle">—</text>
+<rect x="694" y="496" width="175" height="31" rx="7" fill="#FFFFFF" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="781" y="518" font-size="23" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="middle">—</text>
+<rect x="904" y="496" width="175" height="31" rx="7" fill="#FFFFFF" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="991" y="518" font-size="23" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="middle">—</text>
+<rect x="30" y="529" width="1100" height="31" rx="5" fill="#F5F9F6" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="43" y="554" font-size="18" font-family="DejaVu Sans,Arial,sans-serif" font-weight="650" fill="#27332D" text-anchor="start">Power factor</text>
+<text x="427" y="554" font-size="15" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="end"></text>
+<rect x="485" y="531" width="175" height="31" rx="7" fill="#FFFFFF" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="572" y="553" font-size="23" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="middle">—</text>
+<rect x="694" y="531" width="175" height="31" rx="7" fill="#FFFFFF" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="781" y="553" font-size="23" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="middle">—</text>
+<rect x="904" y="531" width="175" height="31" rx="7" fill="#FFFFFF" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="991" y="553" font-size="23" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="middle">—</text>
+<text x="43" y="589" font-size="18" font-family="DejaVu Sans,Arial,sans-serif" font-weight="650" fill="#27332D" text-anchor="start">Voltage THD</text>
+<text x="427" y="589" font-size="15" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="end">%</text>
+<rect x="485" y="566" width="175" height="31" rx="7" fill="#FFFFFF" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="572" y="588" font-size="23" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="middle">—</text>
+<rect x="694" y="566" width="175" height="31" rx="7" fill="#FFFFFF" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="781" y="588" font-size="23" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="middle">—</text>
+<rect x="904" y="566" width="175" height="31" rx="7" fill="#FFFFFF" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="991" y="588" font-size="23" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="middle">—</text>
+<rect x="1190" y="274" width="341" height="72" rx="11" fill="#F3F8F4" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="1204" y="297" font-size="16" font-family="DejaVu Sans,Arial,sans-serif" font-weight="600" fill="#66766F" text-anchor="start">Import energy</text>
+<text x="1510" y="331" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="700" fill="#244D3C" text-anchor="end">kWh</text>
+<text x="1205" y="330" font-size="25" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="start">—</text>
+<rect x="1554" y="274" width="341" height="72" rx="11" fill="#F3F8F4" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="1568" y="297" font-size="16" font-family="DejaVu Sans,Arial,sans-serif" font-weight="600" fill="#66766F" text-anchor="start">Export energy</text>
+<text x="1874" y="331" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="700" fill="#244D3C" text-anchor="end">kWh</text>
+<text x="1569" y="330" font-size="25" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="start">—</text>
+<rect x="1190" y="356" width="341" height="72" rx="11" fill="#F3F8F4" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="1204" y="379" font-size="16" font-family="DejaVu Sans,Arial,sans-serif" font-weight="600" fill="#66766F" text-anchor="start">Maximum demand</text>
+<text x="1510" y="413" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="700" fill="#244D3C" text-anchor="end">kW</text>
+<text x="1205" y="412" font-size="25" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="start">—</text>
+<rect x="1554" y="356" width="341" height="72" rx="11" fill="#F3F8F4" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="1568" y="379" font-size="16" font-family="DejaVu Sans,Arial,sans-serif" font-weight="600" fill="#66766F" text-anchor="start">Frequency</text>
+<text x="1874" y="413" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="700" fill="#244D3C" text-anchor="end">Hz</text>
+<text x="1569" y="412" font-size="25" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="start">—</text>
+<text x="1195" y="514" font-size="17" font-family="DejaVu Sans,Arial,sans-serif" font-weight="600" fill="#27332D" text-anchor="start">Counter processing</text>
+<text x="1870" y="514" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="end">reset/rollover-aware</text>
+<line x1="1194" y1="526" x2="1880" y2="526" stroke="#DCE5DF"/>
+<text x="1195" y="556" font-size="17" font-family="DejaVu Sans,Arial,sans-serif" font-weight="600" fill="#27332D" text-anchor="start">Missing samples</text>
+<text x="1870" y="556" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="end">not equivalent to measured zero</text>
+<line x1="1194" y1="568" x2="1880" y2="568" stroke="#DCE5DF"/>
+<text x="1195" y="598" font-size="17" font-family="DejaVu Sans,Arial,sans-serif" font-weight="600" fill="#27332D" text-anchor="start">THD / imbalance</text>
+<text x="1870" y="598" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="end">only if meter supports</text>
+<line x1="1194" y1="610" x2="1880" y2="610" stroke="#DCE5DF"/>
+<line x1="112" y1="756" x2="1106" y2="756" stroke="#DCE5DF" stroke-width="1"/>
+<line x1="112" y1="785" x2="1106" y2="785" stroke="#DCE5DF" stroke-width="1"/>
+<line x1="112" y1="814" x2="1106" y2="814" stroke="#DCE5DF" stroke-width="1"/>
+<line x1="112" y1="843" x2="1106" y2="843" stroke="#DCE5DF" stroke-width="1"/>
+<line x1="112" y1="737" x2="112" y2="845" stroke="#E4EBE6"/>
+<line x1="260" y1="737" x2="260" y2="845" stroke="#E4EBE6"/>
+<line x1="408" y1="737" x2="408" y2="845" stroke="#E4EBE6"/>
+<line x1="556" y1="737" x2="556" y2="845" stroke="#E4EBE6"/>
+<line x1="704" y1="737" x2="704" y2="845" stroke="#E4EBE6"/>
+<line x1="852" y1="737" x2="852" y2="845" stroke="#E4EBE6"/>
+<line x1="1000" y1="737" x2="1000" y2="845" stroke="#E4EBE6"/>
+<line x1="1106" y1="737" x2="1106" y2="845" stroke="#E4EBE6"/>
+<text x="58" y="737" font-size="13" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="start">kW</text>
+<text x="1124" y="855" font-size="13" font-family="DejaVu Sans,Arial,sans-serif" font-weight="400" fill="#66766F" text-anchor="end">time</text>
+<path d="M112 810 C210 795 275 770 350 780 S500 809 598 761 S793 784 874 786 S1026 765 1106 750" fill="none" stroke="#337D5C" stroke-width="4"/>
+<text x="1085" y="732" font-size="12" font-family="DejaVu Sans,Arial,sans-serif" font-weight="700" fill="#B77C35" text-anchor="end">ILLUSTRATIVE TREND</text>
+<text x="1194" y="748" font-size="16" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#27332D" text-anchor="start">Current imbalance</text>
+<text x="1860" y="748" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="600" fill="#66766F" text-anchor="end">%</text>
+<text x="1762" y="748" font-size="21" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="start">—</text>
+<text x="1194" y="778" font-size="16" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#27332D" text-anchor="start">Voltage imbalance</text>
+<text x="1860" y="778" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="600" fill="#66766F" text-anchor="end">%</text>
+<text x="1762" y="778" font-size="21" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="start">—</text>
+<text x="1194" y="808" font-size="16" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#27332D" text-anchor="start">Recent exception</text>
+<text x="1860" y="808" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="600" fill="#66766F" text-anchor="end">event</text>
+<text x="1762" y="808" font-size="21" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="start">—</text>
+<text x="1194" y="838" font-size="16" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#27332D" text-anchor="start">24h record coverage</text>
+<text x="1860" y="838" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="600" fill="#66766F" text-anchor="end">%</text>
+<text x="1762" y="838" font-size="21" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="start">—</text>
+<rect x="38" y="936" width="246" height="42" rx="9" fill="#F3F8F4" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="50" y="963" font-size="16" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="start">Analyzer</text>
+<rect x="296" y="936" width="286" height="42" rx="9" fill="#F3F8F4" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="308" y="963" font-size="16" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="start">Parameter</text>
+<rect x="594" y="936" width="314" height="42" rx="9" fill="#F3F8F4" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="606" y="963" font-size="16" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="start">From date / time</text>
+<rect x="920" y="936" width="314" height="42" rx="9" fill="#F3F8F4" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="932" y="963" font-size="16" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="start">To date / time</text>
+<rect x="1248" y="936" width="185" height="42" rx="9" fill="#E8F2EA" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="1340" y="963" font-size="16" font-family="DejaVu Sans,Arial,sans-serif" font-weight="700" fill="#244D3C" text-anchor="middle">SHOW HISTORY</text>
+<rect x="1446" y="936" width="187" height="42" rx="9" fill="#EDF5EF" stroke="#DCE5DF" stroke-width="1.4"/>
+<text x="1540" y="963" font-size="16" font-family="DejaVu Sans,Arial,sans-serif" font-weight="700" fill="#244D3C" text-anchor="middle">EXPORT CSV</text>
+<text x="1661" y="962" font-size="16" font-family="DejaVu Sans,Arial,sans-serif" font-weight="450" fill="#66766F" text-anchor="start">Result:</text>
+<text x="44" y="1010" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="700" fill="#66766F" text-anchor="start">TIME</text>
+<text x="366" y="1010" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="700" fill="#66766F" text-anchor="start">L1</text>
+<text x="576" y="1010" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="700" fill="#66766F" text-anchor="start">L2</text>
+<text x="786" y="1010" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="700" fill="#66766F" text-anchor="start">L3</text>
+<text x="996" y="1010" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="700" fill="#66766F" text-anchor="start">TOTAL</text>
+<text x="1225" y="1010" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="700" fill="#66766F" text-anchor="start">QUALITY</text>
+<text x="1490" y="1010" font-size="14" font-family="DejaVu Sans,Arial,sans-serif" font-weight="700" fill="#66766F" text-anchor="start">COVERAGE</text>
+<line x1="38" y1="1023" x2="1878" y2="1023" stroke="#DCE5DF"/>
+<text x="1858" y="1044" font-size="13" font-family="DejaVu Sans,Arial,sans-serif" font-weight="700" fill="#B77C35" text-anchor="end">PREVIEW / NO QUERY HAS RUN</text>
+</svg>

@@ -1,0 +1,19 @@
+{
+  "status": "OFFLINE_DESIGN_NOT_EBPRO_IMPORT",
+  "target": "cMT-FHDX-220",
+  "window": 210,
+  "canvas": [
+    1920,
+    1080
+  ],
+  "fields_per_meter": 48,
+  "meter_count": 61,
+  "lw_base": 256,
+  "lw_stride": 128,
+  "high_word": 8063,
+  "system_range_start": 9000,
+  "private_index": "PLW-9200 MODEL_UNVERIFIED",
+  "sql_local_advanced": "BLOCKED",
+  "usb_persist": "BLOCKED",
+  "raw_meter_registers": "NOT_SUPPLIED"
+}
