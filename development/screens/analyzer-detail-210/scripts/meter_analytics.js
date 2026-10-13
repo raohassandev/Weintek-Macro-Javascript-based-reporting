@@ -1,0 +1,12 @@
+/* Offline reference ONLY, not already Weintek JS/EBPro compiled. */
+'use strict';
+const valid=s=>s&&s.quality==='GOOD'&&typeof s.value==='number'&&Number.isFinite(s.value);
+const reading=a=>valid(a)?a.value:null;
+function imbalance(phases){if(!Array.isArray(phases)||phases.length!==3||!phases.every(valid))return {state:'N_A',value:null};const v=phases.map(s=>s.value);if(v.some(x=>x<0))return {state:'N_A',value:null};const avg=v.reduce((a,b)=>a+b,0)/3;if(avg<=0)return {state:'N_A',value:null};return {state:'GOOD',value:Math.max(...v.map(x=>Math.abs(x-avg)))/avg*100,formula:'max(abs(phase-mean))/mean*100'};}
+function apparent(p,q){if(!valid(p)||!valid(q))return {state:'N_A',value:null};return {state:'GOOD',value:Math.hypot(p.value,q.value),disclaimer:'Qualified P/Q-dependent derived S, not guaranteed meter metrological S'};}
+function pf(p,q){const s=apparent(p,q);if(s.state!=='GOOD'||s.value<1e-9)return {state:'N_A',value:null};return {state:'GOOD',value:Math.max(-1,Math.min(1,p.value/s.value)),disclaimer:'P/S derived from P and Q; true PF with harmonics requires metrological qualification'};}
+function coverage(good,expected){return Number.isSafeInteger(good)&&Number.isSafeInteger(expected)&&expected>0&&good>=0&&good<=expected?{state:'GOOD',value:good/expected*100}:{state:'N_A',value:null};}
+function selectMeter(meter,slotCount=61){if(!Number.isInteger(meter)||!Number.isInteger(slotCount)||slotCount<1||slotCount>61||meter<1||meter>slotCount)throw RangeError('Bad meter ID');return {privateSelectedMeter:meter,privateIndex0:(meter-1)*128};}
+function historyRequest({meter,metric,allowedMetrics,from,to,id}){selectMeter(meter);if(!Array.isArray(allowedMetrics)||!allowedMetrics.includes(metric))throw RangeError('Metric unsupported');const a=Date.parse(from),b=Date.parse(to);if(!Number.isFinite(a)||!Number.isFinite(b)||b<=a||b-a>31*86400000)throw RangeError('Date range invalid');if(!Number.isSafeInteger(id)||id<=0)throw RangeError('Request ID invalid');return {meter,metric,from,to,id,status:'PENDING',sqlText:null};}
+function acceptHistory(pending,result,selected,latestId){return !pending||!result||selected!==pending.meter||result.meter!==selected||pending.id!==latestId||result.id!==latestId?{accepted:false,status:'DISCARDED_STALE'}:{accepted:true,status:result.ok?'READY':'ERROR',rows:result.ok&&Array.isArray(result.rows)?result.rows:[]};}
+module.exports={valid,reading,imbalance,apparent,pf,coverage,selectMeter,historyRequest,acceptHistory};
