@@ -1,0 +1,21 @@
+Name,Device,Address_Mode,Address_Type,Address,Data_Type,Access,Units,Notes
+UCS_USB_PRESENT,Local HMI,Bit,LB,12048,BOOL,RO,,USB1 exists only
+UCS_USB_LOW_SPACE,Local HMI,Bit,LB,9037,BOOL,RO,,Low space warning
+UCS_USB_FREE_KB,Local HMI,Word,LW,9076,UINT32,RO,kB,2 words unsigned
+UCS_HMI_FREE_KB,Local HMI,Word,LW,9072,UINT32,RO,kB,2 words unsigned
+UCS_SD_PRESENT,Local HMI,Bit,LB,12050,BOOL,RO,,SD inserted
+UCS_SD_FREE_KB,Local HMI,Word,LW,9074,UINT32,RO,kB,2 words unsigned
+UCS_HISTORY_TOTAL_KB,Local HMI,Word,LW,11458,UINT32,RO,kB,HMI history allocation not full flash
+UCS_HISTORY_FREE_KB,Local HMI,Word,LW,11460,UINT32,RO,kB,HMI history allocation free
+SYS_CPU_LOAD,Local HMI,Word,LW,9025,UINT16,RO,%,Verify model and OS
+SYS_RAM_LOAD,Local HMI,Word,LW,11159,UINT16,RO,%,System memory percentage
+SYS_RAM_TOTAL_KB,Local HMI,Word,LW,11155,UINT32,RO,kB,2 words
+SYS_RAM_FREE_KB,Local HMI,Word,LW,11157,UINT32,RO,kB,2 words
+SYS_BACKUP_BUSY,Local HMI,Bit,LB,9039,BOOL,RO,,Native backup active
+UCS_USB_PROBE_STATE,Local HMI,Word,LW,8250,UINT16,RW,,0 untested 1 failed 2 pass
+UCS_USB_PROBE_AGE_SEC,Local HMI,Word,LW,8251,UINT16,RW,s,Set by trusted independent ticking process; fail closed if unknown
+UCS_RECORDER_STATE,Local HMI,Word,LW,8252,UINT16,RW,,1 only if actual record persisted
+UCS_LAST_RECORD_AGE_SEC,Local HMI,Word,LW,8253,UINT16,RW,s,Fail closed if not advanced
+UCS_STORAGE_COMBINED_HEALTH,Local HMI,Word,LW,8270,UINT16,RW,,0 absent 1 unverified 2 verified 3 low 4 failed
+SYS_EMMC_WRITE_KB_MIN,Local HMI,Word,LW,12835,UINT32,RO,kB/min,ONLY EBPro >=6.10.02.394 OS >=2026-07-15 cMT X
+SYS_EMMC_WRITE_STATE,Local HMI,Word,LW,12837,UINT16,RO,,ONLY supported newer EBPro and OS

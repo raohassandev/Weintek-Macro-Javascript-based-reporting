@@ -7,7 +7,7 @@
 |---|---|
 | **One-page status (Roman Urdu)** | [Owner Dashboard](docs/OWNER_DASHBOARD.md) |
 | **Pictorial roadmap / architecture** | [Visual Plan — GitHub-rendered diagrams](docs/VISUAL_PLAN.md) |
-| **Resource & Storage Manager screen** | [Visual design + system registers](docs/RESOURCE_STORAGE_MANAGER_SCREEN.md) |
+| **Resource & Storage Manager screen** | [Executive theme: SVG screen + engineer source pack](designs/resource-manager/README.md) |
 | **USB vs Industrial SSD** | [Storage decision & capacity](docs/STORAGE_DECISION_AND_CAPACITY.md) |
 | **Which historical reports?** | [22 planned report templates](docs/REPORT_CATALOG.md) |
 | **All R&D sources and vendor web links** | [Research Library](research/INDEX.md) |

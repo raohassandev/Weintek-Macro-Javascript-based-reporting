@@ -18,3 +18,7 @@ All decisions need an owner, date, evidence URL and fallback. Draft assumptions 
 
 | D-013 | 2026-10-13 | Introduce one UCS Resource/Storage Manager SCADA screen using documented HMI system registers and independent historian/backup metrics | ACCEPTED DIRECTION | [Spec](RESOURCE_STORAGE_MANAGER_SCREEN.md), [#19](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/19); all readouts require actual source/device checks |
 | D-014 | 2026-10-13 | Use FAT32 USB/SD for Weintek-native export; prefer IPC industrial SSD + independent backup for 61-meter durable reporting; directly attached USB SSD unqualified | PROVISIONAL STORAGE DECISION | [Storage architecture](STORAGE_DECISION_AND_CAPACITY.md), [#18](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/18), test actual model/enclosure/power |
+
+| D-015 | 2026-10-13 | Light executive green/neutral graphical Resource Manager theme | ACCEPTED DIRECTION | Actual management user dislikes blue; [screen SVGs](../designs/resource-manager/README.md) |
+| D-016 | 2026-10-13 | Storage states connected, writable, recording, backup must be independently proven and time bounded | ACCEPTED GUARDRAIL | [JS USB probe](../js/ucs_usb_write_read_probe.js), [status evaluator](../macros/UCS_STORAGE_STATUS.mcr); no verified device run yet |
+| D-017 | 2026-10-13 | Native EBPro object feature map + native export CSV compatibility gate | ACCEPTED WORKFLOW | [Objects mapping](../designs/resource-manager/screen-object-map.csv), [tag import guide](../tags/EBPRO_IMPORT_GUIDE.md) |

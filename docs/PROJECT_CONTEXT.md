@@ -1,6 +1,14 @@
 # Project context — handoff document
 **Last updated:** 2026-10-13. **Source:** project owner conversation and verified product references. **Command Centre:** [#1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1).
 
+## Latest management UI directive — 2026-10-13
+- The actual management user rejects blue SCADA theme; use restrained **light executive** off-white and muted green/gray, not dark dashboards. Save screen/source assets in GitHub for EBPro engineer: vector preview, background-only SVG-to-PNG renderer, native EBPro object map, register tags and macro/JS files.
+- Separate storage **CONNECTED** (`LB-12048`) from **WRITABLE/READBACK VERIFIED** and **HISTORY ACTUALLY RECORDING**, all time-bounded proofs; a plugged USB is not sufficient to show healthy.
+- Confirm actual vendor EBPro objects before promising chart styles. Native Bar Graph, Trend, Numeric/Lamp, Backup objects can be used; decorative UI shapes are not live widgets.
+- The new `@weintek/libc/stdio` JavaScript APIs permit file read/write on **Local HMI** for supported EBPro >=6.09.01, enabling optional on-demand small-file byte comparison. Not a SQLite API and not a full recorder validation.
+- Weintek newly publishes eMMC write-rate `LW-12835` and status `LW-12837` for cMT X and recent firmware; hide on unsupported OS.
+- [Repo engineer pack](../designs/resource-manager/README.md), [R&D memo](../research/2026-10-13-ebpro-storage-ui-research.md).
+
 ## Additional owner directive — 2026-10-13
 - Commission initial 61 energy analyzers using cMT-SVRX / cMT-FHDX, share dynamic screens where possible, site-variable tags/device mapping, scalable site configuration and evidence-based historian.
 - A dedicated **UCS Resource & Storage Manager** graphical screen must display CPU, RAM, HMI flash/history quota, USB/SSD/SD, oldest/latest record, actual coverage, remaining estimated retention, per-device communication health and backup status. Human owner should receive a visual SCADA-level screen rather than lengthy test text.
