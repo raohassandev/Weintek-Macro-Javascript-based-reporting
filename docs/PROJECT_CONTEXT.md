@@ -1,4 +1,6 @@
-# Project context — handoff document
+# Project context — chat chronology & handoff source
+
+> **UCS BASELINE v1.0 (2026-10-13) is now authoritative:** [FINAL_MASTER_PLAN](UCS_FINAL_MASTER_PLAN.md). Older statements mentioning external IPC/PC are **preserved only as superseded historical conversation**, not current instructions. See [D-018](DECISION_LOG.md) for the explicit no-PC owner rule and [AI Agent brief](AI_AGENT_EXECUTION_BRIEF.md) for execution.
 **Last updated:** 2026-10-13. **Source:** project owner conversation and verified product references. **Command Centre:** [#1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1).
 
 ## Latest hard requirement from owner — 2026-10-13

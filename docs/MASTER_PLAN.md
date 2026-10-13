@@ -1,43 +1,12 @@
-# Master execution plan — historical reporting
-**Command Centre:** [#1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1). Task-specific acceptance is authoritative in issues #2–#10. Track with a link to an actual artifact/commit/test, not asserted percentages.
+# UCS Master Plan — CANONICAL ROUTE
+**The earlier historical-reporting-only plan has been superseded on 2026-10-13.**
+**AUTHORITATIVE UCS BASELINE v1.0:** [UCS_FINAL_MASTER_PLAN.md](UCS_FINAL_MASTER_PLAN.md).
 
-## Parallel lanes
-| Lane | Issue | Implementation | Evidence gate |
-|---|---|---|---|
-| HW | [#2](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/2) | Official feature matrix; exact model / EBPro / OS and device capability | Documented + device evidence |
-| SQL | [#3](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/3) | Sample schema, filtered SQL, query and register contract | SQL fixtures + verified EBPro config |
-| HIST | [#4](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/4) | Source tags, sampling, backup and retention | Saved EBPro setup + data reconciliation |
-| MACRO | [#5](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/5) | Macro query orchestration/status/error | Minimal reproducible script + execution |
-| JS | [#6](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/6) | JS register I/O, UI integration and state machine | Versioned SDK API + functional test |
-| UI | [#7](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/7) | Date filters, results, paging, loading/errors | Prototype/screens and UX tests |
-| EXPORT | [#8](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/8) | CSV and separately proven PDF/print | Test files + source-data comparison |
-| QA | [#9](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/9) | Automated and real-HMI integration tests | CI IDs + named device proof |
-| RELEASE | [#10](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/10) | Commissioning, training, customer sign-off | Signed acceptance checklist |
+Read [AI Agent brief](AI_AGENT_EXECUTION_BRIEF.md), [36 requirements](UCS_REQUIREMENTS_TRACEABILITY.md), [independent audit](INDEPENDENT_AUDIT_PROTOCOL.md), [parallel workpackages](UCS_DELIVERY_WORKPACKAGES.md), and [Command Centre #1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1).
 
-## Delivery milestones
-### M0 — Reproducible problem definition
-Determine installed hardware, target output (on-screen, CSV, PDF), report columns, period/interval, retained history, USB/SD conditions and whether remote clients are needed. Clear unknowns; no feature selection from assumptions.
+This is a **Weintek SVRX/FHDX-only SCADA/historian/reporting runtime** for initial 61 analyzers (reusable across sites), never a separate PC/IPC/Node/server. The old fallback to external reporting hardware is **REJECTED by owner**. No real HMI EBPro compile, 61-analyzer field acceptance, or customer release has been claimed.
 
-### M1 — Feature compatibility proof
-Freeze specific SKU + firmware + EBPro version. On a supported device, prove SQL Query access to controlled SQLite .db on USB/SD and check query command semantics; validate JS object availability. Alternative if unavailable: external historian/report service, not fictitious macro SQLite functions.
+## Visual current plan
+[Visual diagram](VISUAL_PLAN.md) · [Role-specific homes](ROLE_BASED_UX_PLAN.md) · [Storage/backup](STORAGE_DECISION_AND_CAPACITY.md) · [Official R&D](../research/INDEX.md)
 
-### M2 — Data & query prototype
-Agree timestamp convention, schema, data source, indexes and retention; implement safe filters/aggregation/paging; demonstrate query through SQL Query object → HMI mapped registers. Split sample DB from internal history until their true compatibility is proven.
-
-### M3 — Working report HMI
-Macro/JS orchestration, cancellation/timeout, paginated results, date range, site/device filter, units, stale/missing-data indication. Record actual device performance rather than estimates.
-
-### M4 — Customer output formats
-Verify on-HMI CSV; if needed implement Weintek-only tested PDF workflow with pagination and reconciliation. Clearly identify which device/host generates and stores each artifact.
-
-### M5 — QA & acceptance
-Regression suite plus real HMI proof on specified model. Failure scenarios, restore, power cut, USB absent/full, clock/DST, long queries, quality flags and report reconciliation. Produce release guide and formal customer acceptance.
-
-## 2026-10-13 owner hard boundary
-**No external PC/IPC or server runtime.** Roles/screens: three specialized home pages, common 61-meter detail, shared reports/trends, diagnostics and occasional resource manager. Critical notifications only role-filtered; events always logged. HTML5 support is different from JS Object/PLC Web Browser/WebView; local USB HTML rendering remains a POC. See [visual](VISUAL_PLAN.md) and [HTML](../research/WEINTEK_HTML_FEASIBILITY.md).
-
-## Dependencies and staffing
-HW validation gates deployment promises, but SQL schema fixtures and UX prototypes are parallel; reports can be prototyped with synthetic **clearly labeled test** data. JS/macro integration waits on genuine versioned register map. PDF service evaluation is independent of SQL proof.
-
-## Definition of Done
-100% means verified functionality on the target hardware, tests/evidence and acceptance documented; not just documentation completed. Each lane maintains [AVAILABLE], [INPROGRESS @owner], [REVIEW PR#... head:sha], [COMPLETED PR#...], or [BLOCKED: reason].
+All implementation status remains in [GitHub Command Centre #1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1); no stale percentages in this document.
