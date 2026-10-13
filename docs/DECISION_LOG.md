@@ -1,6 +1,8 @@
 # Architecture decision log
 All decisions need an owner, date, evidence URL and fallback. Draft assumptions are not decisions.
 
+**ACTIVE DIRECTION:** UCS baseline v1.0 [master plan](UCS_FINAL_MASTER_PLAN.md). D-018 **supersedes** historical/conditional references to separate PC/IPC processing in D-006/D-014; cMT FHDX/SVRX with attached media is the ONLY runtime. Never misread old text as authorization.
+
 | ID | Date | Decision / candidate | State | Rationale / follow-up |
 |---|---|---|---|---|
 | D-001 | 2026-10-13 | This repository and GitHub issue #1 are project source of truth | ACCEPTED | Owner requests complete plan, track, Command Centre and chat context in GitHub |
@@ -28,3 +30,6 @@ All decisions need an owner, date, evidence URL and fallback. Draft assumptions 
 | D-020 | 2026-10-13 | Priority/context-based notification popups; all faults/event history persisted | ACCEPTED DIRECTION | [Event routing matrix](ROLE_BASED_UX_PLAN.md) |
 | D-021 | 2026-10-13 | JS Object Canvas preferred for custom UI over generic HTML pages; PLC Web Browser/USB HTML path remains UNVERIFIED | PROVISIONAL TECHNICAL | [Weintek HTML research](../research/WEINTEK_HTML_FEASIBILITY.md) |
 | D-022 | 2026-10-13 | Separate cMT-FHDX-820 (W) Chromium model must not be conflated with EBPro FHDX-820 | ACCEPTED GUARDRAIL | [Vendor model](https://www.weintek.com/Product/Model/cMT-FHDX-820-%28W%29); no assumed native historian |
+
+| D-023 | 2026-10-13 | Freeze UCS v1.0 as **execution/scope baseline**, not physical release | ACCEPTED FOR PLANNING | [Final master plan](UCS_FINAL_MASTER_PLAN.md), [36 requirement matrix](UCS_REQUIREMENTS_TRACEABILITY.md), [AI agent brief](AI_AGENT_EXECUTION_BRIEF.md), [independent audit](INDEPENDENT_AUDIT_PROTOCOL.md) |
+| D-024 | 2026-10-13 | Every future active plan/issue must flag old PC/IPC proposal as superseded; unsupported Weintek report features remain explicit BLOCKED | ACCEPTED GUARDRAIL | [No-PC runtime policy](UCS_FINAL_MASTER_PLAN.md), [Weintek-only tests](../tests/test_ucs_scope.py) |

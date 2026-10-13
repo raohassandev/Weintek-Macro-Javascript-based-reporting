@@ -1,4 +1,6 @@
 # UCS — one-page owner dashboard (Weintek ONLY)
+
+**Plan finalized for implementation/audit as v1.0 (not hardware-deployed):** [Main Plan](UCS_FINAL_MASTER_PLAN.md) · [AI Handoff](AI_AGENT_EXECUTION_BRIEF.md) · [Acceptance](UCS_REQUIREMENTS_TRACEABILITY.md) · [Work Packages](UCS_DELIVERY_WORKPACKAGES.md)
 Aap ko lambi technical reports nahi parhni; yeh 1 screen ka status aur decisions hain. [CC #1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1) · [Diagram](VISUAL_PLAN.md) · [Role home UX](ROLE_BASED_UX_PLAN.md) · [HTML R&D](../research/WEINTEK_HTML_FEASIBILITY.md).
 
 ## Our implementation boundary

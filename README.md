@@ -1,6 +1,17 @@
-# Universal Industrial Historian & Reporting — Weintek
+# UCS — Universal Control & Supervisory System (Weintek-only)
 
 **Ek engine, multiple sites.** Configurable historical reports for solar / grid / DG, industry, UPS, LPG, HVAC and utilities. **Currently in design/R&D**; no production or hardware acceptance claim.
+
+## FINAL BASELINE v1.0 — primary entrypoint
+**Read these first (authoritative, 2026-10-13):**
+1. **[UCS FINAL ENGINEERING MASTER PLAN](docs/UCS_FINAL_MASTER_PLAN.md)** — full customer context, architecture, registers, 61-meter historian, UX, reporting, hardware limits, milestones and constraints.
+2. **[AI IMPLEMENTATION HANDOFF](docs/AI_AGENT_EXECUTION_BRIEF.md)** — exactly how another AI/engineer resumes and works safely.
+3. **[INDEPENDENT AI AUDIT PROTOCOL](docs/INDEPENDENT_AUDIT_PROTOCOL.md)** — evidence gates, findings, security and release criteria.
+4. **[36 REQUIREMENTS & EVIDENCE MATRIX](docs/UCS_REQUIREMENTS_TRACEABILITY.md)** — verification not vague percentages.
+5. **[PARALLEL EXECUTION WORKPACKAGES](docs/UCS_DELIVERY_WORKPACKAGES.md)** — scoped engineering ownership, dependencies, accepted outputs.
+6. **[LIVE COMMAND CENTRE #1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1)** — statuses and precise blockers.
+
+Baseline **finalizes plan/scope**, not physical HMI functionality or customer acceptance. Weintek only; no PC/IPC/server runtime.
 
 ## Owner quick navigation
 | See this | Link |
