@@ -1,0 +1,18 @@
+Panel,Object_Recommended,EBPro_Object,Source_Tag,Data_Type,Access,Notes
+Heading,Site and UTC local time,Static Text + Numeric Display,RTC_SYSTEM,Read,ReadOnly,Use supported RTC system tags
+USB connected,Connection text and status,Bit Lamp + Word Lamp,UCS_USB_PRESENT,Bit,ReadOnly,Connected is not write-proven
+USB proof status,Status message,Word Lamp,UCS_USB_PROBE_STATE,UInt16,ReadOnly,0 not tested 1 fail 2 pass; show freshness
+Recorder status,Status code,Word Lamp,UCS_RECORDER_STATE,UInt16,ReadOnly,Status from independent persisted-record proof
+Meter coverage,Meter counter,Numeric Display,UCS_METERS_ONLINE,UInt16,ReadOnly,Collector ledger only; never infer from selected screen
+CPU load,Horizontal fill,Bar Graph + Numeric Display,SYS_CPU_LOAD,UInt16,ReadOnly,LW-9025 percent verify on model
+RAM load,Horizontal fill,Bar Graph + Numeric Display,SYS_RAM_LOAD,UInt16,ReadOnly,LW-11159 system percent
+History free,Free kB,Numeric Display,UCS_HISTORY_FREE_KB,UInt32,ReadOnly,LW-11460 two words
+USB free,Free kB,Numeric Display,UCS_USB_FREE_KB,UInt32,ReadOnly,LW-9076 two words
+Storage usage,Simple horizontal bar,Bar Graph,UCS_HISTORY_USED_PCT,UInt16,ReadOnly,Only when total/free valid; derived
+History first/last date,Date fields,ASCII Display or Numeric Display,UCS_FIRST_LAST_HISTORY,Derived,ReadOnly,Application historian query only
+Retention estimate,Days forecast,Numeric Display,UCS_RETENTION_DAYS,UInt16,ReadOnly,Requires actual daily storage measurements
+Backup state,Backup busy lamp,Bit Lamp,SYS_BACKUP_BUSY,Bit,ReadOnly,LB-9039
+Create backup,Explicit operator action,Backup (Trigger-based) or Function Key,EBPRO_BACKUP_OBJECT,Action,RoleGated,Prove target and data range on device
+Scheduled backup,Background object,Backup (Global),EBPRO_BACKUP_GLOBAL,ConfigOnly,Admin,Supported cMT/cMT X; verify physical
+Restore,Guarded management flow,Function Key + Confirm Dialog,UCS_RESTORE_REQUEST,Action,AdminOnly,Do not silently write destructive restore
+Data loss events,Event timeline,Event Display,UCS_EVENT_LOG,Event,ReadOnly,No manufactured records

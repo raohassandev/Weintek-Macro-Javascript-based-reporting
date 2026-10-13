@@ -276,6 +276,84 @@
       "limitations": "Backup workflow/remote disk restore and checksum compatibility are version-dependent; this document is not an uptime guarantee.",
       "open_questions": "Q10",
       "related_issue": "#18"
+    },
+    {
+      "source_id": "SRC-022",
+      "publisher": "WeintekUSA",
+      "authority": "vendor-manual",
+      "topic": "Official EasyBuilder Pro native UI Objects",
+      "url": "https://www.weintekusa.com/faq/",
+      "version_or_date": "2026 FAQ",
+      "claim": "Documents Bar Graph, XY Plot, Meter Display, Picture View, Bit/Word Lamp, JS Object and related HMI objects.",
+      "evidence_level": "MANUFACTURER_DOCUMENTED",
+      "limitations": "Donut charts or arbitrary HTML widgets not automatically native; use verified EBPro object types.",
+      "open_questions": "Q11",
+      "related_issue": "#19"
+    },
+    {
+      "source_id": "SRC-023",
+      "publisher": "WeintekUSA",
+      "authority": "vendor-support",
+      "topic": "Address Tag Library import format",
+      "url": "https://forum.weintekusa.com/t/why-cant-i-import-my-user-defined-tags-into-easybuilder-pro/624",
+      "version_or_date": "2023 support",
+      "claim": "Export 2–3 manually entered tags from target EBPro version, match CSV format before importing generated tags.",
+      "evidence_level": "VENDOR_SUPPORT",
+      "limitations": "Generic tag dictionary must not be passed as EBPro native importer CSV without exact exported template.",
+      "open_questions": "Q11",
+      "related_issue": "#19"
+    },
+    {
+      "source_id": "SRC-024",
+      "publisher": "Weintek",
+      "authority": "manufacturer-sdk",
+      "topic": "Local HMI USB file I/O API",
+      "url": "https://dl.weintek.com/public/Document/JS_Object_SDK/Current/module-%40weintek_libc_stdio.html",
+      "version_or_date": "JS SDK v6.09.01+",
+      "claim": "Local HMI JS provides fopen/fwrite/fread/fflush/fclose for external media; readback proof is feasible.",
+      "evidence_level": "MANUFACTURER_DOCUMENTED",
+      "limitations": "Must run Local HMI, exact model/version support uncertain; probe is not durable history verification.",
+      "open_questions": "Q12",
+      "related_issue": "#19"
+    },
+    {
+      "source_id": "SRC-025",
+      "publisher": "Weintek",
+      "authority": "manufacturer-sdk",
+      "topic": "JS filesystem cleanup and detection",
+      "url": "https://dl.weintek.com/public/Document/JS_Object_SDK/Current/module-%40weintek_filesystem.html",
+      "version_or_date": "JS SDK v6.09.01+",
+      "claim": "USB1/SD filesystem.exists/fileSize/remove APIs for scoped test media files.",
+      "evidence_level": "MANUFACTURER_DOCUMENTED",
+      "limitations": "Beware destructive removeAll on customer files; only delete uniquely named probe file.",
+      "open_questions": "Q12",
+      "related_issue": "#19"
+    },
+    {
+      "source_id": "SRC-026",
+      "publisher": "Weintek",
+      "authority": "manufacturer-release-note",
+      "topic": "New eMMC write rate system registers",
+      "url": "https://www.weintek.com/About/NewsDetail/TechNews-Vol.79",
+      "version_or_date": "Sep 09 2026",
+      "claim": "For cMT X with EBPro >=6.10.02.394 and OS >=July 15 2026, LW-12835 32-bit kB/min and LW-12837 status 0..4.",
+      "evidence_level": "MANUFACTURER_DOCUMENTED",
+      "limitations": "Do not display as supported on older OS/EBPro. Not external USB SSD SMART health.",
+      "open_questions": "Q13",
+      "related_issue": "#19"
+    },
+    {
+      "source_id": "SRC-027",
+      "publisher": "Weintek",
+      "authority": "manufacturer-manual",
+      "topic": "Data Sampling sync statuses and errors",
+      "url": "https://dl.weintek.com/public/EBPro/UserManual/eng/EasyBuilder-Pro-V61001-UserManual-eng.pdf",
+      "version_or_date": "EBPro 6.10.01",
+      "claim": "Configured Data Sampling status registers LW-n+1..+4 expose archive connection and errors; Backup (Global) available cMT.",
+      "evidence_level": "MANUFACTURER_DOCUMENTED",
+      "limitations": "Address n assigned by actual object config; no global fixed value or guaranteed durable sample acceptance.",
+      "open_questions": "Q12",
+      "related_issue": "#19"
     }
   ]
 }
