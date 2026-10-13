@@ -8,6 +8,15 @@
 - **Device proof:** nothing is DEVICE-PASS or CUSTOMER-ACCEPTED. Do not confuse status tags such as [COMPLETED PR#31] (planning documents) with a working SCADA.
 - **P0 genuine constraints:** exact SVRx/FHDx SKU/OS/EBPro, 61-meter native logging and storage, accepted report output, dynamic SQL/SQLite behavior; no silent PC/IPC fallback.
 
+## Explicit P0 blocker register (current, not old cMT model shortlist)
+| Question | Resolution gate | Current disposition |
+|---|---|---|
+| **Q01** | Identify exact SVRx/FHDx HMI SKU, OS and EBPro version | BLOCKED: device/model proof, [#2](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/2) |
+| **Q02** | Verify Advanced SQL syntax against USB/SD **Local SQLite** on target HMI | BLOCKED: custom SQL query path, [#3](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/3) |
+| **Q04** | Customer agrees HMI screens + CSV versus **mandatory branded PDF/print** | DECISION PENDING, [#8](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/8) |
+| **Q10** | Real Weintek-only 61-meter native sampling, USB/storage, backups and resource headroom | HARDWARE NOT RUN, [#17](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/17), [#18](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/18) |
+| **Q12** | On-Weintek actual custom report/PDF generator, no external PC runtime | UNKNOWN/UNSUPPORTED until device proof, [#8](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/8) |
+
 ## Findings and actions (external report reconciled)
 | Finding | Severity | Observed / limitation | Fix or resolution | Evidence state | Owner issue |
 |---|---|---|---|---|---|
