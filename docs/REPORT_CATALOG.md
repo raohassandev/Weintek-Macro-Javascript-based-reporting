@@ -34,14 +34,14 @@
 | RPT-21 | Custom search & drilldown | report parameters + tag selection | bounded date range, device/site filter, paging | Any |
 | RPT-22 | Customer-formatted compliance report | chosen metrics + approved template | controlled layout with signoff | PDF/print via proven route |
 
-## Portability and implementation levels
-| Tier | Target | Expected feature family | Caveat |
-|---|---|---|---|
-| T0 Native | Weintek standard Data Sampling + History Data Display + events | history/trend/alarm/backup, common tag values | Confirm exact HMI model and volume limits |
-| T1 Enhanced HMI | Supported cMT + SQL Query object + supported Macro/JS | filtered/paged records and bounded calculated summaries | Local SQLite and Advanced Mode combination **not yet proven**; no direct SQLite API assumed |
-| T2 External reporting | PC/IPC collector + SQLite/SQL + report renderer | cross-device/cross-site, longer retention, batch joins, advanced aggregations, XLSX/PDF/scheduled print | Separate runtime, storage backup and support cost; HMI integration proof required |
+## Weintek-only implementation tiers
+| Tier | On-device route | Scope & boundary |
+|---|---|---|
+| T0 | Native EBPro Data Sampling / History Data Display / Trend Display / Event Log | Validated native history and CSV/backup on named device; exact limits TBD |
+| T1 | JS Object / Macro / SQL Query (documented only) + bounded per-meter reports | Custom date filters/totals where supported; **Local SQLite Advanced custom SQL unverified** |
+| T2 | Not available until on-device R&D | Sophisticated joins, branded multipage PDF generation, unlimited cross-site history. **NO third-party PC/IPC/server allowed** |
 
-**Capability labels for actual deployments:** `UNTESTED`, `DOCUMENTED`, `SIMULATOR_PASS`, `DEVICE_PASS`, `CUSTOMER_ACCEPTED`. Actual site report `available=true` only when source tags, formula, storage and renderer are valid and accepted.
+A requested output requiring T2 functionality remains UNSUPPORTED / BLOCKED until an independently verified Weintek-only mechanism exists. `PDF Reader` opens PDFs, it does not generate them. Satisfying a report format must not silently add another computer.
 
 ## Report query request (abstract, not a Weintek SQL command)
 ```json

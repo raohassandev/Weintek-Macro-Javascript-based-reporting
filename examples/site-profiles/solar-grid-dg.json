@@ -9,14 +9,13 @@
     "missing_data_policy": "mark_gap"
   },
   "storage": {
-    "mode": "external_service",
+    "mode": "weintek_native",
     "retention_days": 365,
     "preferred_export": [
       "screen",
-      "csv",
-      "pdf"
+      "csv"
     ],
-    "note": "Illustrative routing only; real customer requirement not decided"
+    "note": "Illustrative Weintek-only route; exact local historian/storage and report performance NOT device verified."
   },
   "devices": [
     {
@@ -105,8 +104,7 @@
       ],
       "output": [
         "screen",
-        "csv",
-        "pdf"
+        "csv"
       ],
       "enabled": true,
       "availability": "planned"

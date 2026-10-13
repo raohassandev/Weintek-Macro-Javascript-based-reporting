@@ -29,10 +29,11 @@ class ProfileTests(unittest.TestCase):
         value["devices"][0]["metrics"][1]["aggregation"] = "avg_min_max"
         self.assertTrue(any("invalid for kind" in x for x in validate_profile(value, self.schema)))
 
-    def test_hmi_native_rejects_formatted_pdf_without_external_renderer(self):
+    def test_weintek_only_rejects_unverified_pdf(self):
         value = copy.deepcopy(self.profile)
-        value["storage"]["mode"] = "weintek_native"
-        self.assertTrue(any("cannot promise XLSX/PDF" in x for x in validate_profile(value, self.schema)))
+        value["reports"][1]["output"] = ["screen", "pdf"]
+        value["storage"]["preferred_export"].append("pdf")
+        self.assertTrue(any("unproven on Weintek-only" in x for x in validate_profile(value, self.schema)))
 
     def test_duplicate_metric_id(self):
         value = copy.deepcopy(self.profile)

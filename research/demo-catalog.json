@@ -1,0 +1,171 @@
+{
+  "source": "https://www.weintek.com/Download/DemoProject",
+  "accessed_date": "2026-10-13",
+  "rights_note": "Official public catalog listing. Do not mirror binary project files or copyrighted assets without verifying license/permission.",
+  "download_status": "CATALOG_ENTRIES_ONLY__BINARIES_NOT_OBTAINED",
+  "caution": "Manufacturer page presents demo entries with graphics and client-side controls; don't claim zip or EBPro projects downloaded, inspected, compiled or imported.",
+  "demos": [
+    {
+      "title": "cMT-FHDX-820 Demo Project",
+      "category": "Application",
+      "published_date": "2026-08-19",
+      "ucs_research_use": "Native FHDX capabilities, sample screens and Web Browser tile; review project once binary downloaded.",
+      "downloaded": false,
+      "extracted": false,
+      "hardware_tested": false
+    },
+    {
+      "title": "cMT-SVRX-820 Demo Project",
+      "category": "Application",
+      "published_date": "2023-10-05",
+      "ucs_research_use": "Headless HMI architecture and cMT Viewer defaults; verify before assuming SVRX-822 identical.",
+      "downloaded": false,
+      "extracted": false,
+      "hardware_tested": false
+    },
+    {
+      "title": "JS object x UAC Demo",
+      "category": "Part",
+      "published_date": "2024-07-04",
+      "ucs_research_use": "User account/login interaction, role-specific home decisions.",
+      "downloaded": false,
+      "extracted": false,
+      "hardware_tested": false
+    },
+    {
+      "title": "Trend Display",
+      "category": "Part",
+      "published_date": "2025-10-31",
+      "ucs_research_use": "Native long-historian trend chart capabilities.",
+      "downloaded": false,
+      "extracted": false,
+      "hardware_tested": false
+    },
+    {
+      "title": "Data Log Customized File Handling",
+      "category": "Part",
+      "published_date": "2026-01-23",
+      "ucs_research_use": "File naming/rotation and rollover research.",
+      "downloaded": false,
+      "extracted": false,
+      "hardware_tested": false
+    },
+    {
+      "title": "Event Log - Statistics",
+      "category": "Part",
+      "published_date": "2025-11-04",
+      "ucs_research_use": "Alarm/event historical reports.",
+      "downloaded": false,
+      "extracted": false,
+      "hardware_tested": false
+    },
+    {
+      "title": "Index Function",
+      "category": "Part",
+      "published_date": "2025-05-02",
+      "ucs_research_use": "One reusable meter page with per-client index validation.",
+      "downloaded": false,
+      "extracted": false,
+      "hardware_tested": false
+    },
+    {
+      "title": "SQL Query Multiple Result Demo",
+      "category": "Part",
+      "published_date": "2021-10-06",
+      "ucs_research_use": "How query results map to control/results registers (backend capabilities still to verify).",
+      "downloaded": false,
+      "extracted": false,
+      "hardware_tested": false
+    },
+    {
+      "title": "SQL Query",
+      "category": "Part",
+      "published_date": "2019-01-23",
+      "ucs_research_use": "Original SQL Query basics; not proof of arbitrary local SQLite Advanced Mode.",
+      "downloaded": false,
+      "extracted": false,
+      "hardware_tested": false
+    },
+    {
+      "title": "Dynamic Meter Demo",
+      "category": "Macro",
+      "published_date": "2016-12-14",
+      "ucs_research_use": "Reusable meter visualization and macros.",
+      "downloaded": false,
+      "extracted": false,
+      "hardware_tested": false
+    },
+    {
+      "title": "Show Trend Value with JS Object Demo",
+      "category": "Part",
+      "published_date": "2022-12-21",
+      "ucs_research_use": "Mixed JS Object and native Trend Display.",
+      "downloaded": false,
+      "extracted": false,
+      "hardware_tested": false
+    },
+    {
+      "title": "JS Object Read/Write Register Value",
+      "category": "Part",
+      "published_date": "2021-08-18",
+      "ucs_research_use": "JS device/register reads/writes; role security guard required.",
+      "downloaded": false,
+      "extracted": false,
+      "hardware_tested": false
+    },
+    {
+      "title": "Security Demo Project",
+      "category": "System",
+      "published_date": "2025-10-01",
+      "ucs_research_use": "Weintek UAC/security role behavior.",
+      "downloaded": false,
+      "extracted": false,
+      "hardware_tested": false
+    },
+    {
+      "title": "Alarm",
+      "category": "EasyBuilderX",
+      "published_date": "2026-09-16",
+      "ucs_research_use": "Newest EasyBuilder X (NOT EBPro) sample: avoid mixing formats.",
+      "downloaded": false,
+      "extracted": false,
+      "hardware_tested": false
+    },
+    {
+      "title": "Picture View",
+      "category": "Part",
+      "published_date": "2025-06-16",
+      "ucs_research_use": "Layering static background with live values.",
+      "downloaded": false,
+      "extracted": false,
+      "hardware_tested": false
+    },
+    {
+      "title": "Energy Demand Demo Project",
+      "category": "Part",
+      "published_date": "2016-06-30",
+      "ucs_research_use": "Relevant electrical demand examples.",
+      "downloaded": false,
+      "extracted": false,
+      "hardware_tested": false
+    },
+    {
+      "title": "Action Trigger",
+      "category": "Part",
+      "published_date": "2025-05-12",
+      "ucs_research_use": "Event-driven action design and global execution guards.",
+      "downloaded": false,
+      "extracted": false,
+      "hardware_tested": false
+    },
+    {
+      "title": "PDF Reader",
+      "category": "Part",
+      "published_date": "2025-05-08",
+      "ucs_research_use": "PDF display only, not generation.",
+      "downloaded": false,
+      "extracted": false,
+      "hardware_tested": false
+    }
+  ]
+}

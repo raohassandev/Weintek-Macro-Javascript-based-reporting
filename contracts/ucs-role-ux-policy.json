@@ -1,0 +1,150 @@
+{
+  "schema_version": "1.0",
+  "status": "DESIGN_ONLY_EBPRO_RUNTIME_UNTESTED",
+  "runtime_scope": {
+    "processing_hardware": [
+      "Weintek cMT-SVRX-820",
+      "Weintek cMT-SVRX-822",
+      "Weintek cMT-FHDX-820"
+    ],
+    "external_computer_allowed": false,
+    "storage": [
+      "qualified_usb_fat32",
+      "qualified_microsd",
+      "usb_ssd_only_after_qualification"
+    ]
+  },
+  "roles": {
+    "operator": {
+      "landing_screen": "OPERATOR_HOME",
+      "can_access": [
+        "OPERATOR_HOME",
+        "METER_DETAIL",
+        "METER_TRENDS",
+        "ALARM_CENTRE"
+      ],
+      "can_request_backup": false,
+      "can_restore": false
+    },
+    "engineer": {
+      "landing_screen": "ENGINEER_HOME",
+      "can_access": [
+        "ENGINEER_HOME",
+        "METER_DETAIL",
+        "METER_TRENDS",
+        "ALARM_CENTRE",
+        "METER_DIAGNOSTICS",
+        "RESOURCE_MANAGER",
+        "REPORTS"
+      ],
+      "can_request_backup": true,
+      "can_restore": false
+    },
+    "manager": {
+      "landing_screen": "MANAGEMENT_HOME",
+      "can_access": [
+        "MANAGEMENT_HOME",
+        "METER_DETAIL",
+        "METER_TRENDS",
+        "ALARM_CENTRE",
+        "REPORTS",
+        "RESOURCE_MANAGER"
+      ],
+      "can_request_backup": false,
+      "can_restore": false
+    },
+    "administrator": {
+      "landing_screen": "ENGINEER_HOME",
+      "can_access": [
+        "ENGINEER_HOME",
+        "MANAGEMENT_HOME",
+        "OPERATOR_HOME",
+        "METER_DETAIL",
+        "METER_TRENDS",
+        "ALARM_CENTRE",
+        "REPORTS",
+        "RESOURCE_MANAGER",
+        "METER_DIAGNOSTICS",
+        "COMMISSIONING"
+      ],
+      "can_request_backup": true,
+      "can_restore": true
+    }
+  },
+  "common_windows": [
+    "LOGIN_ROUTER",
+    "METER_DETAIL",
+    "METER_TRENDS",
+    "REPORTS",
+    "ALARM_CENTRE",
+    "RESOURCE_MANAGER"
+  ],
+  "notification_policy": {
+    "persist_before_notification": true,
+    "dedupe_keys": [
+      "device_id",
+      "event_type",
+      "active_interval_id"
+    ],
+    "ack_audit": true,
+    "snooze_applies_only_to_noncritical": true,
+    "notification_timeout_must_not_clear_event": true,
+    "default_modal_for_all_events": false,
+    "events": [
+      {
+        "id": "METER_COMM_LOST",
+        "operator": "badge",
+        "engineer": "banner",
+        "manager": "report_exception",
+        "always_log": true
+      },
+      {
+        "id": "CRITICAL_METERS_OFFLINE",
+        "operator": "popup",
+        "engineer": "popup",
+        "manager": "popup_if_business_impact",
+        "always_log": true
+      },
+      {
+        "id": "MEASUREMENT_LIMIT_EXCEEDED",
+        "operator": "popup_if_actionable",
+        "engineer": "banner",
+        "manager": "summary",
+        "always_log": true
+      },
+      {
+        "id": "HISTORIAN_PERSISTENCE_STOPPED",
+        "operator": "popup",
+        "engineer": "popup",
+        "manager": "popup_if_report_integrity_risk",
+        "always_log": true
+      },
+      {
+        "id": "STORAGE_MEDIA_DISCONNECTED",
+        "operator": "popup_if_recording_affected",
+        "engineer": "popup",
+        "manager": "popup_if_report_integrity_risk",
+        "always_log": true
+      },
+      {
+        "id": "BACKUP_VERIFY_FAILED",
+        "operator": "event_log",
+        "engineer": "banner",
+        "manager": "popup_if_reporting_risk",
+        "always_log": true
+      },
+      {
+        "id": "BACKUP_VERIFIED",
+        "operator": "silent",
+        "engineer": "event_log",
+        "manager": "silent",
+        "always_log": true
+      }
+    ]
+  },
+  "notes": [
+    "Weintek UAC, Event Log, Alarm Display and Action Trigger must be configured in EBPro and bench tested. This JSON is a planning contract, not importable EBPro source.",
+    "Privileged actions are authorized by HMI backend/UAC, not a client-side JS visibility condition.",
+    "Alarm events must be logged even if clients are offline or no window open."
+  ]
+}

@@ -13,6 +13,9 @@
 | **All R&D sources and vendor web links** | [Research Library](research/INDEX.md) |
 | **Authoritative issue/task tracking** | [Command Centre #1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1) |
 
+## Approved scope (2026-10-13)
+**All processing and history are Weintek-only**: cMT-SVRX / cMT-FHDX, attached USB/SD/qualified SSD, no external computer runtime. [Revised architecture](docs/VISUAL_PLAN.md) · [Role-specific home screens](docs/ROLE_BASED_UX_PLAN.md) · [Web HTML feasibility](research/WEINTEK_HTML_FEASIBILITY.md) · [Official demo project review](research/DEMO_PROJECTS_REVIEW.md).
+
 ## System at a glance
 ```mermaid
 flowchart LR
@@ -20,7 +23,7 @@ flowchart LR
   B --> C["Universal Historian + Report Definitions"]
   C --> D["HMI History / Trends"]
   C --> E["CSV / Excel-compatible output"]
-  C --> F["Optional external PDF / Print service"]
+  C --> F["On-device reports / proven exports"]
 ```
 
 **Site dependent:** actual devices/register maps, metric types, timezone, sample and retention settings, report selection, output.  
@@ -35,7 +38,7 @@ flowchart LR
 - [Worker protocol](docs/WORKER_PROTOCOL.md) · [AI/contributor rules](AGENTS.md)
 
 ## Safety/feature honesty
-Weintek manufacturer release notes confirm SQL Query can access SQLite on USB/SD for supported cMT devices. The exact combination **SQL Query Advanced Mode + Local SQLite** remains unverified; older manuals describe Advanced custom SQL mainly with MySQL/MS SQL. Do not assume unrestricted SQLite APIs in Macro/JavaScript or unrestricted access to HMI native log files. A formatted multipage PDF is a separately verified export capability, typically via external reporting service. Never treat `SUM(kW)` as energy kWh.
+Weintek manufacturer release notes confirm SQL Query can access SQLite on USB/SD for supported cMT devices. The exact combination **SQL Query Advanced Mode + Local SQLite** remains unverified; older manuals describe Advanced custom SQL mainly with MySQL/MS SQL. Do not assume unrestricted SQLite APIs in Macro/JavaScript or unrestricted access to HMI native log files. A formatted multipage PDF remains UNPROVEN as an on-device Weintek generation feature; no external PC/IPC is permitted. Never treat `SUM(kW)` as energy kWh.
 
 No real customer data, credentials, fabricated test results, or copied proprietary manuals in this public repository.
 

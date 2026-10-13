@@ -34,7 +34,7 @@ flowchart LR
 - `devices` include protocol, a non-secret endpoint alias, and `metrics` tied to site tags.
 - Every metric declares `kind`: `sample`, `counter`, `state`, `event`, `transaction`; correct aggregation is not inferred from unit alone.
 - `reports` use stable IDs from [REPORT_CATALOG](REPORT_CATALOG.md), reference metric IDs and request allowable output and reporting periods.
-- `storage.mode`: `weintek_native`, `hmi_local_sql_query` or `external_service` describes intended implementation route, **not** a guarantee the target HMI supports it.
+- `storage.mode`: `weintek_native`, `hmi_local_sql_query` (no external service allowed) describes intended implementation route, **not** a guarantee the target HMI supports it.
 - `availability` is `planned` by default; promote to device/customer accepted only with evidence.
 
 ## Example files (fictional, not actual customer data)
@@ -49,7 +49,10 @@ To onboard a site, clone an example, change site/device IDs, source tag identifi
 - Unique device IDs, metric IDs and report IDs per site.
 - Each report metric reference must resolve to exactly one declared metric.
 - `sample` should use `avg_min_max` or `raw_only`; `counter` uses `delta_reset_aware`; `state` uses `duration_from_transitions`; `event` uses `event_count`; `transaction` uses `transaction_sum`.
-- `pdf`/`xlsx` output on `weintek_native` requires external renderer or must be rejected; requested output must exist in `storage.preferred_export`.
+- `pdf`/`xlsx` output on `weintek_native` requires a verified on-device renderer; currently must be rejected; requested output must exist in `storage.preferred_export`.
 - `availability` for an example remains `planned` despite passing a JSON validator; validation is not physical proof.
 
-**Hard engineering boundary:** This schema is OUR portable application configuration, **not** an EBPro native CSV/JSON project import format. A separate adapter is needed to configure EasyBuilder Pro, SQL Query or an external reporting service. Full write-access/SQL query APIs must not be presumed.
+**Hard engineering boundary:** This schema is OUR portable application configuration, **not** an EBPro native CSV/JSON project import format. A separate adapter is needed to configure EasyBuilder Pro, SQL Query within the Weintek native runtime. Full write-access/SQL query APIs must not be presumed.
+
+## 2026-10-13 runtime policy
+**Weintek-only**: no external-service mode. Site profiles may request native sampling or an HMI-local SQL Query path (capability still to be tested). XLSX and styled PDF cannot be enabled until proven on the exact on-device firmware. Historical designs using external collector/PC are superseded.

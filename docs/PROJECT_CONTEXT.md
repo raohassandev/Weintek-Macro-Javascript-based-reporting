@@ -1,6 +1,15 @@
 # Project context — handoff document
 **Last updated:** 2026-10-13. **Source:** project owner conversation and verified product references. **Command Centre:** [#1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1).
 
+## Latest hard requirement from owner — 2026-10-13
+- Owner inspected GitHub VISUAL_PLAN.md and explicitly rejected **PC / IPC collection + report service**; all real-time acquisition, logging, reports, graphics, exports must run on **Weintek SVRx/FHDx only**, with USB/SD/qualified USB-SSD storage. Existing previous PC/IPC suggestions are superseded.
+- User home screens must be separate for Operator (live monitoring), Engineer (maintenance, communications), Management (KPIs, executive reports). Each screen must completely serve its purpose; resources/storage aren't routine management homepage widgets.
+- Important context-matched events pop up for relevant user only and remain persisted in alarms/events; avoid popups for every technical note.
+- User supplied manufacturer [DemoProject catalog](https://www.weintek.com/Download/DemoProject). Curated [R&D review](../research/DEMO_PROJECTS_REVIEW.md) and [demo index](../research/demo-catalog.json).
+- Investigate direct HTML/CSS/JS pages from HMI flash/USB/SD. Official Weintek: JS Object is Canvas not DOM; PLC Web Browser on some FHDX local screens is CPU-heavy; EasyWeb/WebView is remote native HMI viewer; separate FHDX-820 (W) is Chromium HTML5 browser product, not equivalent full EBPro runtime. Actual local `file://` path remains unproven. [Research & offline probe](../research/WEINTEK_HTML_FEASIBILITY.md).
+- Two new implementation issues architecture #23, role home #24, HTML R&D #25.
+- Always treat device physics and built-in retention as mandatory validation gates, not as assumed.
+
 ## Latest management UI directive — 2026-10-13
 - The actual management user rejects blue SCADA theme; use restrained **light executive** off-white and muted green/gray, not dark dashboards. Save screen/source assets in GitHub for EBPro engineer: vector preview, background-only SVG-to-PNG renderer, native EBPro object map, register tags and macro/JS files.
 - Separate storage **CONNECTED** (`LB-12048`) from **WRITABLE/READBACK VERIFIED** and **HISTORY ACTUALLY RECORDING**, all time-bounded proofs; a plugged USB is not sufficient to show healthy.

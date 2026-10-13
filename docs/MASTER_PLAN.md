@@ -28,10 +28,13 @@ Agree timestamp convention, schema, data source, indexes and retention; implemen
 Macro/JS orchestration, cancellation/timeout, paginated results, date range, site/device filter, units, stale/missing-data indication. Record actual device performance rather than estimates.
 
 ### M4 — Customer output formats
-Verify on-HMI CSV; if needed implement PC/IPC pdf template with pagination and reconciliation. Clearly identify which device/host generates and stores each artifact.
+Verify on-HMI CSV; if needed implement Weintek-only tested PDF workflow with pagination and reconciliation. Clearly identify which device/host generates and stores each artifact.
 
 ### M5 — QA & acceptance
 Regression suite plus real HMI proof on specified model. Failure scenarios, restore, power cut, USB absent/full, clock/DST, long queries, quality flags and report reconciliation. Produce release guide and formal customer acceptance.
+
+## 2026-10-13 owner hard boundary
+**No external PC/IPC or server runtime.** Roles/screens: three specialized home pages, common 61-meter detail, shared reports/trends, diagnostics and occasional resource manager. Critical notifications only role-filtered; events always logged. HTML5 support is different from JS Object/PLC Web Browser/WebView; local USB HTML rendering remains a POC. See [visual](VISUAL_PLAN.md) and [HTML](../research/WEINTEK_HTML_FEASIBILITY.md).
 
 ## Dependencies and staffing
 HW validation gates deployment promises, but SQL schema fixtures and UX prototypes are parallel; reports can be prototyped with synthetic **clearly labeled test** data. JS/macro integration waits on genuine versioned register map. PDF service evaluation is independent of SQL proof.

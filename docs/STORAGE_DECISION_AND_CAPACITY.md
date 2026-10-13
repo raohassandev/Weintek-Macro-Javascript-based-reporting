@@ -1,71 +1,43 @@
-# UCS — 61 meter storage architecture, compatibility, and capacity policy
-**Architecture proposal**, not a FAT32 USB-SSD device qualification. Decision pending exact cMT-SVRX/FHDX target and user requirement. [CC #1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1), [storage issue #18](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/18), [resource screen #19](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/19).
+# Weintek-only UCS storage and backup decision — 61 analyzers
+**Current direction:** no additional PC / IPC / external SQL server. This supersedes any prior IPC historian architecture described in older design commits. [Visual](VISUAL_PLAN.md) · [Resource Manager](RESOURCE_STORAGE_MANAGER_SCREEN.md) · [HTML R&D](../research/WEINTEK_HTML_FEASIBILITY.md).
 
-## Hardware facts versus feasibility assumptions
-- cMT-SVRX-822 and cMT-FHDX-820: **4 GB built-in Flash, 1 GB RAM, 1 × USB 2.0 Host, 1 × microSD** per Weintek product specs. Neither model's specifications list an internal SATA/NVMe SSD bay.
-- Manufacturer field support: USB/SD should use **FAT32**; NTFS and exFAT are not the standard supported writable media format. FAT32 has per-file ~4 GiB limit, so rotate files rather than create one massive historian database.
-- A USB-connected SSD inside a USB Mass Storage enclosure **might work** when appropriately powered and FAT32-formatted. **Vendor approval, controller compatibility, bus power, reattachment, USB mass storage behavior, and write recovery are not yet proven** on this project. Avoid recommending a specific SSD enclosure without test.
-- Both units have a **single** USB host connector: connecting a USB SSD continuously reduces availability for other USB peripherals or removable backup. A powered hub is not a guaranteed supported workaround; verify separately.
-- Weintek Product Security guide recommends external USB/SD or database synchronization for backups; also advises preparing for flash/USB/SD wear and enabling checksums where supported.
-- **No system-tag can report SSD wear or SMART health through the HMI USB host by default**; if an external IPC/collector owns SSD, those disk SMART/temperature/health statistics must come from its monitored OS/service.
-
-## Three legitimate topologies
+## Approved physical setup (pending actual Weintek hardware proof)
 ```mermaid
 flowchart TB
- METERS["61 Energy Analyzers"] --> CORE["Weintek SVRx / FHDx: Visualization, Alerts, Native Data Sampling"]
- CORE -->|USB2 Host, FAT32 tested media| USBD["A: Industrial USB / qualified USB-SSD: local history + export"]
- METERS -->|independent poller| IPC["B: IPC / collector + SQL historian"]
- IPC --> SSD["Industrial SATA/NVMe SSD: continuous records & comm gaps"]
- SSD --> BAK["NAS / second disk / remote backup: independent restore"]
- CORE -. "only if documented integration proven" .-> IPC
- USBD -. "scheduled, verified backup" .-> BAK
+  M["61 energy analyzers"] --> W["cMT-SVRX / cMT-FHDX Weintek UCS"]
+  W --> DS["HMI-native Data Sampling + Event/Operation Log"]
+  DS --> USB["HMI USB2 / microSD / physically qualified USB-SSD (FAT32)"]
+  USB --> BACKUP["Rotated, checksum-verified backup on separate removable media"]
+  W --> R["Per-role screens + validated on-device report logic"]
+  DS --> R
 ```
+An independent removable archive does not execute software. An **industrial SSD in an untested USB enclosure is not a guaranteed Weintek feature**; qualify filesystem, power, detection, write/read, removal/recovery, and flash endurance. No internal SATA/NVMe slot is claimed.
 
-**Preferred for demanding 61-meter, years-of-history, SQL reporting: B, while retaining HMI-local optional buffer/export for resilience.** For a limited retention HMI-only PoC, begin with **A using FAT32 industrial-grade USB**; test USB SSD as a separate media compatibility option, not a promised feature. The exact bill of materials follows measured sample rate and report retention requirement.
+## Source facts and constraints
+- SVRX-822/FHDX-820 specs: 1×USB2 host and 1×microSD, 4GB flash and 1GB RAM. 1×USB port can be occupied by historian media, complicating local backup.
+- Manufacturer support generally recommends FAT32; ~4GiB maximum single file; design bounded rotation and never single unlimited SQLite journal.
+- Verify mounted, writable **and** last persisted sample timestamp advancing. Presence = `LB-12048` is insufficient.
+- Track `MEDIA_ABSENT`, `MEDIA_READONLY`, `WRITE_FAILED`, `LOW_SPACE`, `BACKUP_FAILED`, `RECOVERED`; record exact start/end plus per-meter gaps separately.
+- Guarantee of *no missing records* cannot be made when meter/network/recorder lacks power. Always record missing intervals and measured data coverage.
 
-## Loss/gap semantics and auditability
-- Every meter has stable `device_id`, independent polling, `last_attempt_at`, `last_good_at`, `quality`, `source_timestamp`, `stored_at`, and a reason code.
-- Persist **missing-data intervals** and communication attempts as distinct events; never manufacture zero kW when a meter is offline.
-- Separate `COLLECTOR_OFFLINE`, `METER_NO_RESPONSE`, `MODBUS_EXCEPTION`, `USB_REMOVED`, `STORAGE_WRITE_FAILURE`, `LOW_DISK`, `CORRUPT_FILE`, `BACKUP_VERIFY_FAILED`, and `RECOVERED`.
-- HMI screen selection has no influence on how many meters are logged. No system can guarantee samples while both the meter and recorder are powerless; use UPS, bounded buffering and data-quality/coverage reports to give truthful evidence.
-- Record *two clocks*: device sample timestamp (if available) and historian receive/write times; clock sync and time zone require explicit policy.
+## Capacity model (not imaginary GB estimates)
+- Live 61-meter logging must be tested at chosen interval on named SVRX/FHDX model with real EBPro software.
+- `daily_growth_bytes`: measured rolling growth of log files + event logs + indices/metadata; compare short-term and rolling-week median.
+- `usable_free_bytes`: detected media free minus reserved headroom, pending file rotations and backup staging.
+- Estimate remaining days from **measured positive growth** only. If no growth data or auto-purge/rotation is active, show retention policy and observed free-space margin; do not fabricate a fixed 218/245-day forecast.
+- Report first/last **actually persisted** records, count of valid/bad/missing expected samples, and periods of lost communication; do not interpret date span as 100% capture.
 
-## Capacity / retention calculations (not HMI system tags)
-**Do not invent capacity.** On commissioning take an actual min 3–7 day dataset with known sample rate and compression/storage layout. Record:
-- `usable_free_bytes`: current storage available minus emergency reserved margin and active filesystem needs. HMI USB free: `LW-9076` (KBytes, UINT32); external IPC free via separate agent/API.
-- `daily_growth_bytes`: robust rolling median of *actual persisted* daily file/database size growth, including SQLite WAL, indices, metadata, event logs and alarms.
-- `days_until_full = floor(max(0, usable_free_bytes) / max(daily_growth_bytes, 1))` (only display when growth sample is adequate and > 0).
-- `estimated_history_days = date(latest_stored) - date(earliest_stored)` vs `data_coverage = good_observed / expected` measured over the same interval. Oldest/last timestamp are **application database queries**, not Weintek system registers.
-- `bytes_per_meter_per_day` and monthly rollups derived from storage samples; forecast include retention pruning, backup staging space, WAL and safety margin, not a fixed compression assumption.
-- If retention auto-purge is enabled, "full in X days" is often misleading; display **retention target, expected reclaimed space, free-space runway and next cleanup separately**.
+## Backup / restore
+Native `Backup (Global)` / `Backup (Trigger-based)` and media support are *candidate Weintek methods*; backup verification needs actual created files, per-file checksum/integrity check and restoration rehearsal. USB SSD is not an independent backup if primary and copy remain on same disk. Use a second periodically swapped removable medium or alternative manufacturer-supported **non-computer** backup destination only after proof.
 
-### Retention state machine
-```mermaid
-flowchart LR
- HEALTHY["Writable + below warning threshold"] -->|remaining days under threshold| WARNING["Near capacity: warn operator"]
- WARNING -->|operator backup verified and retention allows| PRUNE["Archive/rotate oldest eligible files"]
- PRUNE -->|post-archive integrity checked| HEALTHY
- HEALTHY -->|media removed / IO error| BROKEN["Recorder degraded: write failures & incident log"]
- BROKEN -->|media returned and integrity checks pass| RECOVER["Resume + report exact missing interval"]
- RECOVER --> HEALTHY
-```
+Restore must be Admin-only with preflight, backup of current data and documented acknowledgement. Do not present restore on Manager daily home. Critical storage/recorder failures alert Engineer and, if report coverage at risk, Manager; routine media usage lives on Resource Manager.
 
-## Backup / restore safety
-1. Create consistent snapshot / export, independent destination preferred. For SQLite host DB use proper online-backup API or safe checkpoint, not an unsafe blind copy of a live DB.
-2. Compute checksum and verify it after copying. Record `last_verified_backup_at`, backup file range, location, bytes and success/failure.
-3. An action to **Restore** is always admin-gated, confirms scope, stops writers/quiesces dependent readers, and creates a rollback snapshot. Avoid one-click destructive restore from GUI.
-4. Device-safe flush/shutdown must use the documented HMI mechanism (Weintek security manual mentions `LB-9034` before shutdown), but does not substitute for UPS+backup.
-5. Independent periodic NAS/off-device copies, retention and recovery drills; an SSD is **not itself a backup**.
+## Acceptance gate
+1. Qualified external media + mount/write/read/last durable record verification.
+2. 61-meter logging independent of viewer selection at agreed sample period.
+3. USB removed/reattached/full, abnormal shutdown, write errors and clock change tests.
+4. Retention/capacity graph matches measured data, correct quality coverage, backup file recovery verified.
+5. Management receives business exception notification; no constant infrastructure clutter.
 
-## Commissioning selection criteria (simple)
-- 2-meter test initially: local FAT32 USB read/write + disconnect, power cut recovery and file integrity; query earliest/latest sample.
-- Expand to 61 and realistic polling/retention: measure actual bytes/day and I/O latency, not estimated 4GB/32GB marketing claims.
-- Decide HMI-only vs IPC SSD based on read/write stability, retention need, report complexity and recovery evidence.
-- No speed/storage “PASS” until actual device, firmware, storage model/enclosure, filesystem, run ID and observed logs are saved.
-
-## Primary sources
-- [cMT-SVRX-822 Weintek specs](https://www.weintek.com/Product/Model/cMT-SVRX-822)
-- [cMT-FHDX-820 Weintek specs](https://www.weintek.com/Product/Model/cMT-FHDX-820)
-- [WeintekUSA FAT32 media compatibility](https://forum.weintekusa.com/t/usb-project-download-upload-dos-and-donts/1848)
-- [Weintek Product Security guide: history backup and checksums](https://dl.weintek.com/public/Document/UM0/Product-Security-User-Manual-eng.pdf)
-- [EasyBuilder Pro system registers chapter](https://dl.weintek.com/public/EBPro/UserManual/eng/UserManual_separate_chapter/Chapter-22-System-Registers-UserManual-eng.pdf)
+## References
+[Official cMT-SVRX](https://www.weintek.com/Product/Model/cMT-SVRX-822) · [cMT-FHDX](https://www.weintek.com/Product/Model/cMT-FHDX-820) · [Weintek System Registers](https://dl.weintek.com/public/EBPro/UserManual/eng/UserManual_separate_chapter/Chapter-22-System-Registers-UserManual-eng.pdf) · [Weintek Product Security manual](https://dl.weintek.com/public/Document/UM0/Product-Security-User-Manual-eng.pdf)
