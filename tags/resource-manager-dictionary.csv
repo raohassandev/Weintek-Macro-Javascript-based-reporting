@@ -3,8 +3,6 @@ UCS_USB_PRESENT,Local HMI,Bit,LB,12048,BOOL,RO,,USB1 exists only
 UCS_USB_LOW_SPACE,Local HMI,Bit,LB,9037,BOOL,RO,,Low space warning
 UCS_USB_FREE_KB,Local HMI,Word,LW,9076,UINT32,RO,kB,2 words unsigned
 UCS_HMI_FREE_KB,Local HMI,Word,LW,9072,UINT32,RO,kB,2 words unsigned
-UCS_SD_PRESENT,Local HMI,Bit,LB,12050,BOOL,RO,,SD inserted
-UCS_SD_FREE_KB,Local HMI,Word,LW,9074,UINT32,RO,kB,2 words unsigned
 UCS_HISTORY_TOTAL_KB,Local HMI,Word,LW,11458,UINT32,RO,kB,HMI history allocation not full flash
 UCS_HISTORY_FREE_KB,Local HMI,Word,LW,11460,UINT32,RO,kB,HMI history allocation free
 SYS_CPU_LOAD,Local HMI,Word,LW,9025,UINT16,RO,%,Verify model and OS

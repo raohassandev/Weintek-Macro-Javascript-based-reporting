@@ -1,6 +1,6 @@
 # UCS — one-page owner dashboard (Weintek ONLY)
 
-**Plan finalized for implementation/audit as v1.0 (not hardware-deployed):** [Main Plan](UCS_FINAL_MASTER_PLAN.md) · [AI Handoff](AI_AGENT_EXECUTION_BRIEF.md) · [Acceptance](UCS_REQUIREMENTS_TRACEABILITY.md) · [Work Packages](UCS_DELIVERY_WORKPACKAGES.md)
+**Planning freeze PR #39 review, then independent plan audit #38; implementation ON HOLD.** [External audit findings](PLAN_AUDIT.md). **Baseline v1.0 (not hardware-deployed):** [Main Plan](UCS_FINAL_MASTER_PLAN.md) · [AI Handoff](AI_AGENT_EXECUTION_BRIEF.md) · [Acceptance](UCS_REQUIREMENTS_TRACEABILITY.md) · [Work Packages](UCS_DELIVERY_WORKPACKAGES.md)
 Aap ko lambi technical reports nahi parhni; yeh 1 screen ka status aur decisions hain. [CC #1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1) · [Diagram](VISUAL_PLAN.md) · [Role home UX](ROLE_BASED_UX_PLAN.md) · [HTML R&D](../research/WEINTEK_HTML_FEASIBILITY.md).
 
 ## Our implementation boundary
@@ -23,7 +23,7 @@ flowchart LR
 
 ## HTML result: 3 features, not one
 - **JS Object Canvas**: supported customizable visuals in EBPro; NOT arbitrary HTML page execution. **Preferred** for rich UCS views.
-- **PLC Web Browser**: selected models' local screen displays URL content; local USB HTML file **not proven**, SVRX headless/cMT Viewer not an equivalent browser.
+- **PLC Web Browser**: explicitly **NOT supported on selected FHDX-220** (the manufacturer matrix lists FHDX-820). USB HTML is not a 220 implementation route.
 - **cMT-FHDX-820 (W)**: different Weintek HTML5 Web Panel with Chromium. It is not automatically a native EBPro historian; without approved source/Weintek-only data bindings, do not switch to it.
 - EasyWeb/WebView **remote HMI rendering**, not custom HTML server.
 
@@ -33,4 +33,4 @@ flowchart LR
 - Real meter/acquisition, USB HTML, physical HMI file writing, 61-device performance, report completeness **NOT YET ACCEPTED**.
 
 ## Human input when needed
-Model label and EBPro/firmware when practical; engineering handles vendor manuals, tests, code and board. Do not ask user to type long test logs.
+Exact FHDX-220 model already selected; EBPro/firmware details only when required for post-audit hardware validation; engineering handles vendor manuals, tests, code and board. Do not ask user to type long test logs.

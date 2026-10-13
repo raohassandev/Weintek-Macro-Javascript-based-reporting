@@ -1,0 +1,292 @@
+{
+  "$schema_version": "1.0",
+  "purpose": "Synthetic energy-calculation reference cases for auditing Weintek UCS report semantics. NOT HMI execution evidence.",
+  "policy": {
+    "timestamp": "offset-aware ISO 8601, converted to UTC for differences",
+    "units": "power kW and energy kWh",
+    "no_data": "null with bad quality is absent, numeric zero with GOOD is real 0",
+    "power_method": "trapezoidal integration only where both endpoints are GOOD and span<=max_gap_seconds",
+    "counter_method": "successive monotonic cumulative kWh values can recover total energy across a comms gap, but time distribution is unknown",
+    "reset": "explicit reset_before on current sample discards unmeasurable reset crossing",
+    "rollover": "requires explicitly configured modulus AND rollover_before; never infer from negative jump",
+    "audit": "No silent gap imputation, negative counter jump without marker is failure"
+  },
+  "cases": [
+    {
+      "id": "E01_MONOTONIC_COUNTER",
+      "method": "counter",
+      "samples": [
+        {
+          "at": "2026-10-10T00:00:00Z",
+          "value": 1000,
+          "quality": "GOOD"
+        },
+        {
+          "at": "2026-10-10T01:00:00Z",
+          "value": 1012.5,
+          "quality": "GOOD"
+        }
+      ],
+      "expected_kwh": "12.5",
+      "covered_seconds": 3600,
+      "warnings": []
+    },
+    {
+      "id": "E02_COUNTER_RESET_EXPLICIT",
+      "method": "counter",
+      "samples": [
+        {
+          "at": "2026-10-10T00:00:00Z",
+          "value": 985,
+          "quality": "GOOD"
+        },
+        {
+          "at": "2026-10-10T01:00:00Z",
+          "value": 990,
+          "quality": "GOOD"
+        },
+        {
+          "at": "2026-10-10T02:00:00Z",
+          "value": 0.7,
+          "quality": "GOOD",
+          "reset_before": true
+        },
+        {
+          "at": "2026-10-10T03:00:00Z",
+          "value": 3.1,
+          "quality": "GOOD"
+        }
+      ],
+      "expected_kwh": "7.4",
+      "covered_seconds": 7200,
+      "warnings": [
+        "COUNTER_RESET_INTERVAL_EXCLUDED"
+      ]
+    },
+    {
+      "id": "E03_COUNTER_ROLLOVER_KNOWN",
+      "method": "counter",
+      "modulus": "10000",
+      "samples": [
+        {
+          "at": "2026-10-10T00:00:00Z",
+          "value": 9998.5,
+          "quality": "GOOD"
+        },
+        {
+          "at": "2026-10-10T01:00:00Z",
+          "value": 1.25,
+          "quality": "GOOD",
+          "rollover_before": true
+        }
+      ],
+      "expected_kwh": "2.75",
+      "covered_seconds": 3600,
+      "warnings": [
+        "COUNTER_ROLLOVER"
+      ]
+    },
+    {
+      "id": "E04_COUNTER_UNEXPLAINED_DROP",
+      "method": "counter",
+      "samples": [
+        {
+          "at": "2026-10-10T00:00:00Z",
+          "value": 100,
+          "quality": "GOOD"
+        },
+        {
+          "at": "2026-10-10T01:00:00Z",
+          "value": 90,
+          "quality": "GOOD"
+        }
+      ],
+      "expected_error": "UNEXPLAINED_COUNTER_DROP"
+    },
+    {
+      "id": "E05_TRAPEZOID_POWER",
+      "method": "power",
+      "max_gap_seconds": 1200,
+      "samples": [
+        {
+          "at": "2026-10-10T00:00:00Z",
+          "value": 10,
+          "quality": "GOOD"
+        },
+        {
+          "at": "2026-10-10T00:15:00Z",
+          "value": 20,
+          "quality": "GOOD"
+        },
+        {
+          "at": "2026-10-10T00:30:00Z",
+          "value": 30,
+          "quality": "GOOD"
+        }
+      ],
+      "expected_kwh": "10",
+      "covered_seconds": 1800,
+      "warnings": []
+    },
+    {
+      "id": "E06_POWER_WITH_LONG_GAP",
+      "method": "power",
+      "max_gap_seconds": 600,
+      "samples": [
+        {
+          "at": "2026-10-10T00:00:00Z",
+          "value": 10,
+          "quality": "GOOD"
+        },
+        {
+          "at": "2026-10-10T00:05:00Z",
+          "value": 20,
+          "quality": "GOOD"
+        },
+        {
+          "at": "2026-10-10T00:20:00Z",
+          "value": 30,
+          "quality": "GOOD"
+        }
+      ],
+      "expected_kwh": "1.25",
+      "covered_seconds": 300,
+      "warnings": [
+        "POWER_GAP_EXCLUDED"
+      ]
+    },
+    {
+      "id": "E07_REAL_ZERO_NOT_MISSING",
+      "method": "power",
+      "max_gap_seconds": 900,
+      "samples": [
+        {
+          "at": "2026-10-10T00:00:00Z",
+          "value": 0,
+          "quality": "GOOD"
+        },
+        {
+          "at": "2026-10-10T00:10:00Z",
+          "value": 0,
+          "quality": "GOOD"
+        },
+        {
+          "at": "2026-10-10T00:20:00Z",
+          "value": null,
+          "quality": "COMM_TIMEOUT"
+        }
+      ],
+      "expected_kwh": "0",
+      "covered_seconds": 600,
+      "warnings": [
+        "BAD_QUALITY_INTERVAL"
+      ]
+    },
+    {
+      "id": "E08_COUNTER_ACROSS_COMM_GAP",
+      "method": "counter",
+      "max_gap_seconds": 300,
+      "samples": [
+        {
+          "at": "2026-10-10T00:00:00Z",
+          "value": 200,
+          "quality": "GOOD"
+        },
+        {
+          "at": "2026-10-10T02:00:00Z",
+          "value": 221,
+          "quality": "GOOD"
+        }
+      ],
+      "expected_kwh": "21",
+      "covered_seconds": 7200,
+      "warnings": [
+        "COUNTER_INTERVAL_DISTRIBUTION_UNKNOWN"
+      ]
+    },
+    {
+      "id": "E09_TZ_OFFSET_BOUNDED",
+      "method": "counter",
+      "samples": [
+        {
+          "at": "2026-12-31T23:45:00+05:00",
+          "value": 2000,
+          "quality": "GOOD"
+        },
+        {
+          "at": "2027-01-01T00:15:00+05:00",
+          "value": 2001.5,
+          "quality": "GOOD"
+        }
+      ],
+      "expected_kwh": "1.5",
+      "covered_seconds": 1800,
+      "warnings": []
+    },
+    {
+      "id": "E10_SIGNED_POWER_NOT_AUTOMATIC_IMPORT",
+      "method": "power",
+      "max_gap_seconds": 3600,
+      "samples": [
+        {
+          "at": "2026-10-10T00:00:00Z",
+          "value": -10,
+          "quality": "GOOD"
+        },
+        {
+          "at": "2026-10-10T01:00:00Z",
+          "value": -20,
+          "quality": "GOOD"
+        }
+      ],
+      "expected_kwh": "-15",
+      "covered_seconds": 3600,
+      "warnings": [
+        "SIGNED_DIRECTION_MUST_BE_DECLARED"
+      ]
+    },
+    {
+      "id": "E11_BAD_COUNTER_VALUE",
+      "method": "counter",
+      "samples": [
+        {
+          "at": "2026-10-10T00:00:00Z",
+          "value": 500,
+          "quality": "GOOD"
+        },
+        {
+          "at": "2026-10-10T01:00:00Z",
+          "value": null,
+          "quality": "COMM_TIMEOUT"
+        },
+        {
+          "at": "2026-10-10T02:00:00Z",
+          "value": 506,
+          "quality": "GOOD"
+        }
+      ],
+      "expected_kwh": "0",
+      "covered_seconds": 0,
+      "warnings": [
+        "BAD_QUALITY_INTERVAL"
+      ]
+    },
+    {
+      "id": "E12_REVERSED_TIMESTAMPS",
+      "method": "counter",
+      "samples": [
+        {
+          "at": "2026-10-10T01:00:00Z",
+          "value": 10,
+          "quality": "GOOD"
+        },
+        {
+          "at": "2026-10-10T00:00:00Z",
+          "value": 11,
+          "quality": "GOOD"
+        }
+      ],
+      "expected_error": "NON_MONOTONIC_TIME"
+    }
+  ]
+}

@@ -1,6 +1,9 @@
 # UCS — Resource & Storage Manager (ONE reusable global window)
 **Target:** cMT-FHDX-220, one USB2 host and NO SD/microSD; 1920×1080 design target (actual EBPro resolution chosen after hardware screen tests). **Status:** visual/functional specification, *not* a loaded .emtp/.cmtp EasyBuilder Pro project. [Feature issue #19](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/19).
 
+## FHDX-220 design update
+**Approved 1080p design:** [Screen Design Brief](SCREEN_DESIGN_BRIEF_FHDX220.md). The old resource manager PNG/SVG files at 1600×900 are concept art only, not final 1920×1080 HMI ready layouts. **No SD card display or SD configuration** on FHDX-220. Show USB1 read/write, actual history persistence and backup as distinct freshness-qualified indicators, plus single port/touch conflict and safe recovery state. The USB1 live historian may not be disconnected casually for an independent backup; see [single-USB P0 design](FHDX220_SINGLE_USB_STORAGE_RISK.md).
+
 ## Operator-friendly full-screen layout
 ```mermaid
 flowchart TB

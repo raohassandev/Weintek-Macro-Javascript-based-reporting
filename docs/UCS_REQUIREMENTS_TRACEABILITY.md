@@ -11,6 +11,9 @@
 - **CUSTOMER-ACCEPTED:** agreed KPI, approved site report, signed handover.
 Any unobserved state is **NOT RUN**, never presumptive PASS.
 
+## PRE-IMPLEMENTATION HOLD
+**All 36 product requirements are still subject to exact hardware/EBPro verification after independent plan audit.** [Design Freeze #37](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/37) → [Independent Plan Audit #38](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/38) → owner authorization → EBPro implementation. The **cMT-FHDX-220** is selected, but actual OS/firmware/installed EBPro remain unknown. See [1080p Screen Design](SCREEN_DESIGN_BRIEF_FHDX220.md) and [USB-only backup feasibility](FHDX220_SINGLE_USB_STORAGE_RISK.md). Don't mark UAC, SQLite, PDF, backup or 61-meter logging DEVICE-PASS from written plan.
+
 ## Requirements & verifiable outcomes
 
 | ID | Priority | Acceptance requirement | Objective evidence / negative test | Tracking |

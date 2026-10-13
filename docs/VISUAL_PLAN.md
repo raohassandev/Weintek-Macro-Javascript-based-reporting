@@ -1,6 +1,17 @@
 # UCS VISUAL PLAN — WEINTEK-ONLY ARCHITECTURE
 **Current approved deployment rule (2026-10-13): no external PC/IPC, server or SQL computer.** Owner-selected **cMT-FHDX-220**; OS/firmware and 61-meter benchmark pending. [Hardware plan](HARDWARE_TARGET_FHDX_220.md). [Command Centre #1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1) · [Role-based UI](ROLE_BASED_UX_PLAN.md) · [HTML evaluation](../research/WEINTEK_HTML_FEASIBILITY.md).
 
+## PLAN FIRST — CURRENT FHDX-220 ARCHITECTURE
+**No EBPro coding yet.** Freeze [1920×1080 screen design](SCREEN_DESIGN_BRIEF_FHDX220.md), [single USB2/no-SD backup risk](FHDX220_SINGLE_USB_STORAGE_RISK.md), [meter memory & per-client navigation](DYNAMIC_SCREEN_ARCHITECTURE.md), then [independent plan audit #38](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/38). Production audit #30 happens later. Q02 Local SQLite Advanced SQL and Q04 PDF decision remain P0 open. **FHDX-220 PLC Web Browser is NOT in official feature matrix.**
+
+```mermaid
+flowchart LR
+ PLAN["cMT-FHDX-220 full design pack"] --> CHECK["Links/schemas/risk coverage CI"]
+ CHECK --> AUDIT["Independent plan audit #38"]
+ AUDIT -->|"PASS + owner approval"| IMPLEMENT["Only then start EBPro build"]
+ AUDIT -->|"FAIL / BLOCKED"| FIX["Repair design and re-audit"] --> CHECK
+```
+
 ## A. Runtime / physical topology
 ```mermaid
 flowchart TB

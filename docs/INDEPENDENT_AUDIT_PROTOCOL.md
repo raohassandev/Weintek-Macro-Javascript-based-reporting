@@ -2,6 +2,11 @@
 **Audit issue:** [#30](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/30). **Baseline:** [UCS Final Master Plan](UCS_FINAL_MASTER_PLAN.md). **Evidence matrix:** [Traceability](UCS_REQUIREMENTS_TRACEABILITY.md).
 **Current baseline audit state:** NOT RUN; no independent approval claimed.
 
+## Two distinct audits — no mixing of evidence
+1. **PRE-IMPLEMENTATION PLAN AUDIT #38:** After plan #37 merges. Reviewer independent of plan author inspects frozen master plan, 1920×1080 UI, memory contract links, single USB/no SD case, Weintek feature claims, report viability decisions and blocked P0 risks. This audit may PASS design integrity with **hardware UNVERIFIED**, but must not claim deployment working. **Owner then authorizes implementation**.
+2. **LATER PRODUCT / RELEASE AUDIT #30:** Requires actual EBPro project, exact Weintek device, real historian/backup/report/61-meter evidence and customer signoff. No design plan audit can substitute for it.
+See [Plan Freeze](PLAN_FREEZE_PRE_IMPLEMENTATION_AUDIT.md). The original A01–A22 checklist below remains applicable at appropriate evidence level.
+
 ## Auditor identity / independence
 Auditor does **not** author implementation code, resolve own audit findings as invisible private work, fabricate manufacturer confirmation, sign for physical tests or infer Weintek hardware PASS from Python/GitHub CI. Auditor reads immutable PR head, test logs, device firmware, executable EBPro project and explicit known unknowns, then produces a separate dated PASS/FAIL/BLOCKED report.
 

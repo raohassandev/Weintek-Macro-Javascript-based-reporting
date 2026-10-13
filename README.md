@@ -5,6 +5,9 @@
 ## Active HMI target
 **Weintek cMT-FHDX-220 (owner-selected).** [Hardware plan](docs/HARDWARE_TARGET_FHDX_220.md), [test contract](contracts/hardware-target.json). One USB2 host, **no SD/microSD**, 1920×1080 HDMI; native EBPro JS Object and SQL Query listed, PLC Web Browser **820-only**. Actual OS/EBPro and performance pending. No PC/IPC runtime.
 
+## DESIGN FINALIZATION BEFORE INDEPENDENT AUDIT (owner workflow)
+**Do not start EBPro implementation yet.** Finish/merge [planning freeze #37](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/37), obtain real independent [plan audit #38](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/38), resolve findings and wait for owner authorization. [Frozen plan/audit gate](docs/PLAN_FREEZE_PRE_IMPLEMENTATION_AUDIT.md) · [FHDX-220 1080p screen design](docs/SCREEN_DESIGN_BRIEF_FHDX220.md) · [Single-USB backup safety](docs/FHDX220_SINGLE_USB_STORAGE_RISK.md) · [Dynamic screen](docs/DYNAMIC_SCREEN_ARCHITECTURE.md) · [Memory contract](docs/WEINTEK_MEMORY_CONTRACT.md). [External plan findings AF-01..08](docs/PLAN_AUDIT.md) are included here with their offline golden energy fixtures. The older green [PR #35](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/pull/35) audit findings/offline fixtures are being incorporated into the freeze without overwriting the FHDX-220 decision.
+
 ## FINAL BASELINE v1.0 — primary entrypoint
 **Read these first (authoritative, 2026-10-13):**
 1. **[UCS FINAL ENGINEERING MASTER PLAN](docs/UCS_FINAL_MASTER_PLAN.md)** — full customer context, architecture, registers, 61-meter historian, UX, reporting, hardware limits, milestones and constraints.
@@ -28,7 +31,7 @@ Baseline **finalizes plan/scope**, not physical HMI functionality or customer ac
 | **Authoritative issue/task tracking** | [Command Centre #1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1) |
 
 ## Approved scope (2026-10-13)
-**All processing and history are Weintek-only**: cMT-SVRX / cMT-FHDX, attached USB/SD/qualified SSD, no external computer runtime. [Revised architecture](docs/VISUAL_PLAN.md) · [Role-specific home screens](docs/ROLE_BASED_UX_PLAN.md) · [Web HTML feasibility](research/WEINTEK_HTML_FEASIBILITY.md) · [Official demo project review](research/DEMO_PROJECTS_REVIEW.md).
+**All processing and history are Weintek-only**: selected cMT-FHDX-220, single USB2 or qualified USB-SSD, **NO SD/microSD**, no external computer runtime. [Revised architecture](docs/VISUAL_PLAN.md) · [Role-specific home screens](docs/ROLE_BASED_UX_PLAN.md) · [Web HTML feasibility](research/WEINTEK_HTML_FEASIBILITY.md) · [Official demo project review](research/DEMO_PROJECTS_REVIEW.md).
 
 ## System at a glance
 ```mermaid
