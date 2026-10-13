@@ -1,5 +1,9 @@
 # Project context — chat chronology & handoff source
 
+## Latest owner directive — final plan then independent audit (2026-10-13)
+Owner explicitly states: **complete plan first, then have it independently audited, then begin work**, not implementation before review. A second auditor's comments noted FHDX-220 selected but not physically verified, outdated local clone still at PR #26 while GitHub main includes PR #36, single USB2/no SD, FHDX-220 lifecycle risk, 1920×1080 management light screen and native EBPro + JS Canvas only. Planning freeze #37 and independent plan audit #38 are distinct from future product audit #30. A final design plan includes 1080p role screens, independent all-meter historian, memory contracts, safe one-USB backup options, procurement risk and unresolved SQL/PDF decisions. [Freeze](PLAN_FREEZE_PRE_IMPLEMENTATION_AUDIT.md) · [Screen design](SCREEN_DESIGN_BRIEF_FHDX220.md) · [single USB](FHDX220_SINGLE_USB_STORAGE_RISK.md).
+
+
 ## Hardware decision (owner, 2026-10-13)
 Owner selected **Weintek cMT-FHDX-220** for current project. It has **one USB2 host and NO SD/microSD**, quad-core Cortex-A17, 4GB Flash, 1GB RAM, HDMI 1920×1080. EBPro v6.10.01 comparison supports JS Object and SQL Query but PLC Web Browser only on **FHDX-820**. No deployed device OS/firmware or EBPro versions supplied. Other model references (SVRX, FHDX-820) are historical alternatives. [Hardware plan](HARDWARE_TARGET_FHDX_220.md).
 

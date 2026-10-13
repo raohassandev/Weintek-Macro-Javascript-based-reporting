@@ -1,4 +1,6 @@
 # UCS role-focused home screens and popup policy — 61 meters
+
+**Selected FHDX-220, 1920×1080 light executive full brief:** [SCREEN_DESIGN_BRIEF_FHDX220](SCREEN_DESIGN_BRIEF_FHDX220.md). **PLAN before EBPro** → [independent plan audit #38](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/38). Native EBPro + supported JS Object only (not HTML). Resource Manager must show USB1, not SD; critical storage faults appear as role-routed notification, not daily management dashboards.
 **Design status:** approved direction; not compiled EBPro windows. [Visual flow](VISUAL_PLAN.md) · [CC #1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1).
 
 ## Principle

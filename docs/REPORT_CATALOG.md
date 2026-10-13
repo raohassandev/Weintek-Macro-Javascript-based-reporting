@@ -1,4 +1,6 @@
 # Universal historian report catalog
+
+**Active device:** cMT-FHDX-220 only, no PC/IPC/server, no SD. **Plan/design only; no on-device report PASS.** Customer contract must decide whether on-HMI preview + CSV is acceptable vs branded PDF/print mandatory (Q04). PDF creation and Local SQLite Advanced SQL are **not proven**, and the single USB2 historian/backup risk also gates long term report availability. [Audit register](PLAN_AUDIT.md) · [freeze](PLAN_FREEZE_PRE_IMPLEMENTATION_AUDIT.md).
 **Scope:** Requirements-level catalog / proposed portable templates. No report in this table is production-verified on a target Weintek HMI. [Visual Plan](VISUAL_PLAN.md) · [Site profile](SITE_PROFILE_GUIDE.md) · [Command Centre](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1).
 
 ## Report-type primitives (site-independent)

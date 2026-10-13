@@ -1,6 +1,9 @@
 # Weintek-only UCS storage and backup decision — 61 analyzers
 **Current direction:** owner-selected **cMT-FHDX-220**, **one USB2 host and NO SD/microSD**; no PC/IPC/server. [Hardware details](HARDWARE_TARGET_FHDX_220.md). This supersedes any prior IPC historian architecture described in older design commits. [Visual](VISUAL_PLAN.md) · [Resource Manager](RESOURCE_STORAGE_MANAGER_SCREEN.md) · [HTML R&D](../research/WEINTEK_HTML_FEASIBILITY.md).
 
+## Single-USB critical failure/backup decision
+**Read [FHDX-220 USB-only backup risk](FHDX220_SINGLE_USB_STORAGE_RISK.md) before selecting storage.** cMT-FHDX-220 has one USB2 host. The design cannot assume USB live historian + hot-swap second USB backup without a verified internal buffer/replay: **if the primary USB is removed, records can be lost**. Candidate A (native internal history → bounded verified USB archive) is the **first bench evaluation**, NOT an approved 61-meter durable solution; Flash write endurance/history quota must be measured. Any USB hub for touch+SSD also requires exact model/OS manufacturer qualification. If no safe independent backup method passes, historian reliability remains BLOCKED.
+
 ## Approved physical setup (pending actual Weintek hardware proof)
 ```mermaid
 flowchart TB

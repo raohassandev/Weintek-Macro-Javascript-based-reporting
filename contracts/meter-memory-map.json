@@ -1,0 +1,326 @@
+{
+  "schema_version": "1.0-design",
+  "status": "PROPOSED_NOT_EBPRO_OR_DEVICE_VERIFIED",
+  "device": "cMT-FHDX-220",
+  "purpose": "61-device server-side volatile normalized live block map; not physical Modbus map nor durable historian",
+  "memory": {
+    "type": "LW",
+    "base_word": 256,
+    "block_words": 128,
+    "device_count": 61,
+    "highest_used_address": 8063,
+    "system_reserved_from": 9000,
+    "word_bits": 16
+  },
+  "private_navigation": {
+    "selected_meter": "PLW-100",
+    "private_index0": "PLW-9200",
+    "global_index0": "LW-9200",
+    "offset_formula": "(meter_id - 1) * 128",
+    "index_scope": "cMT Viewer per-client on version-qualified target; test before use"
+  },
+  "other_app_registers": {
+    "usb_probe_state": "LW-8250",
+    "usb_probe_age_seconds": "LW-8251",
+    "recorder_state": "LW-8252",
+    "last_record_age_seconds": "LW-8253",
+    "combined_storage_health": "LW-8270"
+  },
+  "reserved_offsets": "94..127 in each block (do not allocate without revision)",
+  "types": {
+    "uint16": "1 16-bit word",
+    "uint32": "2 words",
+    "float32": "2 words",
+    "float64": "4 words"
+  },
+  "fields": [
+    {
+      "id": "status",
+      "offset_words": 0,
+      "words": 1,
+      "type": "uint16"
+    },
+    {
+      "id": "quality_flags",
+      "offset_words": 1,
+      "words": 1,
+      "type": "uint16"
+    },
+    {
+      "id": "snapshot_sequence",
+      "offset_words": 2,
+      "words": 2,
+      "type": "uint32"
+    },
+    {
+      "id": "sample_age_seconds",
+      "offset_words": 4,
+      "words": 1,
+      "type": "uint16"
+    },
+    {
+      "id": "comm_error_code",
+      "offset_words": 5,
+      "words": 1,
+      "type": "uint16"
+    },
+    {
+      "id": "sample_epoch_utc",
+      "offset_words": 6,
+      "words": 2,
+      "type": "uint32"
+    },
+    {
+      "id": "total_active_power_kw",
+      "offset_words": 8,
+      "words": 2,
+      "type": "float32"
+    },
+    {
+      "id": "total_reactive_power_kvar",
+      "offset_words": 10,
+      "words": 2,
+      "type": "float32"
+    },
+    {
+      "id": "total_apparent_power_kva",
+      "offset_words": 12,
+      "words": 2,
+      "type": "float32"
+    },
+    {
+      "id": "overall_pf",
+      "offset_words": 14,
+      "words": 2,
+      "type": "float32"
+    },
+    {
+      "id": "frequency_hz",
+      "offset_words": 16,
+      "words": 2,
+      "type": "float32"
+    },
+    {
+      "id": "voltage_a_v",
+      "offset_words": 18,
+      "words": 2,
+      "type": "float32"
+    },
+    {
+      "id": "voltage_b_v",
+      "offset_words": 20,
+      "words": 2,
+      "type": "float32"
+    },
+    {
+      "id": "voltage_c_v",
+      "offset_words": 22,
+      "words": 2,
+      "type": "float32"
+    },
+    {
+      "id": "voltage_ab_v",
+      "offset_words": 24,
+      "words": 2,
+      "type": "float32"
+    },
+    {
+      "id": "voltage_bc_v",
+      "offset_words": 26,
+      "words": 2,
+      "type": "float32"
+    },
+    {
+      "id": "voltage_ca_v",
+      "offset_words": 28,
+      "words": 2,
+      "type": "float32"
+    },
+    {
+      "id": "current_a_a",
+      "offset_words": 30,
+      "words": 2,
+      "type": "float32"
+    },
+    {
+      "id": "current_b_a",
+      "offset_words": 32,
+      "words": 2,
+      "type": "float32"
+    },
+    {
+      "id": "current_c_a",
+      "offset_words": 34,
+      "words": 2,
+      "type": "float32"
+    },
+    {
+      "id": "power_a_kw",
+      "offset_words": 36,
+      "words": 2,
+      "type": "float32"
+    },
+    {
+      "id": "power_b_kw",
+      "offset_words": 38,
+      "words": 2,
+      "type": "float32"
+    },
+    {
+      "id": "power_c_kw",
+      "offset_words": 40,
+      "words": 2,
+      "type": "float32"
+    },
+    {
+      "id": "reactive_a_kvar",
+      "offset_words": 42,
+      "words": 2,
+      "type": "float32"
+    },
+    {
+      "id": "reactive_b_kvar",
+      "offset_words": 44,
+      "words": 2,
+      "type": "float32"
+    },
+    {
+      "id": "reactive_c_kvar",
+      "offset_words": 46,
+      "words": 2,
+      "type": "float32"
+    },
+    {
+      "id": "thd_va_pct",
+      "offset_words": 48,
+      "words": 2,
+      "type": "float32"
+    },
+    {
+      "id": "thd_vb_pct",
+      "offset_words": 50,
+      "words": 2,
+      "type": "float32"
+    },
+    {
+      "id": "thd_vc_pct",
+      "offset_words": 52,
+      "words": 2,
+      "type": "float32"
+    },
+    {
+      "id": "thd_ia_pct",
+      "offset_words": 54,
+      "words": 2,
+      "type": "float32"
+    },
+    {
+      "id": "thd_ib_pct",
+      "offset_words": 56,
+      "words": 2,
+      "type": "float32"
+    },
+    {
+      "id": "thd_ic_pct",
+      "offset_words": 58,
+      "words": 2,
+      "type": "float32"
+    },
+    {
+      "id": "import_energy_kwh",
+      "offset_words": 60,
+      "words": 4,
+      "type": "float64"
+    },
+    {
+      "id": "export_energy_kwh",
+      "offset_words": 64,
+      "words": 4,
+      "type": "float64"
+    },
+    {
+      "id": "reactive_energy_kvarh",
+      "offset_words": 68,
+      "words": 4,
+      "type": "float64"
+    },
+    {
+      "id": "operating_seconds",
+      "offset_words": 72,
+      "words": 2,
+      "type": "uint32"
+    },
+    {
+      "id": "meter_uptime_seconds",
+      "offset_words": 74,
+      "words": 2,
+      "type": "uint32"
+    },
+    {
+      "id": "demand_kw",
+      "offset_words": 76,
+      "words": 2,
+      "type": "float32"
+    },
+    {
+      "id": "peak_demand_kw",
+      "offset_words": 78,
+      "words": 2,
+      "type": "float32"
+    },
+    {
+      "id": "voltage_unbalance_pct",
+      "offset_words": 80,
+      "words": 2,
+      "type": "float32"
+    },
+    {
+      "id": "current_unbalance_pct",
+      "offset_words": 82,
+      "words": 2,
+      "type": "float32"
+    },
+    {
+      "id": "neutral_current_a",
+      "offset_words": 84,
+      "words": 2,
+      "type": "float32"
+    },
+    {
+      "id": "meter_temperature_c",
+      "offset_words": 86,
+      "words": 2,
+      "type": "float32"
+    },
+    {
+      "id": "phase_rotation_enum",
+      "offset_words": 88,
+      "words": 1,
+      "type": "uint16"
+    },
+    {
+      "id": "alarm_flags",
+      "offset_words": 89,
+      "words": 1,
+      "type": "uint16"
+    },
+    {
+      "id": "last_good_epoch_utc",
+      "offset_words": 90,
+      "words": 2,
+      "type": "uint32"
+    },
+    {
+      "id": "quality_reason_code",
+      "offset_words": 92,
+      "words": 1,
+      "type": "uint16"
+    },
+    {
+      "id": "record_layout_version",
+      "offset_words": 93,
+      "words": 1,
+      "type": "uint16"
+    }
+  ]
+}
