@@ -1,4 +1,4 @@
-# UCS Master Plan — CANONICAL ROUTE
+# UCS Master Plan — CANONICAL ROUTE\n\nExternal audit reconciliation: [PLAN_AUDIT.md](PLAN_AUDIT.md). Pending [#38 independent plan audit](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/38) must approve before implementation.
 **The earlier historical-reporting-only plan has been superseded on 2026-10-13.**
 **AUTHORITATIVE UCS BASELINE v1.0:** [UCS_FINAL_MASTER_PLAN.md](UCS_FINAL_MASTER_PLAN.md).
 
