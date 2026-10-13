@@ -1,0 +1,10 @@
+Panel,EBPro_Object,Binding,Tag_or_Action,Data_Type,Provenance,Current_Status
+COMMUNICATIONS HEALTH,Numeric Display + Word Lamp,Poll quality ledger,comm_ok_count,UINT16,actual attempts,DESIGN/NOT EBPRO VERIFIED
+STALE ANALYZERS,Numeric Display + Word Lamp,Quality age checks,meters_stale,UINT16,bounded TTL,DESIGN/NOT EBPRO VERIFIED
+MODBUS FAILURES,Numeric Display + Word Lamp,Read exception counters,modbus_failures,UINT32,per-source,DESIGN/NOT EBPRO VERIFIED
+LAST GOOD POLL,Numeric Display + Word Lamp,Last valid receive time,last_good_age,UINT32,UTC,DESIGN/NOT EBPRO VERIFIED
+61 ANALYZERS / COMMUNICATION HEALTH MATRIX,Picture + native Numeric/Bit Lamp / History Trend (where supported),Quality-tagged logical meter window,meter_indexed_data / historian,MIXED,Private Index UI does NOT index native historian,DESIGN
+FAILURE INVESTIGATION,Event Display + Word Lamp or supported JS Object Canvas,HMI Event log / bounded report result,event_status,EVENT,Persistent+UAC gating required,DESIGN
+INCIDENT TIMELINE / MAINTENANCE QUEUE,Event/History Data Display + Function Key,Stored log or report,event_log / report_id,EVENT,History source on-device only,DESIGN
+Navigation,Function Key + supported client-private PLW,PLW-100 / index PLW-9200,client_selected_meter,UINT16,Verify OS + Viewer session behaviour,DESIGN
+Backdrop,Picture static PNG,Local project asset,background-only.png,PNG,No dynamic values baked in,OFFLINE

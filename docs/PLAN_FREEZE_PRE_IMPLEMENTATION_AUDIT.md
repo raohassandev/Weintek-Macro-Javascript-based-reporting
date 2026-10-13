@@ -2,6 +2,9 @@
 **Target:** Weintek **cMT-FHDX-220** (selected). **Scope:** one site, 61 configurable energy analyzers, 3 user roles, 22 report-template concepts. **Date:** 2026-10-13.
 **Single-USB safety:** historian storage/backup conflict and touch input need physical verification; no SD slot.\n**Status terminology:** A plan can be **DESIGN-FROZEN FOR AUDIT** while product feasibility remains **BLOCKED / DEVICE NOT RUN**. Independent audit **must occur after plan documentation lands and before implementation is authorized**. Do not claim 100% project complete.
 
+## Reported GATE-1 result (2026-10-13)
+[Owner-relayed independent plan audit](GATE1_INDEPENDENT_PLAN_AUDIT_RESULT.md) at frozen SHA `a22eeeebe1e4ded14219b497de30f5ffd9cedf90` reported **PASS DOC/OFFLINE**. Does NOT mean device firmware/SQLite/storage/PDF success nor owner permission to code. Physical system and actual FHDX-220 System Info + EBPro remain blocking #28/#29. The next agreed tasks are limited to source-traceable static screens and 2-meter **specification**, not compiled EBPro.
+
 ## Governing decision / authority
 - No computer/IPC/Linux box/external SQL/Node/cloud processor in runtime; only native supported Weintek firmware/EBPro and passive USB storage. Existing cMT Viewer clients may view but cannot be mandatory report processors.
 - Primary hardware is cMT-FHDX-220 with **ONE USB2 host, NO SD/microSD, max HDMI 1920×1080**. Earlier SVRX/FHDX-820 designs are contextual only. A legacy/discontinued procurement concern is a documented risk, **not an implicit upgrade decision**.

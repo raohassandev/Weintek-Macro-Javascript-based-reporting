@@ -1,0 +1,10 @@
+Panel,EBPro_Object,Binding,Tag_or_Action,Data_Type,Provenance,Current_Status
+NET ENERGY,Numeric Display + Word Lamp,Historian report engine,net_energy_kwh,FLOAT64,source+coverage,DESIGN/NOT EBPRO VERIFIED
+GRID IMPORT,Numeric Display + Word Lamp,Counter delta/report,grid_import_kwh,FLOAT64,gap-aware,DESIGN/NOT EBPRO VERIFIED
+MAXIMUM DEMAND,Numeric Display + Word Lamp,Verified sample/report,demand_peak_kw,FLOAT32,quality+time,DESIGN/NOT EBPRO VERIFIED
+RECORD COVERAGE,Numeric Display + Word Lamp,Expected-vs-valid log ledger,period_coverage_pct,FLOAT32,quality provenance,DESIGN/NOT EBPRO VERIFIED
+ENERGY PERFORMANCE / SELECTED PERIOD,Picture + native Numeric/Bit Lamp / History Trend (where supported),Quality-tagged logical meter window,meter_indexed_data / historian,MIXED,Private Index UI does NOT index native historian,DESIGN
+COMPARISON & REPORT QUALITY,Event Display + Word Lamp or supported JS Object Canvas,HMI Event log / bounded report result,event_status,EVENT,Persistent+UAC gating required,DESIGN
+REPORT PREVIEW / VERIFIED EXPORT / MATERIAL EXCEPTIONS,Event/History Data Display + Function Key,Stored log or report,event_log / report_id,EVENT,History source on-device only,DESIGN
+Navigation,Function Key + supported client-private PLW,PLW-100 / index PLW-9200,client_selected_meter,UINT16,Verify OS + Viewer session behaviour,DESIGN
+Backdrop,Picture static PNG,Local project asset,background-only.png,PNG,No dynamic values baked in,OFFLINE

@@ -1,0 +1,9 @@
+Tag_Name,Origin,Proposed_Type,Quality_Requirement,EBPro_Import_Status
+comm_ok_count,Poll quality ledger,UINT16,actual attempts,NOT NATIVE IMPORT CSV; requires EBPro exported template
+meters_stale,Quality age checks,UINT16,bounded TTL,NOT NATIVE IMPORT CSV; requires EBPro exported template
+modbus_failures,Read exception counters,UINT32,per-source,NOT NATIVE IMPORT CSV; requires EBPro exported template
+last_good_age,Last valid receive time,UINT32,UTC,NOT NATIVE IMPORT CSV; requires EBPro exported template
+device_health_matrix,Normalized quality mapping,ENUM,per meter,NOT NATIVE IMPORT CSV; requires EBPro exported template
+incident_log,Event Display,EVENT,persisted evidence,NOT NATIVE IMPORT CSV; requires EBPro exported template
+selected_meter_client_private,PLW-100 proposed,UINT16,range 1..61 per client,MODEL/OS TEST REQUIRED
+private_index0,PLW-9200 Weintek private index register 0,UINT16,(meterId-1)*128,MODEL/OS TEST REQUIRED

@@ -24,7 +24,7 @@ flowchart TD
 ```
 
 ## PRE-IMPLEMENTATION HOLD (OWNER DIRECTIVE)
-**STOP EBPro implementation and onsite work until:** planning PR #37 merges, independent plan auditor #38 submits an evidence-based review against immutable exact head, all Critical/High planning findings close and **owner authorizes start**. All WP1..WP11 remain planning or blocked. No external PC; no SD on cMT-FHDX-220. Source [plan audit rules](PLAN_FREEZE_PRE_IMPLEMENTATION_AUDIT.md).
+**GATE-1 DOC/OFFLINE audit PASS at SHA a22eeeeb (owner-transmitted [result](GATE1_INDEPENDENT_PLAN_AUDIT_RESULT.md)). IMPLEMENTATION STILL HELD until actual System Info + EBPro and explicit owner authorization**; physical P0 Q01/Q02/Q10/Q04-Q12 unresolved. All WP1..WP11 remain planning or blocked. No external PC; no SD on cMT-FHDX-220. Source [plan audit rules](PLAN_FREEZE_PRE_IMPLEMENTATION_AUDIT.md).
 
 ## LIVE WORK PACKAGE STATUS SNAPSHOT — 2026-10-13
 **Source for future updates:** [Command Centre #1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1). This snapshot shows the *current known evidence grade*, not estimates or percentage-complete.
@@ -34,13 +34,13 @@ flowchart TD
 | WP0 Governance / baseline | **[COMPLETED PR#31/2965ae6]** | DOC + OFFLINE CI | Maintain baseline after audit |
 | WP1 Hardware features | **[BLOCKED: exact actual cMT-FHDX-220 OS/EBPro version]** | Vendor documentation only | Label/OS/EBPro + Q02 bench |
 | WP2 Generic memory/profiles | **[INPROGRESS: proposed contract, offline tests]** | JSON/schema, no EBPro tag export | Confirm memory map on physical version |
-| WP3 UI & role homes | **[INPROGRESS: SVG/object mapping only]** | Static design, no functional EBPro screen | Native window implementation |
+| WP3 UI & role homes | **[INPROGRESS: offline 1080p screen packs, no EBPro]** | DOC/PNG/native-object mapping only | Native window implementation after owner gate |
 | WP4 Historian & quality | **[AVAILABLE: P0 device test blocked]** | Policy only | Two independent meters and error ledger |
 | WP5 Official demos / HTML R&D | **[COMPLETED: catalog research only; physical HTML POC NOT RUN]** | Vendor links, catalog; demo archive not obtained | Model-specific verification |
-| WP6 Two-meter pilot | **[AVAILABLE: hardware-gated]** | Requirements only | Compiled EBPro project and logging |
+| WP6 Two-meter pilot | **[BLOCKED: owner approval + OS/EBPro; DOC ready-to-build]** | Full register/SQL/USB acceptance manifests | Actual .cmtp/.emtp + logging after gate |
 | WP7 61-meter load | **[BLOCKED: WP6 not device-PASS]** | No site run | Load benchmark & gap coverage |
 | WP8 Reporting/export | **[INPROGRESS: synthetic energy QA fixtures; report runtime NOT RUN]** | Offline tests after CI, no Weintek CSV proof | Q02/Q04 proof, actual file reconciliation |
-| WP9 HMI commissioning | **[AVAILABLE: depends on WP6]** | Spec/site schema | Build/verify HMI-only wizard |
+| WP9 HMI commissioning | **[BLOCKED: owner approval + WP6]** | DOC/site schema only | Build/verify HMI-only wizard after gate |
 | WP10 Independent audit | **[AVAILABLE: protocol defined, no physical audit PASS]** | Audit instructions only | Independent reviewer #30 after code/hardware evidence |
 | WP11 Site release | **[BLOCKED: QA/audit/customer pending]** | No release | Signed site acceptance #10 |
 

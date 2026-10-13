@@ -1,0 +1,11 @@
+Tag_Name,Origin,Proposed_Type,Quality_Requirement,EBPro_Import_Status
+usb1_present,Weintek system tag LB-12048 candidate,BIT,vendor version check,NOT NATIVE IMPORT CSV; requires EBPro exported template
+usb_probe_state,Application LW-8250 candidate,UINT16,recent byte-compare,NOT NATIVE IMPORT CSV; requires EBPro exported template
+recorder_state,Application LW-8252 candidate,UINT16,last persisted record,NOT NATIVE IMPORT CSV; requires EBPro exported template
+backup_proof_state,Native Backup object + independent evidence,ENUM,verification age,NOT NATIVE IMPORT CSV; requires EBPro exported template
+cpu_load_pct,Weintek LW-9025 candidate,UINT16,exact OS/system tag check,NOT NATIVE IMPORT CSV; requires EBPro exported template
+ram_load_pct,Weintek LW-11159 candidate,UINT16,exact model tag,NOT NATIVE IMPORT CSV; requires EBPro exported template
+usb_free_kb,Weintek LW-9076 candidate,UINT32,USB1 only,NOT NATIVE IMPORT CSV; requires EBPro exported template
+retention_days,Measured data bytes/day formula,UINT32,N/A if no trend,NOT NATIVE IMPORT CSV; requires EBPro exported template
+selected_meter_client_private,PLW-100 proposed,UINT16,range 1..61 per client,MODEL/OS TEST REQUIRED
+private_index0,PLW-9200 Weintek private index register 0,UINT16,(meterId-1)*128,MODEL/OS TEST REQUIRED

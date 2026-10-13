@@ -2,6 +2,10 @@
 
 **Ek engine, multiple sites.** Configurable historical reports for solar / grid / DG, industry, UPS, LPG, HVAC and utilities. **Currently in design/R&D**; no production or hardware acceptance claim.
 
+## GATE-1 design audit outcome and offline screen assets
+**Independent PLAN audit PASS (owner-transmitted)** for frozen SHA `a22eeeebe1e4ded14219b497de30f5ffd9cedf90` at DOC/OFFLINE level only; [result](docs/GATE1_INDEPENDENT_PLAN_AUDIT_RESULT.md). **Q01/Q02/Q10/Q04-Q12 BLOCKED; implementation #28/#29 HOLD pending actual System Info/EBPro and owner authorization.**
+Four deterministic **1920×1080** preview/background source packs: [Operator](designs/screens/110-operator-home/), [Engineer](designs/screens/120-engineer-home/), [Management](designs/screens/130-management-home/), [Resource](designs/screens/510-resource-manager/). [Ready-to-build DOC-only 2-meter handoff](planning/2-meter-fhdx220/README.md). [Asset generator](tools/build_ucs_screen_packs.py) can rebuild images without a PC in the *deployed runtime*.
+
 ## Active HMI target
 **Weintek cMT-FHDX-220 (owner-selected).** [Hardware plan](docs/HARDWARE_TARGET_FHDX_220.md), [test contract](contracts/hardware-target.json). One USB2 host, **no SD/microSD**, 1920×1080 HDMI; native EBPro JS Object and SQL Query listed, PLC Web Browser **820-only**. Actual OS/EBPro and performance pending. No PC/IPC runtime.
 

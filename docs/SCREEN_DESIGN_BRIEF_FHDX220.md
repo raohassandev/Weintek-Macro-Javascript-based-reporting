@@ -106,6 +106,16 @@ Each screen must have a self-contained engineer handoff folder:
 
 **Existing Resource Manager SVG/PNG are 1600×900 concept assets**, NOT native 1920×1080 HMI engineering-ready backgrounds. Rescale/re-layout deliberately, preserve native object overlays and verify exact physical display geometry; do not simply stretch and claim final.
 
+## Static 1080p handoff packs (generated offline only)
+All four folders are created by [deterministic asset renderer](../tools/build_ucs_screen_packs.py) and validated by [offline checks](../tests/test_ucs_screen_packs.py). Each holds 1920×1080 **preview.png, background-only.png**, SVG sources, native EBPro object mapping CSV, engineering tag contract CSV (NOT an EBPro import-ready file), interaction-flow.md, state-table.md and tests.md. No customer live data is embedded. **Resource 510 is newly laid out at 1080p—not stretched from old 1600×900.**
+
+- [Operator 110](../designs/screens/110-operator-home/preview.png) — complete real-time site view for 61 meters, only actionable incidents
+- [Engineer 120](../designs/screens/120-engineer-home/preview.png) — communications/error investigation and maintenance
+- [Management 130](../designs/screens/130-management-home/preview.png) — energy KPI, periods, historical coverage and report prep; **no infrastructure gauges**
+- [Resource 510](../designs/screens/510-resource-manager/preview.png) — CPU/RAM, USB1, independent recording and backup proof, **no SD widget**
+
+**Only native EBPro objects supply values.** The generated \`preview.png\` contains explicit "CONCEPT • NOT LIVE" labels and is NOT a real HMI capture. The \`background-only.png\` has no metric values, lamps, fake success or native object behavior baked in. Exact native object compatibility and versions remain untested pending GATE-2 device access.
+
 ## 7. Design audit and explicit no-go conditions
 - Review **every** screen against its “purpose complete” table above, no duplicate metrics or pointless boxes.
 - Confirm FHDX-220 native supported objects and OS/EBPro version when the project becomes buildable, not based on later FHDX-820 feature alone.

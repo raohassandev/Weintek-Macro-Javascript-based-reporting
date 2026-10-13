@@ -1,0 +1,10 @@
+Panel,EBPro_Object,Binding,Tag_or_Action,Data_Type,Provenance,Current_Status
+SITE ACTIVE POWER,Numeric Display + Word Lamp,Derived site KPI,site_active_kw,FLOAT32,GOOD+timestamp,DESIGN/NOT EBPRO VERIFIED
+METERS AVAILABLE,Numeric Display + Word Lamp,Quality ledger,meters_online,UINT16,event ages,DESIGN/NOT EBPRO VERIFIED
+CRITICAL EVENTS,Numeric Display + Word Lamp,Alarm/event ledger,critical_events,UINT16,severity/UAC,DESIGN/NOT EBPRO VERIFIED
+GRID FREQUENCY,Numeric Display + Word Lamp,Site source tag,grid_frequency_hz,FLOAT32,GOOD+timestamp,DESIGN/NOT EBPRO VERIFIED
+METER HEALTH / ALL 61 LOGICAL SLOTS,Picture + native Numeric/Bit Lamp / History Trend (where supported),Quality-tagged logical meter window,meter_indexed_data / historian,MIXED,Private Index UI does NOT index native historian,DESIGN
+PRIORITY OPERATOR ACTIONS,Event Display + Word Lamp or supported JS Object Canvas,HMI Event log / bounded report result,event_status,EVENT,Persistent+UAC gating required,DESIGN
+RECENT ALARMS / CIRCUIT ACTIVITY,Event/History Data Display + Function Key,Stored log or report,event_log / report_id,EVENT,History source on-device only,DESIGN
+Navigation,Function Key + supported client-private PLW,PLW-100 / index PLW-9200,client_selected_meter,UINT16,Verify OS + Viewer session behaviour,DESIGN
+Backdrop,Picture static PNG,Local project asset,background-only.png,PNG,No dynamic values baked in,OFFLINE

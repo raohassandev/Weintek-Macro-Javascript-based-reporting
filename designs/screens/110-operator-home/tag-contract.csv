@@ -1,0 +1,9 @@
+Tag_Name,Origin,Proposed_Type,Quality_Requirement,EBPro_Import_Status
+site_active_kw,Derived site KPI,FLOAT32,GOOD+timestamp,NOT NATIVE IMPORT CSV; requires EBPro exported template
+meters_online,Quality ledger,UINT16,event ages,NOT NATIVE IMPORT CSV; requires EBPro exported template
+critical_events,Alarm/event ledger,UINT16,severity/UAC,NOT NATIVE IMPORT CSV; requires EBPro exported template
+grid_frequency_hz,Site source tag,FLOAT32,GOOD+timestamp,NOT NATIVE IMPORT CSV; requires EBPro exported template
+meter_tile_quality,Normalized meter blocks 256..8063,ENUM,snapshot age,NOT NATIVE IMPORT CSV; requires EBPro exported template
+alarms_operator,Event Display role filter,EVENT,persistent incident,NOT NATIVE IMPORT CSV; requires EBPro exported template
+selected_meter_client_private,PLW-100 proposed,UINT16,range 1..61 per client,MODEL/OS TEST REQUIRED
+private_index0,PLW-9200 Weintek private index register 0,UINT16,(meterId-1)*128,MODEL/OS TEST REQUIRED

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+<title>OPERATIONS OVERVIEW - background-only EBPro Picture</title>
+<rect width="1920" height="1080" fill="#F6F6F2"/>
+<rect width="205" height="1080" fill="#EEF2EA"/>
+<rect x="205" y="0" width="1715" height="86" rx="0" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1.4"/>
+<text x="30" y="52" font-family="Arial,DejaVu Sans,sans-serif" font-size="37" font-weight="800" fill="#244D3C" text-anchor="start" opacity="1.0">UCS</text>
+<text x="29" y="72" font-family="Arial,DejaVu Sans,sans-serif" font-size="11" font-weight="700" fill="#68756E" text-anchor="start" opacity="1.0">ENERGY INTELLIGENCE</text>
+<rect x="16" y="114" width="172" height="46" rx="10" fill="#EAF1E8" stroke="#EAF1E8" stroke-width="1.4"/>
+<text x="34" y="147" font-family="Arial,DejaVu Sans,sans-serif" font-size="19" font-weight="700" fill="#244D3C" text-anchor="start" opacity="1.0">Operator</text>
+<text x="34" y="218" font-family="Arial,DejaVu Sans,sans-serif" font-size="19" font-weight="400" fill="#68756E" text-anchor="start" opacity="1.0">Engineer</text>
+<text x="34" y="289" font-family="Arial,DejaVu Sans,sans-serif" font-size="19" font-weight="400" fill="#68756E" text-anchor="start" opacity="1.0">Management</text>
+<text x="34" y="360" font-family="Arial,DejaVu Sans,sans-serif" font-size="19" font-weight="400" fill="#68756E" text-anchor="start" opacity="1.0">Meter Detail</text>
+<text x="34" y="431" font-family="Arial,DejaVu Sans,sans-serif" font-size="19" font-weight="400" fill="#68756E" text-anchor="start" opacity="1.0">Trends</text>
+<text x="34" y="502" font-family="Arial,DejaVu Sans,sans-serif" font-size="19" font-weight="400" fill="#68756E" text-anchor="start" opacity="1.0">Reports</text>
+<text x="34" y="573" font-family="Arial,DejaVu Sans,sans-serif" font-size="19" font-weight="400" fill="#68756E" text-anchor="start" opacity="1.0">Diagnostics</text>
+<text x="34" y="644" font-family="Arial,DejaVu Sans,sans-serif" font-size="19" font-weight="400" fill="#68756E" text-anchor="start" opacity="1.0">Resources</text>
+<text x="234" y="40" font-family="Arial,DejaVu Sans,sans-serif" font-size="30" font-weight="750" fill="#27332D" text-anchor="start" opacity="1.0">OPERATIONS OVERVIEW</text>
+<text x="234" y="67" font-family="Arial,DejaVu Sans,sans-serif" font-size="15" font-weight="450" fill="#68756E" text-anchor="start" opacity="1.0">Electrical network / live situational awareness</text>
+<rect x="1650" y="22" width="238" height="32" rx="12" fill="#EAF1E8" stroke="#EAF1E8" stroke-width="1.4"/><text x="1769.0" y="44" font-family="Arial,DejaVu Sans,sans-serif" font-size="14" font-weight="700" fill="#244D3C" text-anchor="middle" opacity="1.0">UCS • DESIGN SOURCE</text>
+<text x="234" y="118" font-family="Arial,DejaVu Sans,sans-serif" font-size="15" font-weight="700" fill="#68756E" text-anchor="start" opacity="1.0">PERFORMANCE / STATUS</text>
+<rect x="234" y="142" width="399" height="153" rx="14" fill="#FFFFFF" stroke="#DCE5D9" stroke-width="1.4"/><text x="256" y="177" font-family="Arial,DejaVu Sans,sans-serif" font-size="15" font-weight="700" fill="#68756E" text-anchor="start" opacity="1.0">SITE ACTIVE POWER</text>
+<rect x="647" y="142" width="399" height="153" rx="14" fill="#FFFFFF" stroke="#DCE5D9" stroke-width="1.4"/><text x="669" y="177" font-family="Arial,DejaVu Sans,sans-serif" font-size="15" font-weight="700" fill="#68756E" text-anchor="start" opacity="1.0">METERS AVAILABLE</text>
+<rect x="1060" y="142" width="399" height="153" rx="14" fill="#FFFFFF" stroke="#DCE5D9" stroke-width="1.4"/><text x="1082" y="177" font-family="Arial,DejaVu Sans,sans-serif" font-size="15" font-weight="700" fill="#68756E" text-anchor="start" opacity="1.0">CRITICAL EVENTS</text>
+<rect x="1473" y="142" width="399" height="153" rx="14" fill="#FFFFFF" stroke="#DCE5D9" stroke-width="1.4"/><text x="1495" y="177" font-family="Arial,DejaVu Sans,sans-serif" font-size="15" font-weight="700" fill="#68756E" text-anchor="start" opacity="1.0">GRID FREQUENCY</text>
+<rect x="234" y="314" width="1016" height="524" rx="14" fill="#FFFFFF" stroke="#DCE5D9" stroke-width="1.4"/><text x="256" y="349" font-family="Arial,DejaVu Sans,sans-serif" font-size="15" font-weight="700" fill="#68756E" text-anchor="start" opacity="1.0">METER HEALTH / ALL 61 LOGICAL SLOTS</text>
+<rect x="1266" y="314" width="606" height="524" rx="14" fill="#FFFFFF" stroke="#DCE5D9" stroke-width="1.4"/><text x="1288" y="349" font-family="Arial,DejaVu Sans,sans-serif" font-size="15" font-weight="700" fill="#68756E" text-anchor="start" opacity="1.0">PRIORITY OPERATOR ACTIONS</text>
+<rect x="234" y="855" width="1638" height="170" rx="14" fill="#FFFFFF" stroke="#DCE5D9" stroke-width="1.4"/><text x="256" y="890" font-family="Arial,DejaVu Sans,sans-serif" font-size="15" font-weight="700" fill="#68756E" text-anchor="start" opacity="1.0">RECENT ALARMS / CIRCUIT ACTIVITY</text>
+<text x="260" y="1001" font-family="Arial,DejaVu Sans,sans-serif" font-size="13" font-weight="500" fill="#68756E" text-anchor="start" opacity="1.0">STATIC BACKGROUND / overlay native Numeric, Lamp, Trend &amp; Event EBPro objects</text>
+</svg>
