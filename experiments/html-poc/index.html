@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UCS Weintek Local HTML Rendering Probe</title>
+<style>
+:root {font: 16px/1.45 system-ui, sans-serif;color:#20362b;background:#f5f4ef}
+main{max-width:920px;margin:6vh auto;padding:32px;background:#fff;border-radius:18px;box-shadow:0 10px 30px #20362b1c}
+h1{margin:0 0 8px} .ok{color:#216d4b;font-weight:bold}
+.row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+section{padding:16px;border:1px solid #dee7da;border-radius:14px;background:#f5f9f3}
+small{color:#637a67} button{background:#2e6148;color:#fff;border:0;padding:13px 18px;border-radius:9px;font:inherit}
+</style>
+</head>
+<body><main>
+<h1>UCS • Weintek HTML Proof</h1>
+<p>This is an <strong>offline visual test</strong>. It does not poll any meter, write an HMI register, log history or prove Weintek USB HTML support.</p>
+<div class="row">
+<section><small>HTML renderer</small><p class="ok">Page visible</p></section>
+<section><small>JavaScript runtime</small><p id="js">Not running</p></section>
+<section><small>Local clock</small><p id="clock">—</p></section>
+</div>
+<p><button id="test" type="button">Test interaction</button> <span id="clicks">0 clicks</span></p>
+<p><small>Local file trial only: on the actual device manually load this file using a documented/supported URI or browser. Results must be recorded with exact model, firmware, file path and mode.</small></p>
+</main>
+<script>
+"use strict";
+let clicks=0;
+const $ = id => document.getElementById(id);
+$("js").textContent="JavaScript executed";
+$("test").addEventListener("click",()=>{$("clicks").textContent=(++clicks)+" clicks"});
+setInterval(()=>{$("clock").textContent=new Date().toLocaleTimeString()},1000);
+</script>
+</body></html>

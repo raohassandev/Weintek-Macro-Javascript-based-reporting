@@ -1,57 +1,49 @@
-# Technical architecture — constrained interfaces
-**State:** proposed architecture, not commissioned.
+# UCS runtime architecture — **Weintek-only** (approved 2026-10-13)
+[Live visual](VISUAL_PLAN.md) · [Role UI](ROLE_BASED_UX_PLAN.md) · [History integrity](STORAGE_DECISION_AND_CAPACITY.md) · [HTML R&D](../research/WEINTEK_HTML_FEASIBILITY.md)
 
-## Architecture A — supported Advanced cMT HMI + controlled local SQLite
+## Hard boundary
+Only cMT-SVRX-820/822 or compatible cMT-FHDX model operates real-time collection, visualization, historian, alarms, and on-device report logic. The owner's explicit exclusion of third-party PC/IPC/server also excludes using such a device as the PDF generator or query processor. Other **Weintek hardware**, if required, must be separately approved; a standalone HTML browser variant does not automatically add historian logic.
+
+## Data path
 ```mermaid
-flowchart LR
-  PLC["PLC / power meters"] --> S["EBPro Data Sampling / tag acquisition"]
-  S --> H["Native HMI history / Backup"]
-  SRC["Controlled SQLite .db on supported USB/SD"] --> Q["EBPro SQL Query object"]
-  M["Macro or JS Object/Action"] <-->|"mapped LW/RW registers: input, trigger, status, rows"| Q
-  M --> V["Report screen + bounded pages"]
-  H --> C["CSV backup / verified conversion path"]
-  C --> EXT["Optional PC/IPC report service for branded PDF"]
+flowchart TB
+  METERS["61 analyzers with site-configured Modbus"] --> MAP["Weintek device map/driver: scale, endianness, tag IDs"]
+  MAP --> ACQ["Always-on acquisition; per-meter timestamp and quality"]
+  ACQ --> LW["Normalized shared LW live blocks"]
+  LW --> UI["UAC role homes / per-client indexed meter window"]
+  ACQ --> H["EBPro Data Sampling + Event Log + Operation Log"]
+  H --> REP["HMI Macro/JS/SQL Query • supported operations only"]
+  REP --> UI
+  H --> USB["HMI USB/SD/FAT32 • measured storage, file rotation, verified backups"]
+  REP --> USB
+  H --> EV["Missing-data / communication / storage alarms"]
+  EV --> UI
 ```
-**Important:** a connection from native HMI history to the controlled SQLite source is deliberately **not drawn**. It is a research/test item, not a settled capability. SQLITE `SELECT` statement semantics and Advanced Mode availability for the chosen local SQLite version must be bench-tested.
 
-## Architecture B — external historian/reporting fallback
-If the selected HMI lacks SQL Query/local SQLite or requirements exceed it:
-```mermaid
-flowchart LR
- PLC["Meters / PLC"] --> COL["Collector / IPC"]
- COL --> DB["SQLite or supported server DB"]
- DB --> API["Report/query service"]
- API --> PDF["CSV / formatted PDF"]
- PLC --> HMI["Weintek native display, alarms, basic history"]
- API -. "documented supported integration only" .-> HMI
-```
-Select implementation after total cost, reliability, power-cycle recovery and customer security constraints are known.
+## Acquisition, status and historian invariants
+- One device ID (1–61) maps to one versioned driver profile and normalized quality/time fields. Hardware maps differ by model; avoid 61 copies of per-device pages.
+- Regardless of which screen is selected, sampling for every commissioned analyzer proceeds. Native Weintek sampling capacity, simultaneous history objects, tags, and on-screen refresh must be benchmarked on exact SVRX/FHDX hardware.
+- Missing / bad value is NULL or gap/state marker in report semantics, **not measured zero**. Independent `last_attempt`, `last_good`, `last_persisted` and origin flags provide audit/trace. Persist event intervals when communication or storage fails; reboot/power-loss recovery cannot retroactively recover data the meter never supplied.
+- Use `LW` shared volatile normalized blocks only as live cache. UAC and per-session `PLW` state keeps one shared detail screen independent for cMT Viewer clients. No global selected meter shared across sessions.
+- Native Trend Display binding and Local SQLite query capabilities need proof. Do not claim arbitrary SQL, generic SQLite file API, or WebView acting as a custom file server.
+- Config can adjust site labels, tag mapping, supported driver parameters via approved HMI configuration/recipe settings. New drivers/extra project hardware objects may **still** require EBPro download; do not claim fully unlimited runtime commissioning.
 
-## Integration boundary
-- Weintek **Macro**: documented HMI operations and configured query registers; `RecipeQuery` handles recipes, not arbitrary SQLite.
-- Weintek **JavaScript SDK**: use only functions verified in SDK revision, e.g. data exchange with local device registers. Do **not** assume `sqlite.open`, `sqlite3`, Node filesystem, network modules or arbitrary SQL execution APIs.
-- SQL Query: configure database backend and predetermined commands in EBPro; bridge query IDs / parameters / status / errors through actual documented mappings.
-- Query design: bounded time range, `LIMIT`/page, indexed timestamp, deterministic sort, `COUNT`, daily totals, max, min/avg with data-quality handling.
-- Native historian: acquisition and backups are their own subsystem. Verify file formats and schema before cross-querying.
+## Report tiers WITHIN Weintek (no external computer)
+1. **Native**: History Data Display, Trend Display, Event Log, Data Sampling, official Backup/CSV and PDF Reader if available (reader is not a PDF creator).
+2. **On-device enhanced**: site-defined Macro & JS Object/JS Action, SQL Query object to approved backend/storage path where supported, tested custom report rows/paging, on-HMI screens and documented export behavior.
+3. **Needs device R&D**: arbitrary SQL on local historian, PDF generation with brand/pagination, random HTML hosting from USB, and 61×period data performance. Mark BLOCKED or UNSUPPORTED until proven, **never silently fall back to PC/IPC**.
 
-## Data contract (proposed, not Weintek internal schema)
-```sql
-CREATE TABLE readings (
-    site_id TEXT NOT NULL,
-    device_id TEXT NOT NULL,
-    tag_id TEXT NOT NULL,
-    ts_utc TEXT NOT NULL,
-    value REAL,
-    quality TEXT NOT NULL,
-    PRIMARY KEY (site_id, device_id, tag_id, ts_utc)
-);
-CREATE INDEX idx_readings_time ON readings(ts_utc);
-```
-This is for test fixtures or external managed DB; not a claim about Weintek logger tables. Add source resolution/counter reset metadata before production energy reporting.
+## Storage (single Weintek)
+- Prefer qualified FAT32 USB/SD with controlled bounded file retention. USB-attached SSD is a *test candidate*, not a guaranteed officially supported filesystem/enclosure. Avoid claiming SATA/NVMe slot.
+- Independently monitor media presence, write/read proof, persisted-record activity, free space, last verified backup, and age/quality.
+- A second removable device used for manual/offline recovery does **not** execute software; no extra computer runtime.
+- Data growth rate / 61-analyzer capacity forecast based on actual write benchmark (inc. file rotation and free-space reserve); failure state must be captured, visible in diagnostic report and escalated appropriately.
 
-## Reliability, safety and operations
-- No SQL string concatenation from untrusted operator input; validate date/time, device ID, page and report type before HMI register writes.
-- Use read-only report queries; any writing/migration is separate admin operation.
-- Handle missing/full USB, write endurance, corruption, interrupted transfers, time-zone conversion and rollovers.
-- Set request timeout and busy state; no overlapping query triggers; show explicit stale/error states and last successful timestamp.
-- Do not log credentials; role-restrict exported data; document offline / remote exposure.
+## Rendering & HTML distinctions
+- JS Object in EBPro provides Canvas drawing and event handling, **not browser DOM or HTML CSS execution**. Use one reusable JS object/window with shared input register/role state.
+- PLC Web Browser shows external URL-based web pages **on local screen of supported HMI**, notably FHDX-820 in feature table; not a general-purpose embedded HTML engine across headless SVRX/cMT Viewer.
+- EasyWeb/WebView remotely render/control HMI projects, **not an arbitrary HTML document hosting feature**.
+- The separately sold cMT-FHDX-820 **(W)** is HTML5 Web Panel/Chromium display; its presence is **not proof that it can run EasyBuilder acquisition/historian**. It normally needs a URL/page source. No external web server is authorized. Local USB `file://` path and dynamic Modbus integration are open tests, not commitments.
+
+## Security
+UAC role permissions at navigation, data sources AND action destination. cMT Viewer runs some JS actions on client device (vendor support 2026-01-20): never rely on client-only JS to guard report rights / Modbus writes / dangerous backups. Action Trigger (Global) once/local macro path for backend with scoped guards. Implement notification rate limiting, acknowledgement and escalation; critical events must not vanish after popup.

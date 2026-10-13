@@ -1,70 +1,88 @@
-# Visual project plan — site-independent historian
-**Owner entry point:** [One-screen dashboard](OWNER_DASHBOARD.md) · [Report catalog](REPORT_CATALOG.md) · [Command Centre #1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1)
+# UCS VISUAL PLAN — WEINTEK-ONLY ARCHITECTURE
+**Current approved deployment rule (2026-10-13): no external PC/IPC, server or SQL computer.** Actual SVRX/FHDX model and storage benchmark pending. [Command Centre #1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1) · [Role-based UI](ROLE_BASED_UX_PLAN.md) · [HTML evaluation](../research/WEINTEK_HTML_FEASIBILITY.md).
 
-## 1. The complete system — one engine, different sites
+## A. Runtime / physical topology
 ```mermaid
 flowchart TB
-    subgraph SITE["SITE LAYER — varies by customer"]
-      A["Solar / DG / Grid"] ~~~ B["Factory / HVAC / Utilities"] ~~~ C["UPS / LPG / Other"]
+    M["61 different energy analyzers (Modbus TCP / RTU via supported gateways)"]
+    subgraph HMI["WEINTEK UCS — cMT-SVRX / cMT-FHDX • only runtime"]
+       DRIVER["Preconfigured device drivers + site-to-meter mapping"]
+       ACQ["Always-on polling; value + quality + timestamps"]
+       HIST["Native Data Sampling, event/operation log, macros"]
+       VIEW["Screens: operator / engineer / management / shared detail"]
+       REPORT["On-device historian query/report workflows • prove capability"]
+       DRIVER --> ACQ
+       ACQ --> HIST
+       ACQ --> VIEW
+       HIST --> REPORT
+       REPORT --> VIEW
     end
-    SITE --> CONFIG["Site Profile: devices, tags, units, sample/retention, time zone"]
-    CONFIG --> ACQ["Data Acquisition & Quality: Modbus / PLC / native HMI"]
-    ACQ --> D{Capability gate: chosen HMI?}
-    D -->|"Native historian + documented features"| N["HMI Data Sampling / Events / Backup"]
-    D -->|"Complex reports / cross-site / PDF"| E["PC / IPC collection + report service"]
-    N --> H["HMI History Data Display / supported query path"]
-    N --> CSV["Backup CSV / verified conversion"]
-    E --> DB["Controlled SQLite/SQL DB + indices"]
-    DB --> Q["Generic report query / aggregation"]
-    Q --> OUT["Report templates & file exports"]
-    H --> VIEW["HMI historical view"]
-    OUT --> PDF["CSV / XLSX / styled multi-page PDF / print"]
-    OUT -. "only after supported integration proof" .-> VIEW
-    classDef source fill:#eef4ff,stroke:#6b93be,color:#14253b;
-    classDef report fill:#e5f3ed,stroke:#499678,color:#17362b;
-    class A,B,C,CONFIG source;
-    class H,CSV,VIEW,OUT,PDF report;
+    M --> DRIVER
+    HIST --> MEDIA["Attached Weintek USB / microSD / qualified USB-SSD • rotate/backup"]
+    REPORT --> MEDIA
+    ALARM["Critical exception"] --> ROUTE["UCS severity + role routing / popup"]
+    HIST --> ALARM
+    ROUTE --> VIEW
 ```
-> Architecture shows **two valid implementation routes**, not a claim that all features run on the HMI. Local USB/SD SQLite SQL Query and Advanced Mode combinations require explicit versioned proof.
+**No external computer.** The native HMI historian's query/aggregation capability is NOT equivalent to unrestricted SQLite/HTML-server support. Complex/long-retention reports and 61-meter throughput require physical benchmarks before customer commitments.
 
-## 2. Site differences affect configuration — not the universal platform
+## B. Screens follow user purpose
+```mermaid
+flowchart TD
+    LOGIN["Weintek UAC / role"] --> R{"Active role"}
+    R -->|Operator| OP["Operator Home • live alarms, 61 meter status, loads"]
+    R -->|Engineer| EN["Engineer Home • comms, faults, maintenance actions"]
+    R -->|Management| MG["Management Home • KPI, trends, ready reports"]
+    OP --> SAME["Shared Meter Detail • one indexed template"]
+    EN --> SAME
+    MG --> SAME
+    OP --> TRENDS["Reusable Meter Trends"]
+    EN --> DIAG["Diagnostics / Commissioning"]
+    MG --> REPORT["Historical Reports"]
+    EN --> RESOURCE["Resource & Storage Manager"]
+    MG -. "only when requested" .-> RESOURCE
+    ROUTER["Role-aware alarm/event router"] -->|Actionable problem only| OP
+    ROUTER -->|Technical incident| EN
+    ROUTER -->|Business-impacting or report/backup failure| MG
+```
+Home is a **purpose-complete summary**, not a dump of CPU/RAM/storage gauges. Resource and backup administrative views remain deep navigation; critical problems appear as notifications. All events must also appear in log and historian.
+
+## C. One reusable meter screen / background historian
 ```mermaid
 flowchart LR
-    S1["Site A\nSolar + Grid + DG"] --> P1["Site profile A"]
-    S2["Site B\nProduction machines"] --> P2["Site profile B"]
-    S3["Site C\nUPS + Power Quality"] --> P3["Site profile C"]
-    P1 --> CORE["COMMON REPORTING ENGINE"]
-    P2 --> CORE
-    P3 --> CORE
-    CORE --> T1["Trends"]
-    CORE --> T2["Period totals"]
-    CORE --> T3["Events"]
-    CORE --> T4["Daily / Monthly / Custom"]
-    CORE --> T5["CSV / Optional PDF"]
+    BTN["Selected meter 1..61"] --> ID["Per-client private selection + index"]
+    ID --> DETAIL["ONE Meter Detail screen"]
+    ACQ["Independent polling of ALL 61"] --> CACHE["61 fixed normalized meter blocks"]
+    CACHE --> DETAIL
+    ACQ --> LOG["HMI 61-meter all-channel logging • never depend on selection"]
+    LOG --> T["History/trend selection: separate proof from live index"]
 ```
 
-## 3. Historical report operator flow
+## D. Weintek-only storage lifecycle
+```mermaid
+flowchart TD
+   USB["USB/SD present?"] --> YES{"Writable & capacity valid?"}
+   YES -->|No| ALERT["Record storage incident • show role-directed warning"]
+   YES -->|Yes| REC{"Persisted historical records advancing?"}
+   REC -->|No| ALERT
+   REC -->|Yes| OK["Recording verified with freshness + backup status"]
+   OK --> BAK["Verify backups on an independent removable media or supported destination"]
+   BAK --> CAP["Estimate actual remaining retention from measured bytes/day"]
+```
+Presence is not proof of write or persistence; backup on the same disk is not independent recovery.
+
+## E. Engineer work phases
 ```mermaid
 flowchart LR
-    A["Choose site"] --> B["Device / metric"]
-    B --> C["Date range / shift / batch"]
-    C --> D["Preview table + graph"]
-    D --> E["Summary + quality indication"]
-    E --> F["Export supported format"]
+ A["Source & model capabilities"] --> B["2-meter pilot + shared template"]
+ B --> C["61-meter continuous historian / fault ledger"]
+ C --> D["Three user homes + events & alarms"]
+ D --> E["Date/period reports + export"]
+ E --> F["Storage/backup/failure acceptance on real Weintek"]
 ```
 
-## 4. Execution roadmap and owner touch-points
-```mermaid
-flowchart LR
-    M0["M0: Scope and generic configuration"] --> M1["M1: Weintek actual capabilities"]
-    M1 --> M2["M2: Historian + SQL fixture"]
-    M2 --> M3["M3: Macro/JS + report UI"]
-    M3 --> M4["M4: Exports / PDF if required"]
-    M4 --> M5["M5: Real HMI QA and handover"]
-```
-Owner needs to decide only **(i) which HMI/device is actually available** and **(ii) whether customer mandates styled PDF/print vs on-HMI + CSV**. Engineering team owns reading manuals, building fixtures, tests and issue/PR tracking.
-
-## Current status
-- Diagram/report catalog/config model: **DESIGN baseline**.
-- Model support: manufacturer docs gathered; physical model/OS and local SQLite Advanced Mode **unverified**.
-- Source code/report application/hardware acceptance: **NOT DELIVERED**. Do not sell all catalog reports as available today.
+## Not supported as proven (yet)
+- Arbitrary HTML `file:///usb1/index.html` via **PLC Web Browser**; HTML5 web panel `(W)` is browser-focused, not demonstrated direct EBPro historian runtime.
+- Generic direct SQLite API in Macro/JS, or Advanced Mode custom SQL on Local SQLite for the exact target.
+- Dynamic Trend Display index from client-private live index; proper history querying must be tested.
+- Guaranteed zero missing samples under meter/device power loss; instead record explicit evidence of missing intervals.

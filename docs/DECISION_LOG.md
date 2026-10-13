@@ -22,3 +22,9 @@ All decisions need an owner, date, evidence URL and fallback. Draft assumptions 
 | D-015 | 2026-10-13 | Light executive green/neutral graphical Resource Manager theme | ACCEPTED DIRECTION | Actual management user dislikes blue; [screen SVGs](../designs/resource-manager/README.md) |
 | D-016 | 2026-10-13 | Storage states connected, writable, recording, backup must be independently proven and time bounded | ACCEPTED GUARDRAIL | [JS USB probe](../js/ucs_usb_write_read_probe.js), [status evaluator](../macros/UCS_STORAGE_STATUS.mcr); no verified device run yet |
 | D-017 | 2026-10-13 | Native EBPro object feature map + native export CSV compatibility gate | ACCEPTED WORKFLOW | [Objects mapping](../designs/resource-manager/screen-object-map.csv), [tag import guide](../tags/EBPRO_IMPORT_GUIDE.md) |
+
+| D-018 | 2026-10-13 | **No PC/IPC/computer/report server** in UCS runtime; Weintek-only SVRX/FHDX with attached storage | ACCEPTED HARD CONSTRAINT | Owner reviewed erroneous VISUAL_PLAN branch and explicitly rejected it; [new visual](VISUAL_PLAN.md); overrides provisional external server advice in D-006/D-014 |
+| D-019 | 2026-10-13 | Three separate purpose-built homes, common indexed meter detail and shared reporting/Resource Manager | ACCEPTED DIRECTION | [Role-based UX](ROLE_BASED_UX_PLAN.md) |
+| D-020 | 2026-10-13 | Priority/context-based notification popups; all faults/event history persisted | ACCEPTED DIRECTION | [Event routing matrix](ROLE_BASED_UX_PLAN.md) |
+| D-021 | 2026-10-13 | JS Object Canvas preferred for custom UI over generic HTML pages; PLC Web Browser/USB HTML path remains UNVERIFIED | PROVISIONAL TECHNICAL | [Weintek HTML research](../research/WEINTEK_HTML_FEASIBILITY.md) |
+| D-022 | 2026-10-13 | Separate cMT-FHDX-820 (W) Chromium model must not be conflated with EBPro FHDX-820 | ACCEPTED GUARDRAIL | [Vendor model](https://www.weintek.com/Product/Model/cMT-FHDX-820-%28W%29); no assumed native historian |

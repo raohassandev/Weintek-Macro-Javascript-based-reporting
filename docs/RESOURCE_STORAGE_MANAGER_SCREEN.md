@@ -23,7 +23,7 @@ flowchart TB
 | USB1 FAT32 | media present, free KB, warning | `LB-12048` USB1 exists, `LB-9037` low space, `LW-9076` 32bit free KB | TRUE used% needs validated **total current partition**; `LW-12496` is *last detected* USB partition GB, not guaranteed current; match partition identity first |
 | microSD | present, free KB, warning | `LB-12050` present, `LB-9036` low space, `LW-9074` 32-bit free KB | Same capacity/identity check |
 | HMI general free-space alarms | icon + threshold event | `LB-9035`, `LB-9036`, `LB-9037` | Manufacturer warning near low free space; threshold/value version dependent |
-| External IPC / SSD | optional storage bar & SMART-health panel | collector service telemetry API, independent from Weintek system tags | **Not** a Weintek system register; hide/N/A in HMI-only setups |
+| USB-attached SSD (optional) | optional storage bar & SMART-health panel | HMI system tags and scoped USB/media IO probe when compatible | USB SSD hardware/SMART data cannot be assumed available from Weintek system tags; show N/A until proven |
 | Site capture | online/stale/offline/dropped events/coverage | 61-meter collector/historian quality ledger | Must include timestamps, report missing as a distinct event, no 0 substitution |
 | Data retention | earliest/latest history, date-range timeline and space runway | storage database queries + measured growth | These are **derived**, not Weintek native system tags |
 | Backup | last successful vs **verified**, next due, progress/size/result | application backup job manifest and checksum | HMI native backup integration must be version-tested |
@@ -36,7 +36,7 @@ flowchart TB
 - CPU and RAM percentages are raw vendor registers; end-user percent scaling is **confirmed after OS check**.
 - Numeric gauges have text readouts and saturation; health states: NORMAL / HIGH / CRITICAL / UNAVAILABLE. Provide colorblind-safe labels in addition to colors.
 - Auto-refresh never blocks user backup/export; backup requests async state machine `IDLE → PRECHECK → SNAPSHOT → COPY → VERIFY → COMPLETE/FAILED`.
-- For HMI-only screen, do not imply independent IPC SSD; render the USB section only if its source exists. External SSD section appears only when monitored collector is configured.
+- For HMI-only screen, do not imply independent IPC SSD; render the USB section only if its source exists. Optional USB-SSD section only when physically detected AND supported; no external computer allowed.
 - Viewer sessions and page selection do not start/stop background logging, which continues 61-meters independent of any screen.
 - Screens are concept designs; illustrated demo numerical values are **not live data**.
 

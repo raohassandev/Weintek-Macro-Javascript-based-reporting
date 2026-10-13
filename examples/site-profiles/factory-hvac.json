@@ -14,7 +14,8 @@
     "preferred_export": [
       "screen",
       "csv"
-    ]
+    ],
+    "note": "Illustrative Weintek-only route; exact local historian/storage and report performance NOT device verified."
   },
   "devices": [
     {

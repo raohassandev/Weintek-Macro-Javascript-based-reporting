@@ -16,6 +16,12 @@ Capture **all relevant R&D links, decisions, experiments, version scopes and tec
 | [POC procedure](../docs/POC_TEST_PLAN.md) | Repeatable local SQLite, query and macro/JS test |
 | [Report catalog](../docs/REPORT_CATALOG.md) | Site-independent report capabilities and formula prerequisites |
 
+## October 13 additional manufacturer research
+- [Official Weintek Demo Projects catalog — curated R&D](DEMO_PROJECTS_REVIEW.md); [machine-readable demo list](demo-catalog.json). Demo archives are **not** represented as already downloaded.
+- [Weintek-only HTML and JS rendering feasibility](WEINTEK_HTML_FEASIBILITY.md) with separate cMT-FHDX-820 (W), PLC Web Browser, EBPro JS Object and EasyWeb/View.
+- [Offline HTML UI probe fixture](../experiments/html-poc/index.html) — test input only, not physical HMI pass.
+- Current UCS boundary excludes any PC/IPC/server runtime. Prior IPC storage direction is superseded. Details [Visual plan](../docs/VISUAL_PLAN.md).
+
 ## R&D knowledge categories
 - **A — Hardware/firmware/feature matrix:** cMT Basic, Standard, Advanced and SVRX; supported EBPro; native OS.
 - **B — Native historian:** sampling, event/operation log, history displays, backup, retention, file formats.

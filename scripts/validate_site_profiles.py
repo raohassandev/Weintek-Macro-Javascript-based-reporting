@@ -20,7 +20,7 @@ AGGREGATIONS = {
     "event": {"event_count", "raw_only"},
     "transaction": {"transaction_sum", "raw_only"},
 }
-EXPORTS_WITH_SEPARATE_RENDERER = {"pdf", "xlsx"}
+OUTPUTS_UNPROVEN_ON_WEINTEK = {"pdf", "xlsx"}
 
 
 def validate_profile(profile: dict, schema: dict) -> list[str]:
@@ -58,8 +58,8 @@ def validate_profile(profile: dict, schema: dict) -> list[str]:
         for out in outputs:
             if out not in profile["storage"].get("preferred_export", ["screen"]):
                 errors.append(f"{rid}: output {out} absent from storage.preferred_export")
-        if profile["storage"]["mode"] == "weintek_native" and outputs & EXPORTS_WITH_SEPARATE_RENDERER:
-            errors.append(f"{rid}: native-only route cannot promise XLSX/PDF without external renderer")
+        if outputs & OUTPUTS_UNPROVEN_ON_WEINTEK:
+            errors.append(f"{rid}: PDF/XLSX output unproven on Weintek-only runtime; disabled until native mechanism qualified")
         if report.get("availability", "planned") != "planned":
             errors.append(f"{rid}: example not allowed to self-claim verified/accepted status")
     return errors

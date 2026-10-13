@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/blob/main/schemas/site-profile.schema.json",
   "title": "Portable Industrial Historian Site Profile v1",
-  "description": "Engineering proposal; not an EasyBuilder Pro native import format.",
+  "description": "WEINTEK ONLY; no external computer service, no external SQL server. Offline schema design—not native EBPro import.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -70,8 +70,7 @@
         "mode": {
           "enum": [
             "weintek_native",
-            "hmi_local_sql_query",
-            "external_service"
+            "hmi_local_sql_query"
           ]
         },
         "retention_days": {
