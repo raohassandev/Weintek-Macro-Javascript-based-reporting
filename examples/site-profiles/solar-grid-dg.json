@@ -1,0 +1,115 @@
+{
+  "schema_version": "1.0",
+  "site_id": "example-solar-a",
+  "display_name": "Demo Solar + Grid (synthetic example)",
+  "industry": "solar",
+  "timezone": "Asia/Karachi",
+  "collection": {
+    "default_interval_seconds": 60,
+    "missing_data_policy": "mark_gap"
+  },
+  "storage": {
+    "mode": "external_service",
+    "retention_days": 365,
+    "preferred_export": [
+      "screen",
+      "csv",
+      "pdf"
+    ],
+    "note": "Illustrative routing only; real customer requirement not decided"
+  },
+  "devices": [
+    {
+      "device_id": "grid-meter-1",
+      "label": "Grid meter",
+      "source": {
+        "protocol": "modbus_tcp",
+        "endpoint_alias": "grid-meter-address-placeholder"
+      },
+      "metrics": [
+        {
+          "metric_id": "grid_power_kw",
+          "label": "Grid active power",
+          "kind": "sample",
+          "unit": "kW",
+          "source_tag": "SITE_TAG_GRID_POWER",
+          "aggregation": "avg_min_max"
+        },
+        {
+          "metric_id": "grid_import_kwh",
+          "label": "Grid imported energy",
+          "kind": "counter",
+          "unit": "kWh",
+          "source_tag": "SITE_TAG_GRID_IMPORT",
+          "aggregation": "delta_reset_aware",
+          "counter_reset_policy": "detect_reset"
+        }
+      ]
+    },
+    {
+      "device_id": "pv-inverter-1",
+      "label": "PV inverter",
+      "source": {
+        "protocol": "modbus_tcp",
+        "endpoint_alias": "pv-device-placeholder"
+      },
+      "metrics": [
+        {
+          "metric_id": "pv_power_kw",
+          "label": "PV active power",
+          "kind": "sample",
+          "unit": "kW",
+          "source_tag": "SITE_TAG_PV_POWER",
+          "aggregation": "avg_min_max"
+        },
+        {
+          "metric_id": "pv_energy_kwh",
+          "label": "PV lifetime energy counter",
+          "kind": "counter",
+          "unit": "kWh",
+          "source_tag": "SITE_TAG_PV_ENERGY",
+          "aggregation": "delta_reset_aware",
+          "counter_reset_policy": "detect_reset"
+        }
+      ]
+    }
+  ],
+  "reports": [
+    {
+      "report_id": "RPT-01",
+      "metrics": [
+        "grid_power_kw",
+        "pv_power_kw"
+      ],
+      "periods": [
+        "day",
+        "custom"
+      ],
+      "output": [
+        "screen",
+        "csv"
+      ],
+      "enabled": true,
+      "availability": "planned"
+    },
+    {
+      "report_id": "RPT-05",
+      "metrics": [
+        "grid_import_kwh",
+        "pv_energy_kwh"
+      ],
+      "periods": [
+        "day",
+        "month",
+        "year"
+      ],
+      "output": [
+        "screen",
+        "csv",
+        "pdf"
+      ],
+      "enabled": true,
+      "availability": "planned"
+    }
+  ]
+}

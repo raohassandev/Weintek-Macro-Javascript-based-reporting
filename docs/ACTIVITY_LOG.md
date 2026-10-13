@@ -10,4 +10,5 @@ Entries must describe actual committed changes or tests, timestamp, link, and wh
 | 2026-10-13 | ChatGPT / GitHub connector | Prepared scope, architecture, decisions and acceptance docs | This documentation commit | BOOTSTRAP |
 | 2026-10-13 | ChatGPT / GitHub connector | Committed durable scope, architecture and worker protocols | [Bootstrap commit](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/commit/1ff027e8756c455682cab0970a37c3a36f4296ad) | VERIFIED |
 | 2026-10-13 | ChatGPT / GitHub connector | Added model matrix and POC test protocol | [Matrix](MODEL_COMPATIBILITY.md) + [Protocol](POC_TEST_PLAN.md) | VERIFIED |
+| 2026-10-13 | ChatGPT / GitHub | Research expansion: 22 proposed report templates, visual Mermaid diagrams, source index, site profiles, JSON schema and automated configuration tests | [Owner dashboard](OWNER_DASHBOARD.md) / [R&D library](../research/INDEX.md); PR/commit pending | CODE REVIEW / CI PENDING |
 | 2026-10-13 | Engineering | HMI physical tests, historical export and SQL Query bench verification | None yet | NOT STARTED |

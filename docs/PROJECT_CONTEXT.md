@@ -1,6 +1,13 @@
 # Project context — handoff document
 **Last updated:** 2026-10-13. **Source:** project owner conversation and verified product references. **Command Centre:** [#1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1).
 
+## Latest owner directive — 2026-10-13
+- Make the project a **generalized reusable industrial historian** across solar, DG, factory, UPS, LPG, HVAC and other sites; each site varies only by device/tag/rules/profile.
+- Research must be **completely indexed**: source URLs, vendor manuals, caveats, validation state, failed/successful experiments, decisions and new chat handoff.
+- Owner is human and **will not read extensive documents or execute repetitive tests**. Engineer/AI must proactively research/implement/validate and show only a one-page status, clear diagram, working previews and single essential decision when required.
+- Visual roadmap: docs/VISUAL_PLAN.md. Reports: docs/REPORT_CATALOG.md. Owner quick view: docs/OWNER_DASHBOARD.md. R&D library: research/INDEX.md.
+- The site profiles and registry are designs, not direct EBPro-native imports or completed actual hardware commissioning.
+
 ## The customer problem
 A customer requires **historical reports** on a Weintek industrial HMI, not just live values or general data logging. The engineering objective is filtering by date/period/device, reporting summary statistics, showing historical table/pages, exporting CSV/Excel-compatible data, and deciding whether customer also requires branded multipage PDF/print. Exact final output specification, tag list and report templates are **not supplied yet**.
 

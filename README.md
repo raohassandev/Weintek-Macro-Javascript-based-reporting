@@ -1,31 +1,40 @@
-# Weintek Macro & JavaScript Historical Reporting
+# Universal Industrial Historian & Reporting — Weintek
 
-**Purpose:** Industrial historical reporting on Weintek cMT HMIs, with validated model/firmware compatibility, SQL Query object, macros, JavaScript register-based interaction, historical-data browsing and export.
+**Ek engine, multiple sites.** Configurable historical reports for solar / grid / DG, industry, UPS, LPG, HVAC and utilities. **Currently in design/R&D**; no production or hardware acceptance claim.
 
-> **Project phase:** Bootstrap / technical feasibility. No production-ready solution or hardware verification claimed.
+## Owner quick navigation
+| See this | Link |
+|---|---|
+| **One-page status (Roman Urdu)** | [Owner Dashboard](docs/OWNER_DASHBOARD.md) |
+| **Pictorial roadmap / architecture** | [Visual Plan — GitHub-rendered diagrams](docs/VISUAL_PLAN.md) |
+| **Which historical reports?** | [22 planned report templates](docs/REPORT_CATALOG.md) |
+| **All R&D sources and vendor web links** | [Research Library](research/INDEX.md) |
+| **Authoritative issue/task tracking** | [Command Centre #1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1) |
 
-## Start here
-- [Command Centre — Issue #1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1): authoritative live board, owners, status, blockers.
-- [Project context](docs/PROJECT_CONTEXT.md): customer request, previous chat findings and continuation procedure.
-- [Master plan](docs/MASTER_PLAN.md): independent implementation lanes and acceptance gates.
-- [Technical architecture](docs/ARCHITECTURE.md): trusted API boundaries and reporting options.
-- [Requirements & acceptance](docs/REQUIREMENTS_AND_ACCEPTANCE.md): verifiable functionality.
-- [Decision log](docs/DECISION_LOG.md): confirmed choices vs pending questions.
-- [Activity log](docs/ACTIVITY_LOG.md): durable work and evidence chronology.
-- [Model compatibility](docs/MODEL_COMPATIBILITY.md): manufacturer evidence and pending tests.
-- [POC test protocol](docs/POC_TEST_PLAN.md): step-by-step device acceptance.
-- [Weintek references](docs/REFERENCE_LINKS.md): official manuals, SDK and feature matrices.
-- [Worker protocol](docs/WORKER_PROTOCOL.md): issue/PR ownership and handoff.
+## System at a glance
+```mermaid
+flowchart LR
+  A["Solar / Factory / UPS / LPG / Any Site"] --> B["Site Configuration"]
+  B --> C["Universal Historian + Report Definitions"]
+  C --> D["HMI History / Trends"]
+  C --> E["CSV / Excel-compatible output"]
+  C --> F["Optional external PDF / Print service"]
+```
 
-## Important technical boundary
-Do **not** interpret `JavaScript` or `Macro` support as a direct unrestricted SQLite programming API. The documented route on compatible Advanced models is EasyBuilder Pro's **SQL Query object** (including supported external/local USB/SD SQLite configuration) and mapped HMI registers, which may be coordinated from Macro / JS. HMI internal logger database schema and access are **not assumed**. PDF generation/printing must be proven separately.
+**Site dependent:** actual devices/register maps, metric types, timezone, sample and retention settings, report selection, output.  
+**Reusable:** data semantics, period filters, calculation rules, quality/gap handling, report templates and test contracts.
 
-## Delivery workstream
-Discovery → bench-test compatible HMI → history storage and schema → SQL Query/register contracts → Macro/JS control → report UI → CSV/PDF path → commissioning and customer acceptance.
+## Technical source of truth
+- [Site profile schema](schemas/site-profile.schema.json), [configuration guide](docs/SITE_PROFILE_GUIDE.md) and [fictional sample sites](examples/site-profiles)
+- [Architecture](docs/ARCHITECTURE.md) · [Master Plan](docs/MASTER_PLAN.md) · [Requirements/Acceptance](docs/REQUIREMENTS_AND_ACCEPTANCE.md)
+- [Project/chat context](docs/PROJECT_CONTEXT.md) · [Decision Log](docs/DECISION_LOG.md) · [Activity Log](docs/ACTIVITY_LOG.md)
+- [Weintek feature matrix](docs/MODEL_COMPATIBILITY.md) · [POC test plan](docs/POC_TEST_PLAN.md) · [Official reference links](docs/REFERENCE_LINKS.md)
+- [R&D evidence register](research/SOURCE_REGISTER.json) · [Open questions](research/OPEN_QUESTIONS.md) · [Real experiment log](research/EXPERIMENT_LOG.md)
+- [Worker protocol](docs/WORKER_PROTOCOL.md) · [AI/contributor rules](AGENTS.md)
 
-See the [Command Centre](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1) for live work, not stale status copied here.
+## Safety/feature honesty
+Weintek manufacturer release notes confirm SQL Query can access SQLite on USB/SD for supported cMT devices. The exact combination **SQL Query Advanced Mode + Local SQLite** remains unverified; older manuals describe Advanced custom SQL mainly with MySQL/MS SQL. Do not assume unrestricted SQLite APIs in Macro/JavaScript or unrestricted access to HMI native log files. A formatted multipage PDF is a separately verified export capability, typically via external reporting service. Never treat `SUM(kW)` as energy kWh.
 
-## Working standard
-Small scoped PRs, truthful CI and physical-device evidence, explicit error handling, no leaked credentials, no silent degradation. When revisiting in a new chat, use issue #1 plus `docs/PROJECT_CONTEXT.md` as entry points.
+No real customer data, credentials, fabricated test results, or copied proprietary manuals in this public repository.
 
-**Maintained:** 2026-10-13.
+**As of:** 2026-10-13.
