@@ -39,7 +39,7 @@ class UCSBaselineTests(unittest.TestCase):
 
     def test_all_22_audit_gates_present(self):
         s=read("audit")
-        ids=re.findall(r"^\| (A\d{2}) \|",s,re.M)
+        ids=re.findall(r"^\| (A\d{2})\s",s,re.M)
         self.assertEqual(ids,[f"A{i:02d}" for i in range(1,23)])
         self.assertIn("FAIL",s)
         self.assertIn("BLOCKED",s)
@@ -77,7 +77,7 @@ class UCSBaselineTests(unittest.TestCase):
 
     def test_key_history_quality_invariants_are_auditable(self):
         master=read("master").lower()
-        for phrase in ("missing", "stale", "recovered", "all commissioned meters", "last-good", "no pc", "sqlite", "usb"):
+        for phrase in ("missing", "stale", "recovered", "all commissioned meters", "last-good", "never introduce pc", "sqlite", "usb"):
             self.assertIn(phrase,master)
         audit=read("audit").lower()
         for phrase in ("no-data", "retention", "popup", "exact", "backup", "report"):
