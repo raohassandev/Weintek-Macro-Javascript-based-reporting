@@ -1,5 +1,8 @@
 # UCS — one-page owner dashboard (Weintek ONLY)
 
+**LATEST UI DIRECTION:** Owner rejected generic visual demos. Main plant screen = **REAL site-specific SLD**, not fixed generic cards. One shared Weintek FHDX-220 SLD with role-based actions; per-meter detail/trends/report pages remain. **Cannot draw it before actual electrical plant SLD and meter-to-feeder mapping are supplied**. Existing old preview PNGs are superseded, not approved. [SLD contract](PLANT_SLD_PRIMARY_SCREEN_CONTRACT.md) · [Issue #43](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/43).
+
+
 **Planning freeze PR #39 review, then independent plan audit #38; implementation ON HOLD.** [External audit findings](PLAN_AUDIT.md). **Baseline v1.0 (not hardware-deployed):** [Main Plan](UCS_FINAL_MASTER_PLAN.md) · [AI Handoff](AI_AGENT_EXECUTION_BRIEF.md) · [Acceptance](UCS_REQUIREMENTS_TRACEABILITY.md) · [Work Packages](UCS_DELIVERY_WORKPACKAGES.md)
 Aap ko lambi technical reports nahi parhni; yeh 1 screen ka status aur decisions hain. [CC #1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1) · [Diagram](VISUAL_PLAN.md) · [Role home UX](ROLE_BASED_UX_PLAN.md) · [HTML R&D](../research/WEINTEK_HTML_FEASIBILITY.md).
 

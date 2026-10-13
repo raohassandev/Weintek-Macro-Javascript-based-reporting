@@ -1,4 +1,7 @@
 # UCS VISUAL PLAN — WEINTEK-ONLY ARCHITECTURE
+
+> **UI CHANGE:** Diagrams below describe generic architecture/role routing only, **not actual plant single-line electrical connections**. The owner rejected generic dashboard mockups. Primary UCS screen shall be the [real site-approved plant SLD](PLANT_SLD_PRIMARY_SCREEN_CONTRACT.md); site drawing not provided. Do NOT interpret Mermaid process arrows as grid/solar/generator wiring or a production electrical diagram.
+
 **Current approved deployment rule (2026-10-13): no external PC/IPC, server or SQL computer.** Owner-selected **cMT-FHDX-220**; OS/firmware and 61-meter benchmark pending. [Hardware plan](HARDWARE_TARGET_FHDX_220.md). [Command Centre #1](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/1) · [Role-based UI](ROLE_BASED_UX_PLAN.md) · [HTML evaluation](../research/WEINTEK_HTML_FEASIBILITY.md).
 
 ## PLAN FIRST — CURRENT FHDX-220 ARCHITECTURE

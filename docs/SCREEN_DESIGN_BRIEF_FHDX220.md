@@ -1,4 +1,6 @@
-# UCS — cMT-FHDX-220 1920×1080 SCADA Screen Design Brief (Planning Freeze Candidate)
+# UCS — cMT-FHDX-220 1920×1080 SCADA Screen Design Brief (SUPERSEDED HOME VISUALS)
+> **OWNER REJECTED THESE THREE HOME DASHBOARD PREVIEWS.** The 110/120/130 generated PNGs are archival examples only, **not** approved UCS production UI. The primary entry must be one **actual plant SLD**; its geometry, equipment, bus/feeder connections, breaker signals and meter positions must come from a real signed site drawing. See [new authoritative SLD screen contract](PLANT_SLD_PRIMARY_SCREEN_CONTRACT.md). All generic layouts below remain **SUPERSEDED FOR HOME-SCREEN IMPLEMENTATION**. Resource Manager, detail, trends, report and quality requirements remain in scope. Actual SLD NOT SUPPLIED, so no realistic SLD rendering yet.
+
 **Phase:** DESIGN SPECIFICATION ONLY; no compiled EasyBuilder Pro project and no physical HMI test.
 **Approved primary hardware:** cMT-FHDX-220. **UI runtime:** native EasyBuilder Pro objects + model/OS-supported JS Object Canvas. **No PLC Web Browser on FHDX-220**, no arbitrary local HTML pages, no PC/IPC/server.
 **Initial site:** 61 energy analyzers, configurable vendor/register maps. The purpose of each screen must be fully served; no unrelated infrastructure widgets on routine management/operational screens.
