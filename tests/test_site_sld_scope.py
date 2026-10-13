@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 class SLDRequirementGuard(unittest.TestCase):
     def test_primary_sld_contract_is_clear_and_missing_site_source_is_not_invented(self):
         contract=(ROOT/"docs/PLANT_SLD_PRIMARY_SCREEN_CONTRACT.md").read_text()
-        for text in ("actual plant SLD","61 energy analyzers","cMT-FHDX-220",
+        for text in ("real plant SLD","61 energy analyzers","cMT-FHDX-220",
                      "SOURCE_DRAWING_PENDING","Meter Detail 210","Weintek",
                      "GATE-1 design-change"):
             self.assertIn(text,contract)
