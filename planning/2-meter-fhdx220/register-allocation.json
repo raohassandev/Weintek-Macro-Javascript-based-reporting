@@ -1,0 +1,902 @@
+{
+  "manifest_version": "1.0-DESIGN",
+  "evidence_state": "DOC_ONLY_NOT_EBPRO_IMPORTED",
+  "target_model": "cMT-FHDX-220",
+  "source_contract": "../../contracts/meter-memory-map.json",
+  "selection": {
+    "client_meter": "PLW-100 PROPOSED",
+    "client_private_index0": "PLW-9200 SYSTEM PRIVATE INDEX, confirm on firmware",
+    "offset_formula": "(meter_id - 1) * 128",
+    "global_index_prohibited": "LW-9200"
+  },
+  "shared_LW_blocks": [
+    {
+      "meter": 1,
+      "base": 256,
+      "last": 383
+    },
+    {
+      "meter": 2,
+      "base": 384,
+      "last": 511
+    }
+  ],
+  "application_LW_status": {
+    "usb_probe_state": 8250,
+    "usb_probe_age_seconds": 8251,
+    "recorder_state": 8252,
+    "last_record_age_seconds": 8253,
+    "combined_storage_health": 8270
+  },
+  "system_tag_rules": "Read-only manufacturer-confirmed tags only; actual EBPro Address Tag Library export required. No false user-space claiming for LW >=9000.",
+  "variables": [
+    {
+      "meter_id": 1,
+      "field": "status",
+      "data_type": "uint16",
+      "words": 1,
+      "lw_start": 256,
+      "lw_end": 256,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "quality_flags",
+      "data_type": "uint16",
+      "words": 1,
+      "lw_start": 257,
+      "lw_end": 257,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "snapshot_sequence",
+      "data_type": "uint32",
+      "words": 2,
+      "lw_start": 258,
+      "lw_end": 259,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "sample_age_seconds",
+      "data_type": "uint16",
+      "words": 1,
+      "lw_start": 260,
+      "lw_end": 260,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "comm_error_code",
+      "data_type": "uint16",
+      "words": 1,
+      "lw_start": 261,
+      "lw_end": 261,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "sample_epoch_utc",
+      "data_type": "uint32",
+      "words": 2,
+      "lw_start": 262,
+      "lw_end": 263,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "total_active_power_kw",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 264,
+      "lw_end": 265,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "total_reactive_power_kvar",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 266,
+      "lw_end": 267,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "total_apparent_power_kva",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 268,
+      "lw_end": 269,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "overall_pf",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 270,
+      "lw_end": 271,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "frequency_hz",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 272,
+      "lw_end": 273,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "voltage_a_v",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 274,
+      "lw_end": 275,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "voltage_b_v",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 276,
+      "lw_end": 277,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "voltage_c_v",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 278,
+      "lw_end": 279,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "voltage_ab_v",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 280,
+      "lw_end": 281,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "voltage_bc_v",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 282,
+      "lw_end": 283,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "voltage_ca_v",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 284,
+      "lw_end": 285,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "current_a_a",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 286,
+      "lw_end": 287,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "current_b_a",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 288,
+      "lw_end": 289,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "current_c_a",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 290,
+      "lw_end": 291,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "power_a_kw",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 292,
+      "lw_end": 293,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "power_b_kw",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 294,
+      "lw_end": 295,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "power_c_kw",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 296,
+      "lw_end": 297,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "reactive_a_kvar",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 298,
+      "lw_end": 299,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "reactive_b_kvar",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 300,
+      "lw_end": 301,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "reactive_c_kvar",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 302,
+      "lw_end": 303,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "thd_va_pct",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 304,
+      "lw_end": 305,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "thd_vb_pct",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 306,
+      "lw_end": 307,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "thd_vc_pct",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 308,
+      "lw_end": 309,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "thd_ia_pct",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 310,
+      "lw_end": 311,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "thd_ib_pct",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 312,
+      "lw_end": 313,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "thd_ic_pct",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 314,
+      "lw_end": 315,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "import_energy_kwh",
+      "data_type": "float64",
+      "words": 4,
+      "lw_start": 316,
+      "lw_end": 319,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "export_energy_kwh",
+      "data_type": "float64",
+      "words": 4,
+      "lw_start": 320,
+      "lw_end": 323,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "reactive_energy_kvarh",
+      "data_type": "float64",
+      "words": 4,
+      "lw_start": 324,
+      "lw_end": 327,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "operating_seconds",
+      "data_type": "uint32",
+      "words": 2,
+      "lw_start": 328,
+      "lw_end": 329,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "meter_uptime_seconds",
+      "data_type": "uint32",
+      "words": 2,
+      "lw_start": 330,
+      "lw_end": 331,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "demand_kw",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 332,
+      "lw_end": 333,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "peak_demand_kw",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 334,
+      "lw_end": 335,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "voltage_unbalance_pct",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 336,
+      "lw_end": 337,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "current_unbalance_pct",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 338,
+      "lw_end": 339,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "neutral_current_a",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 340,
+      "lw_end": 341,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "meter_temperature_c",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 342,
+      "lw_end": 343,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "phase_rotation_enum",
+      "data_type": "uint16",
+      "words": 1,
+      "lw_start": 344,
+      "lw_end": 344,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "alarm_flags",
+      "data_type": "uint16",
+      "words": 1,
+      "lw_start": 345,
+      "lw_end": 345,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "last_good_epoch_utc",
+      "data_type": "uint32",
+      "words": 2,
+      "lw_start": 346,
+      "lw_end": 347,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "quality_reason_code",
+      "data_type": "uint16",
+      "words": 1,
+      "lw_start": 348,
+      "lw_end": 348,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 1,
+      "field": "record_layout_version",
+      "data_type": "uint16",
+      "words": 1,
+      "lw_start": 349,
+      "lw_end": 349,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "status",
+      "data_type": "uint16",
+      "words": 1,
+      "lw_start": 384,
+      "lw_end": 384,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "quality_flags",
+      "data_type": "uint16",
+      "words": 1,
+      "lw_start": 385,
+      "lw_end": 385,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "snapshot_sequence",
+      "data_type": "uint32",
+      "words": 2,
+      "lw_start": 386,
+      "lw_end": 387,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "sample_age_seconds",
+      "data_type": "uint16",
+      "words": 1,
+      "lw_start": 388,
+      "lw_end": 388,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "comm_error_code",
+      "data_type": "uint16",
+      "words": 1,
+      "lw_start": 389,
+      "lw_end": 389,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "sample_epoch_utc",
+      "data_type": "uint32",
+      "words": 2,
+      "lw_start": 390,
+      "lw_end": 391,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "total_active_power_kw",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 392,
+      "lw_end": 393,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "total_reactive_power_kvar",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 394,
+      "lw_end": 395,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "total_apparent_power_kva",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 396,
+      "lw_end": 397,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "overall_pf",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 398,
+      "lw_end": 399,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "frequency_hz",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 400,
+      "lw_end": 401,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "voltage_a_v",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 402,
+      "lw_end": 403,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "voltage_b_v",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 404,
+      "lw_end": 405,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "voltage_c_v",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 406,
+      "lw_end": 407,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "voltage_ab_v",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 408,
+      "lw_end": 409,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "voltage_bc_v",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 410,
+      "lw_end": 411,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "voltage_ca_v",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 412,
+      "lw_end": 413,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "current_a_a",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 414,
+      "lw_end": 415,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "current_b_a",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 416,
+      "lw_end": 417,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "current_c_a",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 418,
+      "lw_end": 419,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "power_a_kw",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 420,
+      "lw_end": 421,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "power_b_kw",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 422,
+      "lw_end": 423,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "power_c_kw",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 424,
+      "lw_end": 425,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "reactive_a_kvar",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 426,
+      "lw_end": 427,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "reactive_b_kvar",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 428,
+      "lw_end": 429,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "reactive_c_kvar",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 430,
+      "lw_end": 431,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "thd_va_pct",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 432,
+      "lw_end": 433,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "thd_vb_pct",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 434,
+      "lw_end": 435,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "thd_vc_pct",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 436,
+      "lw_end": 437,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "thd_ia_pct",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 438,
+      "lw_end": 439,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "thd_ib_pct",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 440,
+      "lw_end": 441,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "thd_ic_pct",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 442,
+      "lw_end": 443,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "import_energy_kwh",
+      "data_type": "float64",
+      "words": 4,
+      "lw_start": 444,
+      "lw_end": 447,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "export_energy_kwh",
+      "data_type": "float64",
+      "words": 4,
+      "lw_start": 448,
+      "lw_end": 451,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "reactive_energy_kvarh",
+      "data_type": "float64",
+      "words": 4,
+      "lw_start": 452,
+      "lw_end": 455,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "operating_seconds",
+      "data_type": "uint32",
+      "words": 2,
+      "lw_start": 456,
+      "lw_end": 457,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "meter_uptime_seconds",
+      "data_type": "uint32",
+      "words": 2,
+      "lw_start": 458,
+      "lw_end": 459,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "demand_kw",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 460,
+      "lw_end": 461,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "peak_demand_kw",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 462,
+      "lw_end": 463,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "voltage_unbalance_pct",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 464,
+      "lw_end": 465,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "current_unbalance_pct",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 466,
+      "lw_end": 467,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "neutral_current_a",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 468,
+      "lw_end": 469,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "meter_temperature_c",
+      "data_type": "float32",
+      "words": 2,
+      "lw_start": 470,
+      "lw_end": 471,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "phase_rotation_enum",
+      "data_type": "uint16",
+      "words": 1,
+      "lw_start": 472,
+      "lw_end": 472,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "alarm_flags",
+      "data_type": "uint16",
+      "words": 1,
+      "lw_start": 473,
+      "lw_end": 473,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "last_good_epoch_utc",
+      "data_type": "uint32",
+      "words": 2,
+      "lw_start": 474,
+      "lw_end": 475,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "quality_reason_code",
+      "data_type": "uint16",
+      "words": 1,
+      "lw_start": 476,
+      "lw_end": 476,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    },
+    {
+      "meter_id": 2,
+      "field": "record_layout_version",
+      "data_type": "uint16",
+      "words": 1,
+      "lw_start": 477,
+      "lw_end": 477,
+      "source": "normalized cache only; raw Modbus address to be furnished by meter manufacturer"
+    }
+  ],
+  "raw_meter_driver_addresses": "NOT_DEFINED_UNTIL_SITE_MANUFACTURER_MAP_AVAILABLE",
+  "hardware_tests": "NOT_RUN",
+  "sql_query_tests": "NOT_RUN",
+  "usb_persistence_tests": "NOT_RUN"
+}

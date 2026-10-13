@@ -11,6 +11,9 @@
 ## Planning phase authorization (2026-10-13)
 **Owner's order:** Complete plan first, obtain **independent plan audit**, resolve findings, and obtain explicit owner approval **before** any EBPro/JS/Macro implementation. See [Plan Freeze](PLAN_FREEZE_PRE_IMPLEMENTATION_AUDIT.md), [Audit #38](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/38), [1920×1080 Screen Brief](SCREEN_DESIGN_BRIEF_FHDX220.md), [Single-USB P0 Risk](FHDX220_SINGLE_USB_STORAGE_RISK.md) and [restored meter/memory contracts](DYNAMIC_SCREEN_ARCHITECTURE.md). Older green but unmerged [PR #35](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/pull/35) findings and offline golden fixtures are integrated without reverting [FHDX-220 PR #36](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/pull/36). These are planning artifacts, NOT device proofs.
 
+## GATE-1 pre-implementation plan audit verdict (owner-transmitted)
+**PASS for DOC/OFFLINE design consistency on SHA `a22eeeebe1e4ded14219b497de30f5ffd9cedf90`; no device result.** See [record](GATE1_INDEPENDENT_PLAN_AUDIT_RESULT.md). P0 Q01, Q02, Q10 and Q04/Q12 remain blocked. User authorized only document/asset/pilot planning before actual System Information + EBPro, explicit owner approval. **Full implementation is held**.
+
 ## 0. Executive contract and evidence policy
 Build a **reusable site-configurable, SCADA-grade visualisation, diagnostics and historical reporting system**. Start at **one site with 61 energy analyzers**; subsequent sites may use different meter brands, combinations, quantity and profiles. Build one reusable engine/driver mapping and shared screens, not 61 screen copies. Operators see live plant state; engineers see actionable diagnostics/commissioning; management sees defensible energy reports and exceptions.
 
@@ -150,10 +153,10 @@ Report header includes site, device, interval/timezone, units, aggregation defin
 |---|---|---|---|---|
 | M0 — Baseline | **[COMPLETED PR#31/2965ae6] — PLANNING ONLY** | Master plan, AI handoff, acceptance and audit spec | Docs merged, exact-head [CI PASS](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/actions/runs/38365571787); **no hardware claim** | #27 |
 | M1 — Hardware/feature proof | **[BLOCKED: selected FHDX-220 OS/firmware/EBPro unknown; Q02 SQL unverified]** | Exact platform capabilities and HMI-native SQL/JS/Macro/storage limits | Actual labelled Weintek SKU and direct bench evidence | #2, #3 |
-| M2 — 2-meter pilot | **[AVAILABLE: hardware-gated, NOT RUN]** | Shared detail, two simultaneous sampled meters, communication gaps, USB/CSV | Actual EBPro project + named-device logs | #28, #15–#17 |
-| M3 — Generic commissioning | **[AVAILABLE: design ready, implementation NOT RUN]** | Predeclared profiles configured in HMI, secured apply and rollback | Native HMI wizard, tested permissions, audit records | #29, #16, M2 |
+| M2 — 2-meter pilot | **[BLOCKED: owner implementation approval + actual FHDX-220 System Info/EBPro; DOC build manifest ready]** | Shared detail, two simultaneous sampled meters, communication gaps, USB/CSV | Actual EBPro project + named-device logs | #28, #15–#17 |
+| M3 — Generic commissioning | **[BLOCKED: M2 + owner/device gate; DESIGN ONLY]** | Predeclared profiles configured in HMI, secured apply and rollback | Native HMI wizard, tested permissions, audit records | #29, #16, M2 |
 | M4 — 61-meter site | **[BLOCKED: M2 plus full site devices/requirements; NOT RUN]** | 61 background meters, quality, multi-user screens, performance | Timed hardware results, exact measured CPU/RAM/storage | #17, #7, #9 |
-| M5 — Reporting and backups | **[INPROGRESS: offline reference cases only; HMI proof NOT RUN]** | Correct reports, CSV, quality/gaps, backup/restore | Reference cases #34 plus future actual on-device reconciled files | #3–#8, #18–#19 |
+| M5 — Reporting and backups | **[BLOCKED: Q02/Q10/Q04-Q12 on-device; 12 energy golden cases OFFLINE PASS only]** | Correct reports, CSV, quality/gaps, backup/restore | Reference cases #34 plus future actual on-device reconciled files | #3–#8, #18–#19 |
 | M6 — Release & independent audit | **[BLOCKED: device tests and customer signoff; NOT READY]** | Full production QA, independent reviewer, site signoff | [#30](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/30) + [#10](https://github.com/raohassandev/Weintek-Macro-Javascript-based-reporting/issues/10) | All |
 
 **Gates are not a sequential staffing prohibition.** Independent documentation/R&D, offline tests and visual work can run parallel; do not start physical acceptance or merge “fully working” claims before prereq evidence.

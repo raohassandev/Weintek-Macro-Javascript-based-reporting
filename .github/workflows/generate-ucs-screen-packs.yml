@@ -1,0 +1,56 @@
+name: Generate UCS 1080p Design Screen Packs
+on:
+  push:
+    branches:
+      - feature/ucs-gate1-offline-assets
+    paths:
+      - "tools/build_ucs_screen_packs.py"
+      - ".github/workflows/generate-ucs-screen-packs.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  render-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install SVG renderer
+        run: python -m pip install cairosvg pillow
+      - name: Generate native-object-ready screen asset packages
+        run: python tools/build_ucs_screen_packs.py
+      - name: Validate 1920x1080 raster assets and offline source
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+          root=Path("designs/screens")
+          for slug in ["110-operator-home","120-engineer-home","130-management-home","510-resource-manager"]:
+              folder=root/slug
+              for stem in ("preview","background-only"):
+                  path=folder/(stem+".png")
+                  with Image.open(path) as im:
+                      assert im.size==(1920,1080), str(path)
+                      assert im.mode in ("RGB","RGBA"), str(path)
+                  assert path.stat().st_size>10000, str(path)
+              for name in ("object-map.csv","tag-contract.csv","interaction-flow.md","state-table.md","tests.md"):
+                  assert (folder/name).is_file(),str(folder/name)
+          print("All four 1080p screen packs generated and verified (OFFLINE only).")
+          PY
+      - name: Commit generated sources, CSV, docs and PNGs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add designs/screens
+          if git diff --cached --quiet; then
+            echo "No generated asset changes"
+          else
+            git commit -m "assets: add 1920x1080 UCS role/Resource design PNG packs [skip ci]"
+            git push origin HEAD:feature/ucs-gate1-offline-assets
+          fi
