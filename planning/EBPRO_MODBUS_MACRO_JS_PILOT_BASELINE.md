@@ -1,3 +1,5 @@
+> **2026-10-16 owner decision supersedes the Macro/JS-poller direction below.** First bench is **one Haiwell PLC**, commissioned in EBPro System Parameter Settings. Live screens and Data Sampling use **direct external PLC tags**, not a scheduled Macro data-acquisition cache. Focus exclusively on hardening the native Weintek historian before introducing custom polling, normalization or large meter arrays. The historical architecture discussion below is preserved for traceability and is **not the active pilot design**. See [active Haiwell historian pilot](HAIWELL_PLC_DIRECT_TAG_HISTORIAN_PILOT.md). Existing cMT-FHDX-220 target and physical/EBPro approval gates remain in force.
+
 # EasyBuilder Pro pilot — Modbus channels + Macro/JavaScript architecture (decision draft)
 
 **Date:** 2026-10-16 | **Status:** PLANNING ONLY — no EBPro project or physical device test yet  
